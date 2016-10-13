@@ -1,0 +1,71 @@
+<!doctype html> 
+<html lang="en-us"> 
+<head>
+  <meta charset="utf-8">
+  <title>Devops Discoveries</title>
+  <meta name="author" content="Clint Armstrong">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+
+  
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="">
+
+  <div class="header center">
+    <ul class="navbar">
+	
+	
+		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
+	
+	
+	
+		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
+	
+	
+	
+		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
+	
+	
+	</ul>
+  </div>
+
+  <div class="wrap">
+    <header class="mb">
+      <h1 class="h2 m-0"><a href="/">Devops Discoveries</a></h1>
+      <p class="site-description"></p>
+    </header>
+
+
+<main>
+<article class="post">
+  <h1><a href="https://clinta.github.io/change-upn-to-email-with-powershell/" title="Changing UPN to Email with Powershell">Changing UPN to Email with Powershell</a></h1>
+  <p>If you need a quick way to change the UPN of all your users in active directory to match their email address, PowerShell makes it easy.</p>
+<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #bb60d5">$users</span> = <span style="color: #007020">get-aduser</span> -SearchBase <span style="color: #4070a0">&quot;OU=Users,DC=ad,DC=contoso,DC=com&quot;</span> -Filter * -Properties EmailAddress |
+where {<span style="color: #bb60d5">$_</span>.EmailAddress <span style="color: #666666">-ne</span> <span style="color: #bb60d5">$null</span> <span style="color: #666666">-AND</span> <span style="color: #bb60d5">$_</span>.EmailAddress.toLower() <span style="color: #666666">-ne</span> <span style="color: #bb60d5">$_</span>.UserPrincipalName.toLower()}
+
+<span style="color: #007020; font-weight: bold">foreach</span> (<span style="color: #bb60d5">$user</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">$users</span>) {
+    <span style="color: #bb60d5">$forest</span> = <span style="color: #007020">Get-ADForest</span>
+    <span style="color: #bb60d5">$email</span> = <span style="color: #bb60d5">$user</span>.EmailAddress
+    <span style="color: #bb60d5">$username</span> = <span style="color: #bb60d5">$email</span>.toLower().Split(<span style="color: #4070a0">&#39;@&#39;</span>)[0]
+    <span style="color: #bb60d5">$userdomain</span> = <span style="color: #bb60d5">$email</span>.toLower().Split(<span style="color: #4070a0">&#39;@&#39;</span>)[1]
+    <span style="color: #007020; font-weight: bold">if</span> (<span style="color: #666666">-Not</span> $(<span style="color: #bb60d5">$forest</span>.UPNSuffixes).Contains(<span style="color: #bb60d5">$userdomain</span>)) {
+        <span style="color: #bb60d5">$forest</span> | <span style="color: #007020">Set-ADForest</span> -UPNSuffixes @{Add=<span style="color: #4070a0">&quot;$userdomain&quot;</span>}
+    }
+    <span style="color: #bb60d5">$user</span> | <span style="color: #007020">Set-ADUser</span> -UserPrincipalName <span style="color: #4070a0">&quot;$username@$userdomain&quot;</span>
+}
+</pre></div>
+
+  <p class="small gray"><time datetime="2015-08-07">2015-08-07</time></p>
+</article>
+</main>
+</div>
+
+</body>
+</html>
+

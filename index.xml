@@ -1,0 +1,1921 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops Discoveries</title>
+    <link>https://clinta.github.io/index.xml</link>
+    <description>Recent content on Devops Discoveries</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>clint@clintarmstrong.net (Clint Armstrong)</managingEditor>
+    <webMaster>clint@clintarmstrong.net (Clint Armstrong)</webMaster>
+    <lastBuildDate>Wed, 12 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://clinta.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Moving to Hugo</title>
+      <link>https://clinta.github.io/moving-to-hugo/</link>
+      <pubDate>Wed, 12 Oct 2016 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/moving-to-hugo/</guid>
+      <description>&lt;p&gt;If you notice things look a little different here, it&amp;rsquo;s because I&amp;rsquo;ve given up on
+Jekyll. Ever since github upgraded it I&amp;rsquo;ve not been happy with how it does
+    syntax highlighting and I&amp;rsquo;ve been looking for alternatives.
+    &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; looks promising, and that&amp;rsquo;s what I&amp;rsquo;m trying now.
+  Sometime soon I&amp;rsquo;ll blog about my CI setup once it&amp;rsquo;s running the way I like.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Résumé</title>
+      <link>https://clinta.github.io/resume/</link>
+      <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/resume/</guid>
+      <description>
+
+&lt;h1 id=&#34;clint-armstrong&#34;&gt;Clint Armstrong&lt;/h1&gt;
+
+&lt;h2 id=&#34;work-experience&#34;&gt;Work Experience&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;01/2015 - Present&lt;/dt&gt;
+&lt;dd&gt;&lt;strong&gt;Network Administrator&lt;/strong&gt; Trillium Staffing, Kalamazoo, MI&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Primary technical resource for managing Networking, Servers and cloud
+ services.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Built a full mesh DMVPN network between over 100 branch offices using
+Linux on commodity hardware.&lt;/li&gt;
+&lt;li&gt;Managed a Citrix environment providing desktops for over 200 users.
+Handled upgrades between several major version of both Citrix and Windows
+Server.&lt;/li&gt;
+&lt;li&gt;Built a modern container cluster for running services on Linux.&lt;/li&gt;
+&lt;li&gt;Migrated communications services from on premis Microsoft Exchange and
+Sharepoint to Office 365.&lt;/li&gt;
+&lt;li&gt;Built a &lt;a href=&#34;diy-sbs-for-Office-365-Unified-Messaging&#34;&gt;solution&lt;/a&gt; for
+integrating Office 365 Unified Messaging using open source software.  and
+Cisco Unified Communications with only open source software.&lt;/li&gt;
+&lt;li&gt;Handled upgrades of multiple clusters between major versions of Vmware
+Vsphere.&lt;/li&gt;
+&lt;li&gt;Handled a migration between physical datacenters.&lt;/li&gt;
+&lt;li&gt;Migrated from provider IP space to BGP peering with multiple providers
+using provider independant IPs.&lt;/li&gt;
+&lt;li&gt;Wrote and contributed multiple modules for SaltStack to manage our linux
+servers and workstations.&lt;/li&gt;
+&lt;li&gt;Wrote multiple docker plugins to built our container cluster.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;12/2011 - 01/2015&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Professional Services Engineer&lt;/strong&gt; Secant Techologies, Kalamazoo, MI&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Provided services to customers including NetPro visits to check health of
+ network and server and leading upgrade projects to server infrastructure.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Frequent repairs of unhealthy Active Directory infrastructure including
+correcting AD Site topology, forcibly removing failed domain controllers,
+and troubleshooting and repairing DNS and DHCP.&lt;/li&gt;
+&lt;li&gt;Many implementations of multi-host VSphere deployments with iSCSI, Fibre
+Chanel and SAS based shared storage.&lt;/li&gt;
+&lt;li&gt;Sole engineer on many server virtualization and upgrade projects for
+Active Directory versions 2008R2 and 2012, Exchange 2010 and 2013,
+various version of Microsoft SQL and other line of business applications.&lt;/li&gt;
+&lt;li&gt;Engaged in long term support for a large company coordinating migrations
+to accommodate a corporate acquisition. Included Exchange and Active
+Directory migrations, workstation inventory and replacement, and user
+support coordination.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;01/2011 - 12/2011&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Microsoft Systems Administrator&lt;/strong&gt; Liberty University, Lynchburg, VA&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Primary Administrator responsible for design and maintenance of Active
+ Directory, Exchange, Active Directory Federation Services, Forefront
+ Unified Access Gateway and Public Key Infrastructure&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lead technician in project to migrate from an on-premises Exchange 2007
+environment to a hybrid oexistent deployment with 350,000 student user
+accounts in the cloud on Microsoft Office 365 and 000 Faculty and Staff
+accounts in on-premises Exchange 2010.&lt;/li&gt;
+&lt;li&gt;Implemented Forefront Unified Access Gateway to secure external
+authentication to Sharepoint and ther internal web services.&lt;/li&gt;
+&lt;li&gt;Implemented Active Directory Federation Services to provide single sign
+on for several external ervices.&lt;/li&gt;
+&lt;li&gt;Participated in implementation PCI security requirements for storage of
+sensitive data on infrastructure servers.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;2008 - 2011&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Desktop Configuration Administrator&lt;/strong&gt; Liberty University, Lynchburg, VA&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Managed the centeralized configuration of over 5000 workstations across
+ campus.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Implemented and managed Microsoft System Center Configuration Manager
+2007 for management of over 5000 workstations.&lt;/li&gt;
+&lt;li&gt;Implemented Microsoft Windows Deployment Services with a custom front-end
+to provide PXE booting and advanced automated imaging workflows to
+increase productivity for On-Site Support Technicians.&lt;/li&gt;
+&lt;li&gt;Repackaged and made the university software library available for
+installation via SCCM or Group Policy, improving efficiency for support
+departments by allowing self-service installations for users.&lt;/li&gt;
+&lt;li&gt;Created and maintained operating system images for Windows XP, Windows
+Vista and Windows 7.   Created and maintained Active Directory Group
+Policies for workstations.&lt;/li&gt;
+&lt;li&gt;Managed Windows Updates for workstations via Windows Server Update
+Services.&lt;/li&gt;
+&lt;li&gt;Automated repetitive business processes and client operations with
+VBScript and PowerShell.&lt;/li&gt;
+&lt;li&gt;Participated in committees coordinating the implementation of Information
+Technology Infrastructure Library (ITIL) business process throughout IT.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;2008&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Desk-Side Support Technician&lt;/strong&gt; Liberty University, Lynchburg, VA&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Provided desk side support for escalated IT tickets.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Operated as top-tier technical support troubleshooting hardware, software
+and network issues which ould not be solved by remote support
+technicians.&lt;/li&gt;
+&lt;li&gt;Deployed and re-imaged workstations.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;2005 - 2007&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;IT Technician&lt;/strong&gt; Comstock Public Schools, Kalamazoo, MI&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Remote and on-site support technician&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Created and maintained operating system images for Windows 98 and Windows
+XP.&lt;/li&gt;
+&lt;li&gt;Managed software deployment via Novell Zenworks.&lt;/li&gt;
+&lt;li&gt;Provided remote and on-site technical support.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&#34;open-source-projects&#34;&gt;Open Source Projects&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/undocker-dns&#34;&gt;undocker-dns&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;A small daemon to keep Docker from changing the dns server in a container.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-vxlan-plugin&#34;&gt;docker-vxlan-plugin&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;A plugin for connecting docker containers to vxlan overlay networks.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-arp-ipam&#34;&gt;docker-arp-ipam&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;A docker IPAM plugin to assign IP addresses to containers based on which
+ addresses are already in use on the network.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-drouter&#34;&gt;docker-drouter&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Co-Authored a tool which monitors docker containers and manipulates their
+ routing tables to facilitate efficient routing between containers on a
+ cluster of hosts.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/saltstack/salt/commits?author=clinta&#34;&gt;SaltStack&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Wrote the
+ &lt;a href=&#34;https://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html&#34;&gt;x509&lt;/a&gt;
+ state and module which facilitates managing an internal x509 PKI with Salt.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-zfs-plugin&#34;&gt;docker-zfs-plugin&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Wrote the go zfs library which this project is based on, and Setup the
+ continuous integration pipeline.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&#34;technologies-used&#34;&gt;Technologies Used&lt;/h2&gt;
+
+&lt;p&gt;Technologies I have experinece with include:&lt;/p&gt;
+
+&lt;p&gt;Linux, Ubuntu, FreeBSD, FreeNAS, ZFS, Windows Server, Go (GoLang), Python,
+PowerShell, Bash, Docker, Cisco, BGP, OSPF, Bird, Kamailio, Microsoft Exchange,
+Windows Server, Office 365&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Salt git integration without gitfs</title>
+      <link>https://clinta.github.io/salt-git-nogitfs/</link>
+      <pubDate>Tue, 15 Dec 2015 15:45:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/salt-git-nogitfs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://saltstack.com/&#34;&gt;SaltStack&lt;/a&gt; has some pretty cool git &lt;a href=&#34;https://docs.saltstack.com/en/latest/topics/tutorials/gitfs.html&#34;&gt;integration&lt;/a&gt;. Unfortunately it also has quite a few &lt;a href=&#34;https://github.com/saltstack/salt/issues?utf8=%E2%9C%93&amp;amp;q=is%3Aissue+is%3Aopen+gitfs&#34;&gt;bugs&lt;/a&gt;, especially when using gitfs for pillars.&lt;/p&gt;
+
+&lt;p&gt;These issues can be annoying at small scale, but they can become very important as you add more minions. To work around these I looked for ways I could simplify our salt/git integration and now that it&amp;rsquo;s complete I couldn&amp;rsquo;t be happier.&lt;/p&gt;
+
+&lt;p&gt;With a post-receive hook on my gitlab server and a salt master that is also a minion, the salt server updates it&amp;rsquo;s file root&amp;rsquo;s directory from git without the salt-master process having to do any interfacing with git at all. As a result applying states through our environment of nearly 200 minions is faster and more reliable than it ever was with gitfs.&lt;/p&gt;
+
+&lt;p&gt;I even have some features that I never had with gitfs, like automatic environments based on branches. Here&amp;rsquo;s how it works.&lt;/p&gt;
+
+&lt;p&gt;My salt master has the following state applied. This state ensures that the salt-master service is running. It gets the list of branches from the git remote and makes sure that that branch is cloned into a directory under &lt;code&gt;/srv/salt/&lt;/code&gt;. It also manages a file in &lt;code&gt;/etc/salt/master.d/roots.conf&lt;/code&gt; which defines each environment that has been cloned and restarts the salt-master process when the file changes. This uses one git repository for both states and pillars, so states are in the &lt;code&gt;repo/states&lt;/code&gt; directory and pillars are in the &lt;code&gt;repo/pillar&lt;/code&gt; directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/salt-master-git.sls&lt;/span&gt;
+
+salt-master:
+  service.running:
+    - enable: True
+
+/srv/salt:
+  file.directory: []
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# get the list of remote branches&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git.ls_remote&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;remote&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git@gitlab:salt/salt.git&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;opts&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;--heads&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches.append&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch.replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;refs/heads/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# delete any directories that are no longer remote branches&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.find&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;maxdepth&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.startswith&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.split&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[-&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+  file.absent:
+    - require_in:
+      - file: /etc/salt/master.d/roots.conf
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# clone each branch&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+  git.latest:
+    - name: git@gitlab:salt/salt.git
+    - target: /srv/salt/&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - rev: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - branch: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - user: root
+    - force_checkout: True
+    - force_clone: True
+    - force_fetch: True
+    - force_reset: True
+    - require:
+      - file: /srv/salt
+    - require_in:
+      - file: /etc/salt/master.d/roots.conf
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# manage the file_roots config to generate environments&lt;/span&gt;
+/etc/salt/master.d/roots.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;tpldir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/files/roots.conf
+    - user: root
+    - mode: 644
+    - listen_in:
+      - service: salt-master
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/files/roots.conf&lt;/span&gt;
+
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;[]&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.find&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;maxdepth&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; 
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.startswith&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; !&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/master&amp;#39;&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs.append&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+file_roots:
+  base:
+    - /srv/salt/master/states
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; !&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;master&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+  &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+    - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/states
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+pillar_roots:
+  base:
+    - /srv/salt/master/pillar
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; !&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;master&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+  &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+    - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/pillar
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With just this and a schedule you already have an okay salt-git integration. But with a little more work you can take it to the next step and make it event driven on git push.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re using gitlab for your salt repository, you can create a post-recieve script by putting a file in &lt;code&gt;/var/opt/gitlab/git-data/repositories/salt/salt.git/custom_hooks/post-receive&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;#!/usr/bin/env bash                                                        &lt;/span&gt;
+ 
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;read&lt;/span&gt; branch; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;do&lt;/span&gt;                                                      
+        &lt;span style=&#34;color: #bb60d5&#34;&gt;branchname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;$(&lt;/span&gt;cut -d &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;/&amp;quot;&lt;/span&gt; -f &lt;span style=&#34;color: #40a070&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;)&lt;/span&gt;                      
+        sudo salt-call event.send salt/push &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;branchname&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;}&lt;/span&gt;           
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;done&lt;/span&gt;                                                                       
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now in your salt master config, add a reactor:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /etc/salt/master&lt;/span&gt;
+
+reactor:
+  - &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;salt/push&amp;#39;&lt;/span&gt;:
+     - salt://reactor/salt-push.sls
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the reactor file in your git repo.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/reactor/salt-push.sls&lt;/span&gt;
+
+salt-push:
+  local.state.sls:
+    - tgt: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;salt-master&amp;#39;&lt;/span&gt;
+    - expr_form: pcre
+    - queue: True
+    - kwarg:
+        mods: salt.master.salt-git
+        pillar:
+          salt_git_branches:
+            - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;branch&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+        queue: True
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And add a bit more logic to the salt-master-git.sls to handle the individual branch being pushed. With this logic if the pillar &lt;code&gt;salt_git_branches&lt;/code&gt; is included in the state run, the state will only update that branch. If it is not included, the state will update all branches, and clean up old deleted branches. This saves some time which is important when it&amp;rsquo;s being called by a post-recieve hook.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/salt-master-git.sls&lt;/span&gt;
+
+salt-master:
+  service.running:
+    - enable: True
+
+/srv/salt:
+  file.directory: []
+
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;pillar.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;salt_git_branches&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,[])&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# if a piller was not passed in, then get the list of branches from remote&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git.ls_remote&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;remote&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git@gitlab:salt/salt.git&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;opts&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;--heads&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches.append&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch.replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;refs/heads/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Delete directories of deleted branches since we&amp;#39;re looking at all remote branches&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.find&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;maxdepth&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.startswith&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.split&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[-&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+  file.absent:
+    - require_in:
+      - file: /etc/salt/master.d/roots.conf
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+  git.latest:
+    - name: git@gitlab:salt/salt.git
+    - target: /srv/salt/&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - rev: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - branch: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - user: root
+    - force_checkout: True
+    - force_clone: True
+    - force_fetch: True
+    - force_reset: True
+    - require:
+      - file: /srv/salt
+    - require_in:
+      - file: /etc/salt/master.d/roots.conf
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+/etc/salt/master.d/roots.conf:
+  file.managed:
+    - template: jinja
+    - source: salt://&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;tpldir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/files/roots.conf
+    - user: root
+    - mode: 644
+    - listen_in:
+      - service: salt-master
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now enjoy the best of both worlds. Automatic integration between salt and git and the reliability and speed of a simple file_roots configuration.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Random root passwords with saltstack.</title>
+      <link>https://clinta.github.io/random-local-passwords/</link>
+      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/random-local-passwords/</guid>
+      <description>&lt;p&gt;Common passwords for devices is a significant security risk, but maintaining unique passwords for every server is nearly impossible without some password manager. But manually generating passwords for hundreds of servers and putting them into a password manager is just not practical. Here is a way to have your salt master generate complex random passwords for each minion and store them in a password manager where you can retrieve them later.&lt;/p&gt;
+
+&lt;p&gt;The password manager I&amp;rsquo;ll be using is &lt;a href=&#34;http://www.passwordstore.org/&#34;&gt;pass&lt;/a&gt;. Pass is uniquely suited to this challenge because it relies on GPG and asymetric cryptography. This allows me to put my public GPG key on the salt master so that the salt master can encrypt passwords it generates, but the salt master doesn&amp;rsquo;t have to store any private key that would allow it to ever decrypt the passwords after they&amp;rsquo;ve been generated.&lt;/p&gt;
+
+&lt;p&gt;First install pass using your operating system&amp;rsquo;s package manager. It should pull in all GPG dependencies.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t have a GPG key that you wish to use with pass, you must first create one on your workstation. Depending on your workstation it may take a long time to generate, you can make this faster by installing the &lt;code&gt;haveged&lt;/code&gt; daemon to collect entropy. Choose to generate a key of type &lt;code&gt;RSA and RSA&lt;/code&gt; and be sure to choose a strong passphrase. This passphrase and the key file are what will protect all your passwords in the future.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ gpg --gen-key
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once you have a gpg key, initialize a password store.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ pass init me@mydomain.com
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You also need to initialize your password store as a git repo and add a git remote. The service account which runs your salt-master must also have read and write permissions to this git remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ pass git init
+$ pass git remote add origin git@gitserver:/passdb
+$ pass git push
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Export your gpg public key and copy it to your salt master.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ gpg --armor --export me@mydomain.com &amp;gt; gpg.pub
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In your salt master, install pass, then import your gpg public key and trust it. Run the commands under the user account that runs your salt-master service.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gpg --import gpg.pub
+$ gpg --edit-key me@mydomain.com
+gpg&amp;gt; trust
+5
+y
+gpg&amp;gt; quit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On your salt master, install the &lt;a href=&#34;https://github.com/clinta/salt-pwgen&#34;&gt;pwgen&lt;/a&gt; extension module. Install this in your &lt;a href=&#34;https://docs.saltstack.com/en/latest/ref/configuration/master.html#extension-modules&#34;&gt;extension modules&lt;/a&gt; directory. These directions assume it is &lt;code&gt;/srv/modules&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://raw.githubusercontent.com/clinta/salt-pwgen/master/pwgen.py -O /srv/modules/pwgen.py
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Clone your password store to the salt master, using your salt-master service account. In my case I&amp;rsquo;m cloning it to /opt/passdb&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /opt
+$ git clone git@gitserver:/passdb
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you are ready to start generating passwords. Here&amp;rsquo;s how it will work. A pillar will be defined with a jinja template which calls this extension module. When the salt master compiles the pillar it will run the extension module. The extension module checks for the existence of a meta file which holds the unix password hash as well as a sha256 of the .gpg file which contains the encrypted plaintext password. If the meta file does not exist, or the .gpg file doesn&amp;rsquo;t exist, or the sha256 in the meta file doesn&amp;rsquo;t match the .gpg file, it calls pass to generate a new password and writes the unix hash of this password and the sha256 of the new .gpg file to the meta file. It then returns the unix hash which is the value of the pillar. If the meta file does exist, and matches the .gpg file, the unix hash from the meta file is returned for the value of the pillar.&lt;/p&gt;
+
+&lt;p&gt;Create your pillar template:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/root-pw.sls&lt;/span&gt;
+root-pw: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;pwgen.get_pw&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;pw_name&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;local-root/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;grains&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;],&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pw_store&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/opt/passdb&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pw_meta_dir&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/opt/pw_meta&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And apply this pillar via the pillar top file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/top.sls&lt;/span&gt;
+
+base:
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;:
+    - root-pw
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point you should be able to highstate a minion, then on the minion run &lt;code&gt;salt-call pillar.get root-pw&lt;/code&gt; and get back a unix hash of a unique password. You can get the plaintext of this password on your workstation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ pass git pull
+$ pass local-root/minion
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once you know this is working, you can use this unix hash to set the root password on your minions with a simple state:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/salt/root-pw.sls&lt;/span&gt;
+
+root:
+  user.present:
+    - password: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;pillar.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;root-pw&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Make sure this state is applied via your top file, highstate all your minions and you will now have all their unique passwords in your password store.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building your own Session Boarder Controller for SIP communication with Office 365.</title>
+      <link>https://clinta.github.io/diy-sbs-for-office-365-unified-messaging/</link>
+      <pubDate>Mon, 24 Aug 2015 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/diy-sbs-for-office-365-unified-messaging/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;re looking to connect an on-premise VOIP phone system to Office 365 you&amp;rsquo;ll find several documents stating that you must purchase a session border controller, and a list of supported vendors. But if you&amp;rsquo;re the kind of person who would rather take an unsupported approach than install yet another black box on your network, it can be done. In this guide I&amp;rsquo;ll share what I&amp;rsquo;ve learned over the last two weeks in building my own session boarder controller with open source software.&lt;/p&gt;
+
+&lt;p&gt;This guide assumes you have some familiarity with SIP and that you can do some of the basic configuration of software like Kamailio and rtpengine. The point of this post is primarily to document the specific configuration needed by Office 365.&lt;/p&gt;
+
+&lt;p&gt;To start, you&amp;rsquo;ll need a server with the &lt;a href=&#34;http://www.kamailio.org&#34;&gt;Kamailio&lt;/a&gt; SIP server and the Sipwise &lt;a href=&#34;https://github.com/sipwise/rtpengine&#34;&gt;rtpengine&lt;/a&gt; RTP proxy installed. I&amp;rsquo;ll be referring this server as &lt;code&gt;sbc&lt;/code&gt; throughout this guide. The internal address for &lt;code&gt;sbc&lt;/code&gt; is 10.0.0.5, the external address is 25.25.25.5.&lt;/p&gt;
+
+&lt;p&gt;You will also need a public IP that is natted to your &lt;code&gt;sbc&lt;/code&gt; server, and a public DNS record. And you will need an SSL certificate signed by one of &lt;a href=&#34;https://support.microsoft.com/en-us/kb/929395&#34;&gt;Office 365&amp;rsquo;s supported CA&amp;rsquo;s&lt;/a&gt;. The Subject of the certificate must match the DNS record EXACTLY, wildcard certificates will not work. If you attempt to connect with a wildcard certificate you will get 403 forbidden back from Microsoft&amp;rsquo;s SIP server.&lt;/p&gt;
+
+&lt;p&gt;Make sure you have a UM Dial plan configured in Office 365, then configure your UM IP Gateway. Use your public DNS entry which matches the subject of your SSL certificate for the address. Once configured, open back up the UM IP Gateway configuration to find your Fowarding address, it will be in the format &lt;guid&gt;.um.outlook.com.&lt;/p&gt;
+
+&lt;p&gt;You will need to configure your firewall to allow SIPS and SRTP from Office 365. You can either open your firewall to all &lt;a href=&#34;https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&amp;amp;rs=en-US&amp;amp;ad=US&#34;&gt;Office 365 IPs&lt;/a&gt; or use the IP that your forwarding address currently resolves to and hope it doesn&amp;rsquo;t change. To allow SIPS, make sure that TCP port 5061 is open to your &lt;code&gt;sbc&lt;/code&gt; server. To allow SRTP you will need to allow the UDP port range 1024-65535.&lt;/p&gt;
+
+&lt;p&gt;In my case the phone system I&amp;rsquo;m proxying to 365 is Cisco Unified Call Manager 8. To connect Call Manager to your &lt;code&gt;sbc&lt;/code&gt; server, create a SIP Trunk, be sure that &lt;code&gt;Media Termination Point Required&lt;/code&gt; is checked and make sure it is associated with a SIP security profile that uses TCP. For the Destination use the internal IP of your &lt;code&gt;sbc&lt;/code&gt; server. Then create a route pattern for Office 365 voicemail that uses this trunk, in my case I&amp;rsquo;m using the numer 87000.&lt;/p&gt;
+
+&lt;p&gt;All the steps so far are prerequisites that would be basically the same for any session boarder controller. The next steps are whare you start building your own SBS.&lt;/p&gt;
+
+&lt;p&gt;First configure rtpengine. If using the debian packages, edit &lt;code&gt;/etc/defaults/ngcp-rtpengine-daemon&lt;/code&gt; otherwise edit your startup script with the same options.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#/etc/defaults/ngcp-rtpengine-daemon
+
+RUN_RTPENGINE=yes
+LISTEN_TCP=25060
+LISTEN_UDP=12222
+LISTEN_NG=22222
+LISTEN_CLI=9900
+INTERFACES=&amp;quot;10.0.0.5 internal/10.0.0.5 external/10.0.0.5!25.25.25.5&amp;quot;
+TIMEOUT=60
+SILENT_TIMEOUT=3600
+PIDFILE=/var/run/ngcp-rtpengine-daemon.pid
+FORK=yes
+TABLE=0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The important part here is &lt;code&gt;LISTEN_NG&lt;/code&gt; which is how kamailio will communicate with rtpengine, and &lt;code&gt;INTERFACES&lt;/code&gt; which specifies which interface rtpengine will listen on as well as how rtpengine will re-write the SDP body in the SIP packets.&lt;/p&gt;
+
+&lt;p&gt;For your kamailio configuration, make sure you have the modules for tls, rtpengine and textops enabled. Consult the kamailio &lt;a href=&#34;http://kamailio.org/docs/modules/3.4.x/modules/tls.html&#34;&gt;tls&lt;/a&gt; documentation for how to configure your SSL certificate.&lt;/p&gt;
+
+&lt;p&gt;Since I&amp;rsquo;m using kamailio for routing to other SIP trunks as well, I created an SRV record specifically for routing to 365 which I point Call Manager to. I then use the SIP uri to determine which SIP packets to rewrite for 365. The kamailio routing config may look something like this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#/etc/kamailio/kamailio.cfg
+request_route {
+    if(uri=~&#39;^.*@pstn[0-9]?-o365\.in\.trilliumstaffing\.com.*$&#39;) {
+        set_rtpengine_set(&amp;quot;0&amp;quot;);
+        tpengine_manage(&amp;quot;SRTP DTLS=off replace-session-connection ICE=remove direction=internal direction=external&amp;quot;);#
+    }
+    if(!loose_route()) {
+        if(uri=~&#39;^.*@sbc-o365\.example\.com.*$&#39;) {
+            record_route_advertised_address(&amp;quot;25.25.25.5&amp;quot;);
+            rewritehostporttrans(&amp;quot;&amp;lt;guid&amp;gt;.um.outlook.com:5061;transport=tls&amp;quot;);
+            remove_hf(&amp;quot;To&amp;quot;);
+            insert_hf(&amp;quot;To: &amp;lt;sip:87000@&amp;lt;guid&amp;gt;.um.outlook.com&amp;gt;\r\n&amp;quot;);
+            t_on_reply(1);
+        }
+    }
+}
+onreply_route[1] {
+    set_rtpengine_set(&amp;quot;0&amp;quot;);
+    rtpengine_manage(&amp;quot;RTP DTLS=off ICE=remove replace-session-connection direction=external direction=internal&amp;quot;);#
+    sdp_remove_line_by_prefix(&amp;quot;c=IN IP4 25&amp;quot;);
+    subst(&amp;quot;/^(Record-Route.*)25[.]25[.]25[.]5(.*)$/\\10.0.0.5\\2/g&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don&amp;rsquo;t expect to be able to copy and paste the config above and have it work. As noted earlier, this guide is for people who can manage a kamailio configuration. But this should include the minimum SIP maipulations necessary to make it work.&lt;/p&gt;
+
+&lt;p&gt;Part of what makes integrating SIP with Office 365 so difficult is that Microsoft does not public specific guidence on what SIP options they require, this seems to be special information reserved to their SBC partners. Here are some of the specific requirements I&amp;rsquo;ve learned through trial and error.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;As noted above, the certificate subject must exactly match your DNS and the address in your UM IP gateway. Without this you get a 403 from 365.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The host portion of the To: header in your SIP packet must be your destination &lt;guid&gt;.um.outlook.com. If this does not match you will get 488 not acceptable here from Microsoft.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You will also get 488 from Microsoft if you are not offering SRTP&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If you are offering RTCP mutexing in your invite you will get 488.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If your Invite contains any ICE options you will get 488.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There may be other requirements or restrictions that I did not discover, so in the interests of helping others figure out what Office 365 requires I&amp;rsquo;m including the dump of a SIP exchange between my working Kamailio/rtpengine server and Office 365.&lt;/p&gt;
+
+&lt;p&gt;Invite with Offer&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INVITE sip:87000@df6b236d-056d-416a-8f5f-f2e8e1a0238d.um.outlook.com:5061;transport=tls SIP/2.0
+Record-Route: &amp;lt;sip:25.25.25.5;transport=tls;r2=on;lr&amp;gt;
+Record-Route: &amp;lt;sip:25.25.25.5;transport=tcp;r2=on;lr&amp;gt;
+To: &amp;lt;sip:87000@&amp;lt;guid&amp;gt;.um.outlook.com&amp;gt;
+Via: SIP/2.0/TLS sbc.example.com:5061;branch=z9hG4bKf5ce.075c1223046356d5878a36157c2736d5.0;i=c
+Via: SIP/2.0/TCP 10.0.0.6:5060;branch=z9hG4bK1fd3fd816943
+From: &amp;quot;10048 - Armstrong, Clint&amp;quot; &amp;lt;sip:10048@10.0.0.6&amp;gt;;tag=94213~3cc43a48-48ec-41b9-848c-fcefa428f2e7-21861219
+Date: Mon, 24 Aug 2015 12:22:29 GMT
+Call-ID: c81d7600-5db10c85-9501-3402000a@10.0.2.52
+Supported: timer,resource-priority,replaces
+Min-SE:  1800
+User-Agent: Cisco-CUCM9.1
+Allow: INVITE, OPTIONS, INFO, BYE, CANCEL, ACK, PRACK, UPDATE, REFER, SUBSCRIBE, NOTIFY
+CSeq: 101 INVITE
+Expires: 180
+Allow-Events: presence, kpml
+Supported: X-cisco-srtp-fallback,X-cisco-original-called
+Call-Info: &amp;lt;urn:x-cisco-remotecc:callinfo&amp;gt;; security= NotAuthenticated; gci= 1-4270982, &amp;lt;sip:10.0.2.52:5060&amp;gt;;method=&amp;quot;NOTIFY;Event=telephone-event;Duration=500&amp;quot;
+Cisco-Guid: 3357373952-0000065536-0000032693-0872546314
+Session-Expires:  1800
+P-Asserted-Identity: &amp;quot;10048 - Armstrong, Clint&amp;quot; &amp;lt;sip:10048@10.0.2.52&amp;gt;
+Remote-Party-ID: &amp;quot;10048 - Armstrong, Clint&amp;quot; &amp;lt;sip:10048@10.0.2.52&amp;gt;;party=calling;screen=yes;privacy=off
+Contact: &amp;lt;sip:10048@10.0.0.6:5060;transport=tcp&amp;gt;
+Max-Forwards: 70
+Content-Type: application/sdp
+Content-Length: 322
+
+v=0
+o=CiscoSystemsCCM-SIP 94213 1 IN IP4 10.0.2.52
+s=SIP Call
+c=IN IP4 25.25.25.5
+t=0 0
+m=audio 31182 RTP/SAVP 0 101
+a=rtpmap:0 PCMU/8000
+a=ptime:20
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+a=rtcp:31183
+a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:Rt5s9b1WdrBKIoygx4q3Tx8Zog/+Qt1/UTEmxr9x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;OK with Answer&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SIP/2.0 200 OK
+To: &amp;lt;sip:87000@&amp;lt;guid&amp;gt;.um.outlook.com&amp;gt;;tag=ee195713eb
+Via: SIP/2.0/TLS sbc.example.com:5061;received=25.25.25.5;branch=z9hG4bKf5ce.075c1223046356d5878a36157c2736d5.0;i=c
+Via: SIP/2.0/TCP 10.0.0.6:5060;branch=z9hG4bK1fd3fd816943
+From: &amp;quot;10048 - Armstrong, Clint&amp;quot; &amp;lt;sip:10048@10.0.0.6&amp;gt;;tag=94213~3cc43a48-48ec-41b9-848c-fcefa428f2e7-21861219
+Call-ID: c81d7600-5db10c85-9501-3402000a@10.0.0.6
+CSeq: 101 INVITE
+Record-Route: &amp;lt;sip:25.25.25.5;transport=tls;r2=on;lr&amp;gt;
+Record-Route: &amp;lt;sip:25.25.25.5;transport=tcp;r2=on;lr&amp;gt;
+Contact: &amp;lt;sip:207.46.198.124:5061;transport=tls&amp;gt;;automata;text;audio;video;image
+CONTENT-LENGTH: 355
+PRIORITY: Normal
+SUPPORTED: Replaces
+SUPPORTED: timer
+SUPPORTED: 100rel
+CONTENT-TYPE: application/sdp
+ALLOW: ACK
+Allow: CANCEL,BYE,INVITE,MESSAGE,INFO,SERVICE,OPTIONS,BENOTIFY,NOTIFY,PRACK,UPDATE
+P-ASSERTED-IDENTITY: &amp;lt;sip:87000@&amp;lt;guid&amp;gt;.um.outlook.com&amp;gt;
+SERVER: RTCC/5.0.0.0 MSExchangeUM/15.01.0231.021
+Content-ID: c0284ce7-716b-4ff2-8ec3-c23379fe1184
+Session-Expires: 1800;refresher=uac
+Min-SE: 1800
+
+v=0
+o=- 85 0 IN IP4 207.46.198.124
+s=session
+c=IN IP4 207.46.198.124
+b=CT:10000000
+t=0 0
+m=audio 54532 RTP/SAVP 0 101
+c=IN IP4 207.46.198.124
+a=label:main-audio
+a=sendrecv
+a=rtpmap:0 PCMU/8000
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-16,36
+a=ptime:20
+a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:FHoHEZk7wM6b/frTeX+fzQ/K0PtuAvfIzRqjol9K
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FreeBSD Jails the hard way</title>
+      <link>https://clinta.github.io/freebsd-jails-the-hard-way/</link>
+      <pubDate>Sun, 09 Aug 2015 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/freebsd-jails-the-hard-way/</guid>
+      <description>
+
+&lt;p&gt;There are many great options for managing FreeBSD Jails. iocage, warden and ez-jail aim to streamline the process and make it quick an easy to get going. But sometimes the tools built right into the OS are overlooked.&lt;/p&gt;
+
+&lt;p&gt;This post goes over what is involved in creating and managing jails using only the tools built into FreeBSD.&lt;/p&gt;
+
+&lt;p&gt;For this guide, I&amp;rsquo;m going to be putting my jails in &lt;code&gt;/usr/local/jails&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll start with a very simple, isolated jail. Then I&amp;rsquo;ll go over how to use ZFS snapshots, and lastly nullfs mounts to share the FreeBSD base files with multiple jails.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll also show some examples of how to use the templating power of jail.conf to apply similar settings to all your jails.&lt;/p&gt;
+
+&lt;h2 id=&#34;full-jail&#34;&gt;Full Jail&lt;/h2&gt;
+
+&lt;p&gt;1. Make a directory for the jail, or a zfs dataset if you prefer.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/fulljail1
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;## or&lt;/span&gt;
+zfs create -o &lt;span style=&#34;color: #bb60d5&#34;&gt;mountpoint&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;/usr/local/jails zroot/jails
+zfs create zroot/jails/fulljail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2. Download the FreeBSD base files, and any other parts of FreeBSD you want. In this example I&amp;rsquo;ll include the 32 bit libraries as well.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
+tar -xvf /tmp/base.txz -C /usr/local/jails/fulljail1
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz
+tar -xvf /tmp/lib32.txz -C /usr/local/jails/fulljail1
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz
+tar -xvf /tmp/ports.txz -C /usr/local/jails/fulljail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3. Update your FreeBSD base install.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;4. Verify your download. We&amp;rsquo;re downloading these archives over FTP after all, we should confirm that this download is valid and not tampered with. The &lt;code&gt;freebsd-update IDS&lt;/code&gt; command verifies the installation using a PGP key which is in your base system, which was presumably installed with an ISO that you verified using the FreeBSD &lt;a href=&#34;https://www.freebsd.org/releases/10.2R/signatures.html&#34;&gt;signed checksums&lt;/a&gt;. Admittedly this step is a bit of paranoia, but I think it&amp;rsquo;s prudent.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;5. Make sure you jail has the right timezone and dns servers and a hostname in rc.conf.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf
+cp /etc/localtime /usr/local/jails/fulljail1/etc/localtime
+&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;hostname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt;fulljail1&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt; &amp;gt; /usr/local/jails/fulljail1/etc/rc.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;6. Edit jail.conf with the details about your jail.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /etc/jail.conf
+
+# Global settings applied to all jails.
+
+exec.start = &amp;quot;/bin/sh /etc/rc&amp;quot;;
+exec.stop = &amp;quot;/bin/sh /etc/rc.shutdown&amp;quot;;
+exec.clean;
+mount.devfs;
+
+# The jail definition for fulljail1
+fulljail1 {
+    host.hostname = &amp;quot;fulljail1.domain.local&amp;quot;;
+    path = &amp;quot;/usr/local/jails/fulljail1&amp;quot;;
+    interface = &amp;quot;lagg0&amp;quot;;
+    ip4.addr = 10.0.0.15;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7. Start and login to your jail.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jail -c fulljail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;11 commands and a config file, but this is the most tedious way to make a jail. With a little bit of templating it can be even easier. So I&amp;rsquo;ll start by making a template. Making a template is basically the same as steps 1, 2 and 3 above, but with a different destination folder, I&amp;rsquo;ll condense them here.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-template&#34;&gt;Creating a template&lt;/h2&gt;
+
+&lt;p&gt;1. Create a template or a ZFS dataset. If you&amp;rsquo;d like to use the zfs clone method of deploying templates, you&amp;rsquo;ll need to create a zfs dataset instead of a folder.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/releases/10.2-RELEASE
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;## or &lt;/span&gt;
+zfs create -p zroot/jails/releases/10.2-RELEASE
+
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
+tar -xvf /tmp/base.txz -C /usr/local/jails/releases/10.2-RELEASE
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz
+tar -xvf /tmp/lib32.txz -C /usr/local/jails/releases/10.2-RELEASE
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz
+tar -xvf /tmp/ports.txz -C /usr/local/jails/releases/10.2-RELEASE
+cp /etc/resolv.conf /usr/local/jails/releases/10.2-RELEASE/etc/resolv.conf
+cp /etc/localtime /usr/local/jails/releases/10.2-RELEASE/etc/localtime
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2. Update your template with &lt;code&gt;freebsd-update&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3. Verify your install&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And that&amp;rsquo;s it, now you have a fully up to date jail template. If you&amp;rsquo;ve made this template with zfs, you can easily deploy it using zfs snapshots.&lt;/p&gt;
+
+&lt;h2 id=&#34;deploying-a-template-with-zfs-snapshots&#34;&gt;Deploying a template with ZFS snapshots&lt;/h2&gt;
+
+&lt;p&gt;1. Create a snapshot. My last freebsd-update to my template brought it to patch level 17, so I&amp;rsquo;ll call my snapshot p10.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;zfs snapshot zroot/jails/releases/10.2-RELEASE@p10
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2. Clone the snapshot to a new jail.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3. Configure the jail hostname.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;hostname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt;zjail1&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt; &amp;gt; /usr/local/jails/zjail1/etc/rc.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;4. Add the jail definition to jail.conf, make sure you have the global jail settings from jail.conf listed in the fulljail example.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# The jail definition for zjail1
+zjail1 {
+    host.hostname = &amp;quot;zjail1.domain.local&amp;quot;;
+    path = &amp;quot;/usr/local/jails/zjail1&amp;quot;;
+    interface = &amp;quot;lagg0&amp;quot;;
+    ip4.addr = 10.0.0.16;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5. Start the jail.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jail -c zjail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The downside with the zfs approach is that each jail is now a fully independent, and if you need to update your jails, you have to update them all individually. By sharing a template using nullfs mounts you can have only one copy of the base system that only needs to be updated once.&lt;/p&gt;
+
+&lt;h2 id=&#34;thin-jails-using-nullfs-mounts&#34;&gt;Thin jails using NullFS mounts.&lt;/h2&gt;
+
+&lt;p&gt;This section has changed. &lt;a href=&#34;https://github.com/clinta/clinta.github.io/commit/2b28a7d626eff467e44ce18dd1000aa2c279a329&#34;&gt;details&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This method is a little bit more tricky, because you have to take notes of which directories are local to your jails and which are universal to FreeBSD. Fortunately FreeBSD&amp;rsquo;s directory structure is stable and predictable and the benefits of this method are that it allows you to update your base image and your ports tree once for all jails.&lt;/p&gt;
+
+&lt;p&gt;1. This method requires a slightly different template than the ZFS method, so either copy the template created in the previous instructions, or use ZFS and clone it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# or&lt;/span&gt;
+zfs create zroot/jails/templates
+zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/templates/base-10.2-RELEASE
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2. In addition to your base template, you need to create a skeleton template which will hold all the directories that are local to your jail. We&amp;rsquo;re going to copy these directories from the template to the skeleton.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# or&lt;/span&gt;
+zfs create -p zroot/jails/templates/skeleton-10.2-RELEASE
+
+mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/ports/distfiles /usr/local/jails/templates/skeleton-10.2-RELEASE/home /usr/local/jails/templates/skeleton-10.2-RELEASE/portsbuild
+mv /usr/local/jails/templates/base-10.2-RELEASE/etc /usr/local/jails/templates/skeleton-10.2-RELEASE/etc
+mv /usr/local/jails/templates/base-10.2-RELEASE/usr/local /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/local
+mv /usr/local/jails/templates/base-10.2-RELEASE/tmp /usr/local/jails/templates/skeleton-10.2-RELEASE/tmp
+mv /usr/local/jails/templates/base-10.2-RELEASE/var /usr/local/jails/templates/skeleton-10.2-RELEASE/var
+mv /usr/local/jails/templates/base-10.2-RELEASE/root /usr/local/jails/templates/skeleton-10.2-RELEASE/root
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3. The skeleton directory is what is going to be copied for each new jail. It is going to be mounted in &lt;code&gt;/skeleton/&lt;/code&gt; inside the jail. So in the read-only base template we need to create symlink from all the expected locations to the appropriate directories inside the &lt;code&gt;/skeleton/&lt;/code&gt; directory. It is very important to cd into your jail directory and create these symlinks with relative paths. That way they will always link to the correct location no matter where the base template ends up mounted.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /usr/local/jails/templates/base-10.2-RELEASE
+mkdir skeleton
+ln -s skeleton/etc etc
+ln -s skeleton/home home
+ln -s skeleton/root root
+ln -s skeleton/usr/local usr/local
+ln -s skeleton/usr/ports/distfiles usr/ports/distfiles
+ln -s skeleton/tmp tmp
+ln -s skeleton/var var
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;4. Edit make.conf so that your ports workdirectory is located inside the skeleton directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;WRKDIRPREFIX?=  /skeleton/portbuild&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;5. Copy your skeleton for your jail. You can use plain old copy or ZFS snapshots.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton
+zfs create zroot/jails/thinjails
+zfs clone zroot/jails/templates/skeleton-10.2-RELEASE@skeleton zroot/jails/thinjails/thinjail1
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# or&lt;/span&gt;
+mkdir /usr/local/jails/thinjails
+cp -R /usr/local/jails/templates/skeleton-10.2-RELEASE /usr/local/jails/thinjails/thinjail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;6. Add the hostname to the jails rc.conf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;hostname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt;thinjail1&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt; &amp;gt; /usr/local/jails/thinjails/thinjail1/etc/rc.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;7. Make the jail directory where the base template and skeleton folder will be mounted.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/thinjail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;8. Create the jail entry in &lt;code&gt;/etc/jail.conf&lt;/code&gt;, be sure and include the global jail configs listed in the fulljail example.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# The jail definition for thinjail1
+thinjail1 {
+    host.hostname = &amp;quot;thinjail1.domain.local&amp;quot;;
+    path = &amp;quot;/usr/local/jails/thinjail1&amp;quot;;
+    interface = &amp;quot;lagg0&amp;quot;;
+    ip4.addr = 10.0.0.17;
+    mount.fstab = &amp;quot;/usr/local/jails/thinjail1.fstab&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;9. Create the jail fstab.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /usr/local/jails/thinjail1.fstab
+
+/usr/local/jails/templates/base-10.2-RELEASE  /usr/local/jails/thinjail1/ nullfs   ro          0 0
+/usr/local/jails/thinjails/thinjail1     /usr/local/jails/thinjail1/skeleton nullfs  rw  0 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;10. Start the jail.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jail -c thinjail1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now if you create dozens of thinjails, you can run &lt;code&gt;env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/templates/base-10.2-RELEASE fetch install&lt;/code&gt; once and all your jails will be updated. You can run &lt;code&gt;portsnap -p /usr/local/jails/templates/base-10.2-RELEASE/usr/ports auto&lt;/code&gt; and your ports tree for all jails is updated. And you have one easy place to backup to save all your jails customizations: &lt;code&gt;/usr/local/jails/thinjails/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;simplifying-jail-conf&#34;&gt;Simplifying jail.conf&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/cgi/man.cgi?query=jail.conf&amp;amp;sektion=5&amp;amp;manpath=FreeBSD+10.2-RELEASE&#34;&gt;Jail.conf&lt;/a&gt; is actually a fairly powerfull tool if you take advantage of it&amp;rsquo;s features. The man page goes in more detail of how to use variables, but the examples below should give enough details to see how it can be useful. Any option that can be specified in the &lt;a href=&#34;https://www.freebsd.org/cgi/man.cgi?query=jail&amp;amp;sektion=8&amp;amp;apropos=0&amp;amp;manpath=FreeBSD+10.2-RELEASE&#34;&gt;jail&lt;/a&gt; command can be included in jail.conf.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;ve followed all three examples, your jail.conf is looking something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /etc/jail.conf
+
+# Global settings applied to all jails.
+
+exec.start = &amp;quot;/bin/sh /etc/rc&amp;quot;;
+exec.stop = &amp;quot;/bin/sh /etc/rc.shutdown&amp;quot;;
+exec.clean;
+mount.devfs;
+
+# The jail definition for fulljail1
+fulljail1 {
+    host.hostname = &amp;quot;fulljail1.domain.local&amp;quot;;
+    path = &amp;quot;/usr/local/jails/fulljail1&amp;quot;;
+    interface = &amp;quot;lagg0&amp;quot;;
+    ip4.addr = 10.0.0.15;
+}
+
+# The jail definition for zjail1
+zjail1 {
+    host.hostname = &amp;quot;zjail1.domain.local&amp;quot;;
+    path = &amp;quot;/usr/local/jails/zjail1&amp;quot;;
+    interface = &amp;quot;lagg0&amp;quot;;
+    ip4.addr = 10.0.0.16;
+}
+
+# The jail definition for thinjail1
+thinjail1 {
+    host.hostname = &amp;quot;thinjail1.domain.local&amp;quot;;
+    path = &amp;quot;/usr/local/jails/thinjail1&amp;quot;;
+    interface = &amp;quot;lagg0&amp;quot;;
+    ip4.addr = 10.0.0.17;
+    mount.fstab = &amp;quot;/usr/local/jails/thinjail1.fstab&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This can be greatly simplified using some of the inheritence features of jail.conf. The first low hanging fruit is that the interface is the same for every jail, so it can be moved up to the global settings and be applied to every jail.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Global settings applied to all jails
+
+interface = &amp;quot;lagg0&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The hostnames and paths are slightly differnet, but all based on the name of the jail. In jail.conf, the name of a jail is accessable via a variable $name. So that can also be moved to the global settings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Global settings applied to all jails
+
+interface = &amp;quot;lagg0&amp;quot;;
+hostname = &amp;quot;$name.domain.local&amp;quot;;
+path = &amp;quot;/usr/local/jails/$name&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The IPv4 address is also nearly the same, just varying by one number, we can use custom variables to simplify this and allow us to change the subnet of all our jails in one config if we need to move this server to a new network in the future.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Global settings applied to all jails
+
+interface = &amp;quot;lagg0&amp;quot;;
+hostname = &amp;quot;$name.domain.local&amp;quot;;
+path = &amp;quot;/usr/local/jails/$name&amp;quot;;
+ip4.addr = 10.0.0.$ip;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lastly the mount.fstab line. Lets assume that all the future jails we&amp;rsquo;re going to create will have fstabs at &lt;code&gt;/usr/local/jails/$name.fstab&lt;/code&gt;, but the first three we created won&amp;rsquo;t. We can do that by defining the fstab as a global setting then removing it for the first two jails.&lt;/p&gt;
+
+&lt;p&gt;Simplified, the new jail.conf looks like this, and new jails require only 3 lines of config and an fstab.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Global settings applied to all jails
+
+interface = &amp;quot;lagg0&amp;quot;;
+host.hostname = &amp;quot;$name.domain.local&amp;quot;;
+path = &amp;quot;/usr/local/jails/$name&amp;quot;;
+ip4.addr = 10.0.0.$ip;
+mount.fstab = &amp;quot;/usr/local/jails/$name.fstab&amp;quot;;
+
+exec.start = &amp;quot;/bin/sh /etc/rc&amp;quot;;
+exec.stop = &amp;quot;/bin/sh /etc/rc.shutdown&amp;quot;;
+exec.clean;
+mount.devfs;
+
+# The jail definition for fulljail1
+fulljail1 {
+    $ip = 15;
+    mount.fstab = &amp;quot;&amp;quot;;
+}
+
+# The jail definition for zjail1
+zjail1 {
+    $ip = 16;
+    mount.fstab = &amp;quot;&amp;quot;;
+}
+
+# The jail definition for thinjail1
+thinjail1 {
+    $ip = 17;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hopefully this has helped you understand the process of how to create and manage FreeBSD jails without tools that abstract away all the details. Those tools are often quite useful, but there is always benefit in learning to do things the hard way. And in this case, the hard way doesn&amp;rsquo;t seem to be that hard after all.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Changing UPN to Email with Powershell</title>
+      <link>https://clinta.github.io/change-upn-to-email-with-powershell/</link>
+      <pubDate>Fri, 07 Aug 2015 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/change-upn-to-email-with-powershell/</guid>
+      <description>&lt;p&gt;If you need a quick way to change the UPN of all your users in active directory to match their email address, PowerShell makes it easy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;$users&lt;/span&gt; = &lt;span style=&#34;color: #007020&#34;&gt;get-aduser&lt;/span&gt; -SearchBase &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;OU=Users,DC=ad,DC=contoso,DC=com&amp;quot;&lt;/span&gt; -Filter * -Properties EmailAddress |
+where {&lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.EmailAddress &lt;span style=&#34;color: #666666&#34;&gt;-ne&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$null&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;-AND&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.EmailAddress.toLower() &lt;span style=&#34;color: #666666&#34;&gt;-ne&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.UserPrincipalName.toLower()}
+
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color: #bb60d5&#34;&gt;$user&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$users&lt;/span&gt;) {
+    &lt;span style=&#34;color: #bb60d5&#34;&gt;$forest&lt;/span&gt; = &lt;span style=&#34;color: #007020&#34;&gt;Get-ADForest&lt;/span&gt;
+    &lt;span style=&#34;color: #bb60d5&#34;&gt;$email&lt;/span&gt; = &lt;span style=&#34;color: #bb60d5&#34;&gt;$user&lt;/span&gt;.EmailAddress
+    &lt;span style=&#34;color: #bb60d5&#34;&gt;$username&lt;/span&gt; = &lt;span style=&#34;color: #bb60d5&#34;&gt;$email&lt;/span&gt;.toLower().Split(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;)[0]
+    &lt;span style=&#34;color: #bb60d5&#34;&gt;$userdomain&lt;/span&gt; = &lt;span style=&#34;color: #bb60d5&#34;&gt;$email&lt;/span&gt;.toLower().Split(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;)[1]
+    &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color: #666666&#34;&gt;-Not&lt;/span&gt; $(&lt;span style=&#34;color: #bb60d5&#34;&gt;$forest&lt;/span&gt;.UPNSuffixes).Contains(&lt;span style=&#34;color: #bb60d5&#34;&gt;$userdomain&lt;/span&gt;)) {
+        &lt;span style=&#34;color: #bb60d5&#34;&gt;$forest&lt;/span&gt; | &lt;span style=&#34;color: #007020&#34;&gt;Set-ADForest&lt;/span&gt; -UPNSuffixes @{Add=&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;$userdomain&amp;quot;&lt;/span&gt;}
+    }
+    &lt;span style=&#34;color: #bb60d5&#34;&gt;$user&lt;/span&gt; | &lt;span style=&#34;color: #007020&#34;&gt;Set-ADUser&lt;/span&gt; -UserPrincipalName &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;$username@$userdomain&amp;quot;&lt;/span&gt;
+}
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Compiling the mongodb plugin for collectd</title>
+      <link>https://clinta.github.io/mongodb-for-collectd/</link>
+      <pubDate>Tue, 30 Jun 2015 14:20:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/mongodb-for-collectd/</guid>
+      <description>&lt;p&gt;The MongoDB &lt;a href=&#34;https://collectd.org/wiki/index.php/Plugin:MongoDB&#34;&gt;plugin&lt;/a&gt; for collectd is currently unfinished and hasn&amp;rsquo;t had active development since 2012. Fortunately the folks at &lt;a href=&#34;https://github.com/Stackdriver&#34;&gt;Stackdriver&lt;/a&gt; have fixed some of the issues so that the plugin works for their stackdriver agent, which is based on collectd. Unfortunately this code has not been submitted back upstream to collectd.&lt;/p&gt;
+
+&lt;p&gt;This means that if you want to monitor your own mongodb instances with collectd you&amp;rsquo;ll need to build it yourself.&lt;/p&gt;
+
+&lt;p&gt;Start by cloning the stackdriver repository and changing to the stackdriver agent branch.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Stackdriver/collectd
+&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; collectd
+git checkout stackdriver-agent-5.5.0
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The build script should help you find any missing dependencies you need to do the build.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;./build.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Run the configure script, specifying only the mongodb module and instruct it to use the included libmongoc driver.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./configure --enable-mongodb --disable-all-plugins --disable-daemon --with-libmongoc=own
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The mongodb plugin is now compiled. Copy it from &lt;code&gt;src/.libs/mongodb.so&lt;/code&gt; to &lt;code&gt;/usr/lib/collectd/&lt;/code&gt; on your mongodb server and configure according to the plugin documentation.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating a Secure Corporate Apt Repository with Salt</title>
+      <link>https://clinta.github.io/secure-corporate-apt-repo/</link>
+      <pubDate>Sat, 04 Apr 2015 10:04:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/secure-corporate-apt-repo/</guid>
+      <description>&lt;p&gt;There are many reasons an organization could use it&amp;rsquo;s own internal apt repository. But controlling access to this repository for clients that are outside your internal network can be difficult. But if your repository contains proprietary or confidential packages, securing access is not optional. Thankfully apt supports client authentication with SSL certificates. And with the new &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html&#34;&gt;x509&lt;/a&gt; module, managing these certificates can be made fully automatic.&lt;/p&gt;
+
+&lt;p&gt;The x509 module is not yet in the latest release of salt, so you&amp;rsquo;ll need to manually add it to your custom paths.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/salt/_modules
+wget https://raw.githubusercontent.com/saltstack/salt/develop/salt/modules/x509.py
+&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/salt/_states
+wget https://raw.githubusercontent.com/saltstack/salt/develop/salt/states/x509.py
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now setup targeting in the top file.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/top.sls&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;base:
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;:
+    - ca.server
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;aptrepo&amp;#39;&lt;/span&gt;:
+    - aptrepo.server
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;:
+    - aptrepo.client
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;First the CA needs to be configured. It will need to create a CA private key and certificate,
+then publish that certificate to the mine where other minions will get it. It will also need
+to have a signing policy which allows the apt server and clients to get signed certificates.&lt;/p&gt;
+
+&lt;p&gt;Start by creating the signing policy configuraiton.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/pki/files/signing_policies.conf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;x509_signing_policies:
+  aptrepo_server:
+    - minions: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;aptrepo&amp;#39;&lt;/span&gt;
+    - signing_private_key: /etc/pki/aptrepo.key
+    - signing_cert: /etc/pki/aptrepo.crt
+    - C: US
+    - ST: Utah
+    - basicConstraints: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;CA:false&amp;quot;&lt;/span&gt;
+    - keyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;keyEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;dataEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;keyAgreement,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;digitalSignature&amp;quot;&lt;/span&gt;
+    - extendedKeyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;serverAuth,clientAuth&amp;quot;&lt;/span&gt;
+    - subjectKeyIdentifier: hash
+    - authorityKeyIdentifier: keyid,issuer:always
+    - days_valid: 90
+    - copypath: /etc/pki/aptrepo_issued_certs/
+  aptrepo_client:
+    - minions: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+    - signing_private_key: /etc/pki/aptrepo.key
+    - signing_cert: /etc/pki/aptrepo.crt
+    - C: US
+    - ST: Utah
+    - basicConstraints: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;CA:false&amp;quot;&lt;/span&gt;
+    - keyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;keyEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;dataEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;keyAgreement,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;digitalSignature&amp;quot;&lt;/span&gt;
+    - extendedKeyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;clientAuth&amp;quot;&lt;/span&gt;
+    - subjectKeyIdentifier: hash
+    - authorityKeyIdentifier: keyid,issuer:always
+    - days_valid: 30
+    - copypath: /etc/pki/aptrepo_issued_certs/
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that in the below state I&amp;rsquo;m triggering a restart of the salt-minion service when the
+configuration changes. You&amp;rsquo;ll need another state managing the status of salt-minion for this to work.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/pki/server.sls&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;/etc/pki:
+  file.directory:
+    - user: root
+    - group: root
+    - mode: 700
+
+/etc/salt/minion.d/signing_policies.conf:
+      file.managed:
+        - source: salt://pki/files/signing_policies.conf
+        - listen_in:
+          - service: salt-minion
+
+/etc/pki/aptrepo.key:
+  x509.private_key_managed:
+    - bits: 4096
+    - backup: True
+
+/etc/pki/aptrepo.crt:
+  x509.certificate_managed:
+    - signing_private_key: /etc/pki/aptrepo.key
+    - CN: Internal AptRepo
+    - C: US
+    - ST: Utah
+    - basicConstraints: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;CA:true&amp;quot;&lt;/span&gt;
+    - keyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;cRLSign,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;keyCertSign&amp;quot;&lt;/span&gt;
+    - subjectKeyIdentifier: hash
+    - authorityKeyIdentifier: keyid,issuer:always
+    - days_valid: 1095
+    - days_remaining: 30
+    - backup: True
+
+/etc/pki/aptrepo_issued_certs:
+  file.directory:
+    - user: root
+    - group: root
+    - mode: 700
+
+mine.send:
+  module.run: 
+    - name: mine.send
+    - func: x509.get_pem_entries
+    - kwargs:
+        glob_path: /etc/pki/*.crt
+    - onchanges:
+      - x509: /etc/pki/aptrepo.crt
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To create the repository I&amp;rsquo;ll be using reprepro. A good gude to configuring reprepro can be found
+&lt;a href=&#34;http://vincent.bernat.im/en/blog/2014-local-apt-repositories.htmlGNUPGHOME=gpg&#34;&gt;here&lt;/a&gt;
+Reprepro requires some configuration files to define the distributions and components.
+Here are these config files which salt will manage.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/aptrepo/server/files/conf/distributions&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Internal Trusty Packages
+Origin: Internal #
+Label: prod
+Suite: trusty-prod
+Codename: trusty-prod
+Architectures: i386 amd64 source
+Components: main
+Description: Internal Trusty prod repository
+Contents: .gz .bz2
+Tracking: keep
+SignWith: yes
+Log: packages.trusty-prod.log
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;/srv/salt/aptrepro/server/files/conf/incoming&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Name: incoming
+IncomingDir: /srv/packages/incoming
+TempDir: /srv/packages/tmp
+Default: prod
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;/srv/salt/aptrepro/server/files/conf/options&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;outdir +b/www
+logdir +b/logs
+gnupghome +b/gpg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To sign packages added to the repository, gpg keys are required. Personally I opted to create
+the GPG keys locally, then copy them to the salt server where they will be managed.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/salt/aptrepo/server/files
+mkdir gpg
+&lt;span style=&#34;color: #bb60d5&#34;&gt;GNUPGHOME&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;gpg gpg --gen-key  &lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Make sure and use an empty password&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Another file that needs to be managed is the NGINX configuration file.
+Notice the &lt;code&gt;ssl_verify_client on;&lt;/code&gt;, this is what enables client authentication.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/aptrepo/server/files/nginx-default&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+    listen	443;
+    ssl on;
+    ssl_certificate      /etc/nginx/certs/server.crt;
+    ssl_certificate_key  /etc/nginx/certs/server.key;
+    ssl_client_certificate /etc/nginx/certs/aptrepo_ca.crt;
+    ssl_verify_client on;
+
+    ## Let your repository be the root directory
+    root        /srv/packages/www;
+    autoindex on;
+
+    ## Always good to log
+    access_log  /var/log/nginx/repo.access.log;
+    error_log   /var/log/nginx/repo.error.log;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lastly, a script which will automatically import packages added to the incoming directory.
+Salt will create a cron job that regularly runs this script. Now adding packages to the internal
+repository is a simple matter of SCPing them to the incoming directory on the aptrepo server.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/aptrepo/server/files/processincoming.sh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;#!/bin/sh&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/packages
+
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; f in incoming/*.deb
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;do&lt;/span&gt;
+	reprepro -C main includedeb trusty-prod &lt;span style=&#34;color: #bb60d5&#34;&gt;$f&lt;/span&gt;
+	rm &lt;span style=&#34;color: #bb60d5&#34;&gt;$f&lt;/span&gt;
+&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we&amp;rsquo;re ready to put it all together with a salt state.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/aptrepo/server/init.sls&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Install the GPG package needed to sign packages&lt;/span&gt;
+gnupg:
+  pkg.installed: []
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Install the dpkg-sig package also needd to sign packages&lt;/span&gt;
+dpkg-sig:
+  pkg.installed: []
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Install nginx which will be used to serve the packages&lt;/span&gt;
+nginx:
+  pkg.installed: []
+  service.running:
+    - enable: True
+    - require:
+      - pkg: nginx
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add a reprepro user&lt;/span&gt;
+reprepro:
+  user.present:
+    - system: True
+    - home: /srv/packages
+  pkg.installed: []
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Configure nginx, restart the nginx service when this file changes&lt;/span&gt;
+/etc/nginx/sites-available/default:
+  file.managed:
+    - source: salt://aptrepo/server/files/nginx-default
+    - listen_in:
+      - service: nginx
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Manage the reprepro configuration files&lt;/span&gt;
+/srv/packages/conf:
+  file.recurse:
+    - makedirs: True
+    - source: salt://aptrepo/server/files/conf
+    - user: reprepro
+    - group: reprepro
+    
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the GPG keys that will be used to sign packages&lt;/span&gt;
+/srv/packages/gpg:
+  file.recurse:
+    - source: salt://aptrepo/server/files/gpg
+    - makedirs: True
+    - user: reprepro
+    - group: reprepro
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the public key into a location where it will be served by NGINX so that clients can get it.&lt;/span&gt;
+/srv/packages/www/public.gpg.key:
+  file.managed:
+    - source: salt://aptrepo/server/files/gpg/public.gpg.key
+    - makedirs: True
+    - user: reprepro
+    - group: reprepro
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a logging directory&lt;/span&gt;
+/srv/packages/logs:
+  file.directory:
+    - makedirs: True
+    - user: reprepro
+    - group: reprepro
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a directory to hold incoming packages&lt;/span&gt;
+/srv/packages/incoming/main:
+  file.directory:
+    - makedirs: True
+    - mode: 777
+    - user: reprepro
+    - group: reprepro
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the script that will automatically process incoming packages, and a cron job to run it.&lt;/span&gt;
+/srv/packages/processincoming.sh:
+  file.managed:
+    - source: salt://aptrepo/server/files/processincoming.sh
+    - user: reprepro
+    - group: reprepro
+    - mode: 755
+  cron.present:
+    - user: reprepro
+    - minute: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+    - require:
+      - pkg: reprepro
+      - file: /srv/packages/processincoming.sh
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a certs directory for NGINX&lt;/span&gt;
+/etc/nginx/certs:
+  file.directory:
+    - user: root
+    - group: root
+    - mode: 700
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the CA cert to the nginx cert directory&lt;/span&gt;
+/etc/nginx/certs/aptrepo_ca.crt:
+  x509.pem_managed:
+    - text: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;mine.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;x509.get_pem_entries&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/pki/aptrepo.crt&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]|&lt;/span&gt;&lt;span style=&#34;color: #06287e&#34;&gt;replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a private key for the server&lt;/span&gt;
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# The condition below ensures that a key is always created if one doesn&amp;#39;t exist, but if one does&lt;/span&gt;
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# exist, the state will be a prereq and a new key will only be created when the certificate needs&lt;/span&gt;
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# to be renewed.&lt;/span&gt;
+aptrepo_server-key:
+  x509.private_key_managed:
+    - name: /etc/nginx/certs/server.key
+    - bits: 4096
+    - backup: True
+    - new: True
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.file_exists&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/nginx/certs/server.key&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    - prereq:
+      - x509: aptrepo_server-cert
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    - listen_in:
+      - service: nginx
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a certificate for the server, signed by the CA.&lt;/span&gt;
+aptrepo_server-cert:
+  x509.certificate_managed:
+    - name: /etc/nginx/certs/server.crt
+    - ca_server: ca
+    - signing_policy: aptrepo_server
+    - public_key: /etc/nginx/certs/server.key
+    - CN: aptrepo.example.com
+    - days_remaining: 30
+    - backup: True
+    - listen_in:
+      - service: nginx
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now to configure clients to be able to use the new repository. First apt needs to know
+that our repository requires a client certificate.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/aptrepo/client/files/45aptrepo-ssl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Acquire::https::aptrepo.example.com {
+  Verify-Peer &amp;quot;true&amp;quot;;
+  Verify-Host &amp;quot;true&amp;quot;;
+
+  CaInfo &amp;quot;/etc/ssl/aptrepo_ca.crt&amp;quot;;
+  SslCert &amp;quot;/etc/ssl/aptrepo_client.crt&amp;quot;;
+  SslKey &amp;quot;/etc/ssl/aptrepo_client.key&amp;quot;;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And now a client state to add the repository and generate the certificates clients will
+need to use it.&lt;/p&gt;
+
+&lt;p&gt;/srv/salt/aptrepo/client/init.sls&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add our new repository&lt;/span&gt;
+internal-main-prod:
+  pkgrepo.managed:
+    - humanname: Internal Repo
+    - name: deb https://aptrepo.example.com trusty-prod main
+    - key_url: salt://aptrepo/server/files/gpg/public.gpg.key
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add the CA certificate&lt;/span&gt;
+/etc/ssl/aptrepo_ca.crt:
+  x509.pem_managed:
+    - text: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;mine.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;x509.get_pem_entries&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/pki/aptrepo.crt&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]|&lt;/span&gt;&lt;span style=&#34;color: #06287e&#34;&gt;replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Generate a unique private key&lt;/span&gt;
+aptrepo_client-key:
+  x509.private_key_managed:
+    - name: /etc/ssl/aptrepo_client.key
+    - bits: 4096
+    - backup: True
+    - new: True
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.file_exists&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/ssl/aptrepo_client.key&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    - prereq:
+      - x509: aptrepo_client-cert
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a certificate signed by CA&lt;/span&gt;
+aptrepo_client-cert:
+  x509.certificate_managed:
+    - name: /etc/ssl/aptrepo_client.crt
+    - ca_server: ca
+    - signing_policy: aptrepo_client
+    - public_key: /etc/ssl/aptrepo_client.key
+    - CN: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;grains&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;fqdn&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - days_remaining: 15
+    - backup: True
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add the file configuring apt to use the certificates with this repository&lt;/span&gt;
+/etc/apt/apt.conf.d/45aptrepo-ssl:
+  file.managed:
+    - source: salt://aptrepo/client/files/45aptrepo-ssl
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That it, now you have a fully managed internal repository on aptrepo. You can create expose this repository to the internet and only your clients trusted by salt and issued a client certificate will be able to use it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>X509 Certificates in Salt, implementation details</title>
+      <link>https://clinta.github.io/salt-x509-details/</link>
+      <pubDate>Thu, 02 Apr 2015 21:16:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/salt-x509-details/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://saltstack.com/&#34;&gt;Saltstack&lt;/a&gt; has recently accepted my pull request and integrated the x509 module I&amp;rsquo;ve spent the last few weeks working on. Most of it&amp;rsquo;s functionality including a complete PKI example is explained in the &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html&#34;&gt;documentation&lt;/a&gt;, this blog post is to go over some more of the details of how and why I made it for anyone who may not want to just read the source code.&lt;/p&gt;
+
+&lt;p&gt;I started out with a need to manage X509 certificates for geographically distributed linux based VPN routers. I thought this would be pretty easy with the built in &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.tls.html&#34;&gt;tls&lt;/a&gt; module, but this didn&amp;rsquo;t meet my needs for a few reasons. For one thing the module is stateful. It requires having a specific directory structure setup and expects files to be in specific places. I don&amp;rsquo;t really like this idea, I prefer my stateful configuration to be in my state files, and my execution modules to get everything they need via arguments. Secondly this module has no methods for having a CA sign certificates for remote servers.&lt;/p&gt;
+
+&lt;p&gt;What I wanted in the end was to be able to configure a state which would generate a private key on my VPN router, submit the corresponding public key back to my CA server, which would then generate a certificate with that public key and give it back to the VPN router. And with the great tools provided by salt I was able to do this.&lt;/p&gt;
+
+&lt;p&gt;This module and state does require some understanding of how X509 certificates work. For example, this state does not have the concept of a &amp;lsquo;CA&amp;rsquo; per say. Because in reality a CA is the same as any other private key and certificate. The only difference is what extensions are included in the certificate. So to generate a CA using this module, you first generate a private key, then generate a certificate with the correct extensions, most importantly &lt;code&gt;basicConstraints: CA:true&lt;/code&gt;. If you pass in a public_key argument that is the corresponding key to the signing_private_key argument, this will create a self-signed certificate. A self-signed certificate with &lt;code&gt;CA: true&lt;/code&gt; is a CA.&lt;/p&gt;
+
+&lt;p&gt;One thing to keep in mind when looking at this state is that some times you will see in the examples passing a private key as a public key to a module. If you&amp;rsquo;re concerned about this, congratulations, you understand the importance of keeping private keys private. But this functionality is safe to use. Any property passed into the module as a public key will first be run through the &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.x509.html#salt.modules.x509.get_public_key&#34;&gt;get_public_key&lt;/a&gt; function. This means if you pass in a private key, the matching public key will be generated and used. This happens before anything is sent over the network, so you can be sure that the CA you are having sign your certificate will never have access to your private key.&lt;/p&gt;
+
+&lt;p&gt;When you&amp;rsquo;re ready to create a certificate signed by the remote CA, you use the create_certificate state again, but instead of using the signing_private_key argument, use the ca_server argument. When using ca_server you must necessarily include the signing_policy argument. Signing policies are properties defined in the minion configuration of the CA server. They define mandatory certificate properties and which minion IDs are allowed to get certificates signed. For example, by including the basicConstraints extension in the signing policy, the CA will be protected against issuing certificates that can be used to sign other certificates. When this state is run, the public key, along with any other properties for the certificate are sent across the salt event bus using &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/peer.html&#34;&gt;peer communication&lt;/a&gt;. The CA server checks the minion id that sent the request to determine if it has permission to get a certificate using the requested signing_policy. If so it creates the certificate, overriding any requested properties with those specified in the signing_policy, then returns the signed certificate back to the minion that requested it.&lt;/p&gt;
+
+&lt;p&gt;One more very useful property of controlling these in states, is the days_remaining property. The state will check the expiration date of a certificate when the state runs and if days_remaining is configured, it will automatically renew the certificate when fewer than that number of days are remaining. This can greatly improve security of a PKI infrastructure by allowing self-manged short-lived certificates. I can have each VPN router generate certificates which the signing policy limits to only being valid for 2 weeks. The VPN server&amp;rsquo;s state can automatically request a new certificate when there are less than 7 days remaining. Through the use of prereqs and the &lt;code&gt;new: True&lt;/code&gt; parameter on the &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html#salt.states.x509.private_key_managed&#34;&gt;private key&lt;/a&gt; state I can also make sure that new private keys are generated for every certificate renewal. This means that if a VPN router&amp;rsquo;s private key is ever compromised, it is only useful for at most 2 weeks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Embracing Binary for Beautiful Networks</title>
+      <link>https://clinta.github.io/embracing-binary-for-beautiful-networks/</link>
+      <pubDate>Sat, 07 Mar 2015 11:30:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/embracing-binary-for-beautiful-networks/</guid>
+      <description>&lt;p&gt;During my time working for an MSP I got to see many different networks with many different techniques for mapping vlan numbers to subnets, but all of them left me dissatisfied. The biggest problem was that they were always destgned to try to make some sense to people looking at the numbers as they&amp;rsquo;re most commonly written. Vlan numbers in decimal and IP addresses in dotted decimal. But these are just incompatible. Sure you can make it look pretty if Vlan &lt;code&gt;10&lt;/code&gt; is &lt;code&gt;10.10.0.0/16&lt;/code&gt; and Vlan &lt;code&gt;20&lt;/code&gt; is &lt;code&gt;10.20.0.0/16&lt;/code&gt;, but once you need to start subnetting those /16 networks things get messy and you have to have all sorts of special rules for what happens to vlans over 255.&lt;/p&gt;
+
+&lt;p&gt;In my new network design I sought to tackle this inconsistency head on. I started with the idea that we should make all of our IPV4 networks /24. Broadcast domains don&amp;rsquo;t scale well with more than 254 hosts anyway, and with proper planning we don&amp;rsquo;t need to preserve private IP space by subnetting smaller than that. The second idea that I considered to make this possible is that 4096 vlans is enough that we can have every network in our organizaiton be unique. This may not be true for very large organizations, but it is for us, and designing our networks so that every vlan is unique can avoid a lot of management headaches.&lt;/p&gt;
+
+&lt;p&gt;With that in place a simple vlan to subnet mapping becomes possible. A vlan is a 12 bit integer, the network address of a /24 IPv4 network is a 24 bit integer. All of our private space will be /24 networks in the &lt;code&gt;10.0.0.0/8&lt;/code&gt; network. This leaves us with a 16 bit number that identifies the network. As I said above, we don&amp;rsquo;t need more than 4096 networks, so we can cut this number down to 12 bits. Our private netowork range is now &lt;code&gt;10.0.0.0/12&lt;/code&gt;. And the vlan number is always the least significant network bits.&lt;/p&gt;
+
+&lt;p&gt;See the table below for some examples for how this works.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;IP Addresss&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Network&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Network Bits&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Least Significant 12 Network Bits&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Base 10 VLAN&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;10.0.4.&lt;sup&gt;254&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.0.4.0/24&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;00001010.00000000.00000100&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0000.00000100&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;10.4.25.&lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.4.25.0/24&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;00001010.00000100.00011001&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0100.00011001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1049&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;10.15.64.&lt;sup&gt;55&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10.15.64.0/24&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;00001010.00001111.01000000&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1111.01000000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3904&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Now here&amp;rsquo;s the shortcut. Multiply the second octet by 256 and add the 3rd octet to get the vlan.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;IP Addresss&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;2nd octet * 256&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;+ 3rd octet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;10.0.4.&lt;sup&gt;254&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0 * 256 = 0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0 + 4 = 4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;10.4.25.&lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4 * 256 = 1024&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1024 + 25 = 1049&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;10.15.64.&lt;sup&gt;55&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;15 * 256 = 3840&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3840 + 64 = 3904&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Now at this point the astute reader may have noticed that there is no vlan &lt;code&gt;0&lt;/code&gt;. And you&amp;rsquo;re correct. &lt;code&gt;10.0.0.0/24&lt;/code&gt; must be given as a sacrifice to the network gods. Or at least used for a network which does not need a vlan. In our case we&amp;rsquo;ll be using it for router loopback addresses.&lt;/p&gt;
+
+&lt;p&gt;Now that the vlan to network mapping is solved, the rest of this post is just a geeky dive into subnetting that may provide inspiration to others designing new networks. Our network consists of 2 datacenters and around 100 branch offices. Trying to keep our design open for future growth we&amp;rsquo;ve allocated a /16 network to each datacenter, and left room to grow up to 8 datacenters. We&amp;rsquo;re also leaving room to grow up to 512 branch offices. Planning along binary boundaries allows us to easily think in terms of route summarization. For us &lt;code&gt;10.0.0.0/13&lt;/code&gt; represents datacenter networks. &lt;code&gt;10.0.0.0/16&lt;/code&gt; is DC0. &lt;code&gt;10.1.0.0/16&lt;/code&gt; is DC1 up to DC7. Our branches each need a voice and data vlan, keeping in line with our plan for all networks being /24, this means that each branch office needs a designated /23 network. A /14 can hold 512 /23 networks. So allocating &lt;code&gt;10.8.0.0/14&lt;/code&gt; allows us to grow up to 512 branch offices. Basic sorting of branches by region can prove useful if we begin to open more datacenters in other regions. So the first 2 bits of the branch&amp;rsquo;s address represent the region. &lt;code&gt;10.8.0.0/16&lt;/code&gt; is Region 1 (Midwest), &lt;code&gt;10.9.0.0/16&lt;/code&gt; is Region 2 (Midwest), &lt;code&gt;10.10.0.0/16&lt;/code&gt; is Region 3 (South), &lt;code&gt;10.11.0.0/16&lt;/code&gt; is Region 4 (West).&lt;/p&gt;
+
+&lt;p&gt;Every business is different and will require a unique network design. But I hope this post can demonstrate the power of remembering that in the end addresses and vlans are binary numbers. Next time you&amp;rsquo;re tempted to add 10 for your next network, consider adding 8 instead.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Managing Users with Salt</title>
+      <link>https://clinta.github.io/salt-user-management/</link>
+      <pubDate>Sat, 07 Mar 2015 09:38:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/salt-user-management/</guid>
+      <description>&lt;p&gt;This post has gone through a few iterations. You can see the full history on the github repo.&lt;/p&gt;
+
+&lt;p&gt;One of the great things about a configuration management solution like Salt is the ability to centrally manage local users. Sure LDAP and Kerberos are great, but sometimes it&amp;rsquo;s better to keep things simple, that&amp;rsquo;s what I&amp;rsquo;m doing with Salt. Leveraging Pillars I can define certain users to be added to servers of a given role. Here&amp;rsquo;s how I do it.&lt;/p&gt;
+
+&lt;p&gt;Start by defining your users, separating and targeting by role.:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/top.sls&lt;/span&gt;
+base:
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;:
+    - users.admins
+    - users.revokedusers
+
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;web*&amp;#39;&lt;/span&gt;:
+    - users.webadmins
+
+  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;db*&amp;#39;&lt;/span&gt;:
+    - users.dbadmins
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And define your users:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/admins.sls&lt;/span&gt;
+users:
+  tywin:
+    fullname: Tywin Lannister
+    uid: 1100
+    ssh-keys:
+      - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNWRiUmFXjxrp4VGfqWISvsEdxPJi2ES3gi6U/ZoVR3UpMUNGYm/VUTNjiXPX6XU5KjaSdGgeqDQdcwfAxl7q4A= tywin@CastRockWks1
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCllUe3Q14M1AwMyaGLaW0b3IyDyghljYzKlQE/osh0hjUCxqcjFW26DekBSF/RErYeJwlRPrGxWZAYLYW9ZMLolYJGAon1jBgNUAaSbj45m+sf8gFDWqpL6E0Vxzr4/o2A7NpqBsdwy95Xov0MGQq7wyJ7bEQ4b/TFo7Peb6oWoHGdDMbXym/T0UFiEH30w6XBIN34tRsV9DGmG3BpshI7ho5pNo1dO8xDD0Acr6blpOQKap02ihJKYBAdFDGfK4P3PUrhArEJvD8QU7Q7Fwl1Yej6Y54IMndTVf8i5CZNmUKh87Xawo4NRMaVPePoMInEYTiEkOYrILGkWRCT2GWb tywin@TLLap1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/revokedusers.sls&lt;/span&gt;
+revokedusers:
+  robb:
+    fullname: Robb Stark
+    uid: 2001
+    ssh-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFmuEiljWGa1W3/mgymLdEwCbkBcIaXZfik9uNQCzajW Robb@RSLap1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/webadmins.sls&lt;/span&gt;
+users:
+  tyrion:
+    fullname: Tyrion Lannister
+    uid: 1101
+    ssh-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIED4TtDwUcNZdhQwIxK4LOtn3Q/yQxlcvQKrZIBaOllQ tyrion@TSLap2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/dbadmins.sls&lt;/span&gt;
+users:
+  cersei:
+    fullname: Cersei Lannister
+    uid: 1102
+    ssh-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINZ9GpN4T3beWlRzfO27tYH7t13QhMRoKbmDR3nwwAWa cersei@CLLap1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It should be fairly self-explanatory how this works. Tywin is added to every server. Tyrion is only added to webservers and Cersei is only added to database servers. Robb has been fired and his access to all servers has been revoked.&lt;/p&gt;
+
+&lt;p&gt;Now the logic for adding these users.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/salt/users/init.sls&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Revoke any users with a role of revoked&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pillar.get&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;revokedusers&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;{})&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;.iteritems&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+  user.absent: []
+  group.absent: []
+
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_root_key:
+  ssh_auth.absent:
+    - user: root
+    - names:
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_key:
+  ssh_auth.absent:
+    - user: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - names:
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add users&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pillar.get&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;users&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;{})&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;.iteritems&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+  group.present:
+    - gid: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;uid&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+  user.present:
+    - fullname: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;fullname&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - uid: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;uid&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - gid: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;uid&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - shell: /bin/bash
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;grains&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;os&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;Ubuntu&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    - groups:
+      - sudo
+      - adm
+      - dip
+      - cdrom
+      - plugdev
+    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_root_key:
+  ssh_auth.present:
+    - user: root
+    - names:
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_key:
+  ssh_auth.present:
+    - user: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - names:
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Allow sudoers to sudo without passwords.&lt;/span&gt;
+&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# This is to avoid having to manage passwords in addition to keys&lt;/span&gt;
+/etc/sudoers.d/sudonopasswd:
+  file.managed:
+    - source: salt://users/files/sudoers.d/sudonopasswd
+    - user: root
+    - group: root
+    - mode: 440
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The first section removes any revoked users, and removed revoked users ssh keys from the root account, as well as their own.&lt;/p&gt;
+
+&lt;p&gt;The second section adds any users in the users pillar to the system. It also adds their keys to the root account. This isn&amp;rsquo;t ideal, but I&amp;rsquo;ve not found any other way to allow users to edit files over scp. Running &lt;code&gt;vim scp://root@server//etc/file&lt;/code&gt; is very useful, and simply doesn&amp;rsquo;t work with sudo.&lt;/p&gt;
+
+&lt;p&gt;Lastly, hashing passwords and putting that value into the pillar to define it wouldn&amp;rsquo;t be difficult. But it does make it difficult for users to change their passwords. And with encrypted ssh keys, it seems unnecessary to me. So I push out a final config to allow users to sudo without a password, since no password is defined in the first place.&lt;/p&gt;
+
+&lt;p&gt;The file that&amp;rsquo;s being managed to allow sudo without password is below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /srv/salt/users/files/sudoers.d/sudonopasswd
+%sudo	ALL = (ALL) NOPASSWD: ALL
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Automated Ubuntu Installation with PXE, Preseeds and Apt-Cacher-NG (and UEFI compatible)</title>
+      <link>https://clinta.github.io/automated-pxe-ubuntu-installs/</link>
+      <pubDate>Wed, 28 Jan 2015 09:13:00 -0500</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/automated-pxe-ubuntu-installs/</guid>
+      <description>&lt;p&gt;Doing repetitive installs can be a pain, and figuring out how to make it easier can be even more of a pain since everybody has their own preferred system. Most searching for how to do this for Ubuntu will lead you to Cobbler. Cobbler isn&amp;rsquo;t a bad tool, but it&amp;rsquo;s not a good fit for me. It takes away most of the ability to customize pxelinux without learning their templating language. And it is built with the assumption that you&amp;rsquo;ll be defining system roles and doing configuration management through Cobbler. I don&amp;rsquo;t need that, I&amp;rsquo;m using Salt for configuration management. For unattended installations I need something simpler. Putting together a few simple tools I was able to get an installation system I&amp;rsquo;m very happy with.&lt;/p&gt;
+
+&lt;p&gt;Another complication that&amp;rsquo;s not addressed in most existing guides is getting this to work with both BIOS and EFI based computers. Ignoring EFI and setting everything to boot in legacy mode isn&amp;rsquo;t a long term solution, and not one I&amp;rsquo;m willing to accept.&lt;/p&gt;
+
+&lt;p&gt;The first thing we need is a tftp server.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;apt-get install tftpd-hpa
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we need syslinux. Syslinux contains a set of kernels that can be downloaded via tftp and booted by the client. It&amp;rsquo;s really just a set of files, no services that will be run, so I&amp;rsquo;ll be skipping the normal ubuntu syslinux packages and getting the latest and greatest from the source.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget https://www.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.gz
+tar -xvf syslinux-6.03.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now create some directories and copy the necessary syslinux files to the tftp root directory. Since we&amp;rsquo;re wanting to boot legacy bios clients and x64 based EFI clients. Technically 32 bit EFI clients might exist, but I don&amp;rsquo;t have any, so I&amp;rsquo;m not bothering to configure those.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/bios
+cp syslinux-6.03/bios/core/pxelinux.0 /var/lib/tftpboot/bios/
+cp syslinux-6.03/bios/com32/elflink/ldlinux/ldlinux.c32 /var/lib/tftpboot/bios/
+cp syslinux-6.03/bios/com32/lib/libcom32.c32 /var/lib/tftpboot/bios/
+cp syslinux-6.03/bios/com32/libutil/libutil.c32 /var/lib/tftpboot/bios/
+cp syslinux-6.03/bios/com32/menu/vesamenu.c32 /var/lib/tftpboot/bios/
+cp syslinux-6.03/bios/com32/modules/pxechn.c32 /var/lib/tftpboot/bios/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/efi64
+cp syslinux-6.03/efi64/efi/syslinux.efi /var/lib/tftpboot/efi64/
+cp syslinux-6.03/efi64/com32/elflink/ldlinux/ldlinux.e64 /var/lib/tftpboot/efi64/
+cp syslinux-6.03/efi64/com32/lib/libcom32.c32 /var/lib/tftpboot/efi64/
+cp syslinux-6.03/efi64/com32/libutil/libutil.c32 /var/lib/tftpboot/efi64/
+cp syslinux-6.03/efi64/com32/menu/vesamenu.c32 /var/lib/tftpboot/efi64/
+cp syslinux-6.03/efi64/com32/modules/pxechn.c32 /var/lib/tftpboot/efi64/
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that our boot kernels are in place, configure DHCP to pass the kernel to the clients. This can be tricky, and the method will depend on your DHCP server. When a client sends a DHCP request, it includes information about itself. Option 93 includes the architecture of the client. 0 indicates a bios client, 9 and 7 indicate a 64 bit EFI client. 6 identifies an ia64 client, but I don&amp;rsquo;t have any of those either. Using the DHCP templates provided on the &lt;a href=&#34;http://www.syslinux.org/wiki/index.php/PXELINUX#UEFI&#34;&gt;syslinux wiki&lt;/a&gt;, I&amp;rsquo;ve customized my DHCP server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /etc/dhcp/dhcpd.conf
+authoritative;
+option architecture-type code 93 = unsigned integer 16;
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  ##
+  ## … All your normal DHCP options go here
+  ##
+  option tftp-server-name &amp;quot;192.168.1.1&amp;quot;;                        # The IP address of the tftp server
+  next-server 192.168.1.1;                                      # IP Address of the tftp server again
+  # Below are the conditions to send the correct kernel depending on if the client is EFI or not.
+  if option architecture-type = 00:00 {
+   filename &amp;quot;bios/pxelinux.0&amp;quot;;
+   } elsif option architecture-type = 00:09 {
+   filename &amp;quot;efi64/syslinux.efi&amp;quot;;                               
+   } elsif option architecture-type = 00:07 {
+   filename &amp;quot;efi64/syslinux.efi&amp;quot;;
+   } else {
+   filename &amp;quot;bios/pxelinux.0&amp;quot;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this in place, our clients can now pxe boot, but they&amp;rsquo;ll just get an error saying that the configuraiton file can&amp;rsquo;t be found. They need a configuration to tell them what to do. pxelinux looks for a configuration file in the pxelinux.cfg directory. You can create configuration files for individual machines by creating files with a fliename that matches the MAC address of the booting client. Any client that doesn&amp;rsquo;t have a matching config will use the default file. In this example, we&amp;rsquo;re just going to make the default file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/bios/pxelinux.cfg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Edit the file &lt;code&gt;/var/lib/tftpboot/bios/pxelinux.cfg/default&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /var/lib/tftpboot/bios/pxelinux.cfg/default
+DEFAULT vesamenu.c32
+TIMEOUT 600
+ONTIMEOUT BootLocal
+PROMPT 0
+MENU TITLE PXE Menu
+NOESCAPE 1
+LABEL BootLocal
+  localboot 0
+  TEXT HELP
+  Boot to the local hard disk
+  ENDTEXT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t found a nice way to make tftpd-hpa follow symlinks, so this directory must be copied both to the bios and the efi directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp -r /var/lib/tftpboot/bios/pxelinux.cfg /var/lib/tftpboot/efi64
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now try and PXE boot. You will get a sparse menu with only one option. We&amp;rsquo;ll be adding more later. Right now the only option in the menu is to continue booting to the local disk. If you wish to take a break to customize the look of this menu, you can do so by customizing options like &lt;code&gt;MENU BACKGROUND&lt;/code&gt; and &lt;code&gt;MENU COLOR&lt;/code&gt;. Read more about these options on the &lt;a href=&#34;http://www.syslinux.org/wiki/index.php/Menu#MENU_COLOR&#34;&gt;syslinux wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s time to add the Ubuntu mini CD. I like to stick with LTS releases of Ubuntu, which means that the normal server ISO will have packages that are 2 years old by the time it&amp;rsquo;s replaced. This makes them almost useless as the first apt-get upgrade will download nearly as much as the original ISO had on it in the first place. The mini iso contains only what&amp;rsquo;s necessary to boot, then pulls all the packages from the internet. This would make the installation pretty slow, but we&amp;rsquo;re going to supercharge it with an Apt Cache later on in this guide.&lt;/p&gt;
+
+&lt;p&gt;Grab the mini ISO and extract the files into your tftpboot directory. I choose to maintain a pretty strict hierarchy so that I can add more distributions later.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget -O ubuntu-14.04-x64-mini.iso http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
+mkdir /mnt/iso
+mount ubuntu-14.04-x64-mini.iso /mnt/iso
+mkdir -p /var/lib/tftpboot/images/ubuntu/14.04/
+cp -r /mnt/iso /var/lib/tftpboot/images/ubuntu/14.04/amd64
+umount /mnt/iso
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can add an option to our PXE Configuraiton to boot to this image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /var/lib/tftpboot/bios/pxelinux.cfg/default
+DEFAULT vesamenu.c32
+TIMEOUT 600
+ONTIMEOUT BootLocal
+PROMPT 0
+MENU TITLE PXE Menu
+NOESCAPE 1
+LABEL BootLocal
+  localboot 0
+  TEXT HELP
+  Boot to the local hard disk
+  ENDTEXT
+LABEL Ubuntu 14.04 (64-bit)
+  KERNEL tftp://192.168.1.1/images/ubuntu/14.04/amd64/linux
+  APPEND vga=788 initrd=tftp://192.168.1.1/images/ubuntu/14.04/amd64/initrd.gz
+  TEXT HELP
+  Boot to the Ubuntu 14.04 64-bit automatic installation
+  ENDTEXT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;At this point you can PXE boot and run an interactive installation using the mini installer. The system will be installed fully up to date, with all packages pulled direct from the internet. All the installer questions will be asked normally just like if you had booted from the CD.&lt;/p&gt;
+
+&lt;p&gt;Next step is to begin automating the installation. In Debian and Ubuntu, automation is done via preseed files. This &lt;a href=&#34;https://help.ubuntu.com/lts/installation-guide/example-preseed.txt&#34;&gt;example&lt;/a&gt; is fairly well documented in the comments and will serve as a good starting point. Start by putting this file in your tftp directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/preseeds
+wget -O /var/lib/tftpboot/preseeds/ubuntu.preseed https://help.ubuntu.com/lts/installation-guide/example-preseed.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Edit this preseed file to your liking, using the in-line comments as a guide. I modified mine to do things like use normal partitioning rather than lvm, I commented out the hostname parameter to make the installer prompt for a hostname, and I set the tasksel property to none, then put openssh-server and salt-minion as additional packages to install.&lt;/p&gt;
+
+&lt;p&gt;Once you have this file configured as you like it, you need to modify your PXE options so that it will be used. Notice the append line added below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /var/lib/tftpboot/bios/pxelinux.cfg/default
+DEFAULT vesamenu.c32
+TIMEOUT 600
+ONTIMEOUT BootLocal
+PROMPT 0
+MENU TITLE PXE Menu
+NOESCAPE 1
+LABEL BootLocal
+  localboot 0
+  TEXT HELP
+  Boot to the local hard disk
+  ENDTEXT
+LABEL Ubuntu 14.04 (64-bit)
+  KERNEL tftp://192.168.1.1/images/ubuntu/14.04/amd64/linux
+  APPEND auto=true priority=high vga=788 initrd=tftp://192.168.1.1/images/ubuntu/14.04/amd64/initrd.gz locale=en_US.UTF-8 kdb-chooser/method=us netcfg/choose_interface=auto url=tftp://192.168.1.1/preseeds/ubuntu.preseed
+  TEXT HELP
+  Boot to the Ubuntu 14.04 64-bit automatic installation
+  ENDTEXT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice a couple of things here. The first thing added is &lt;code&gt;auto=true&lt;/code&gt;, this is what tells the installer to attempt to automatically complete. &lt;code&gt;priority=high&lt;/code&gt; instructs the installer to skip asking any questoins with a priority of less than high. Many guides will instruct adding &lt;code&gt;priority=critical&lt;/code&gt; which will only ask questions that the installer cannot possibly complete without. I choose high, because I want to be prompted for a hostname by the installer, and that is not a critical priority question. The locale must be passed to the kernel, because the locale and keyboard layout is asked before the preseed is actually downloaded. &lt;code&gt;netcfg/choose_interface=auto&lt;/code&gt; should not be necessary if the same parameter is specified in the preseed file, but due to a &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/netcfg/+bug/713385&#34;&gt;bug&lt;/a&gt;, this property only works if passed as a kernel option. And lastly &lt;code&gt;url=tftp://192.168.1.1/preseeds/ubuntu.preseed&lt;/code&gt; is the tftp path to the preseed file you just customized.&lt;/p&gt;
+
+&lt;p&gt;At this point you now have either a fully or semi-automated pxe installer for Ubuntu. However, because we&amp;rsquo;re using the mini cd, it&amp;rsquo;s probably a fair bit slower that you&amp;rsquo;d like, pulling packages from the internet for every install. Now it&amp;rsquo;s time to setup your apt proxy to speed this up.&lt;/p&gt;
+
+&lt;p&gt;In this demo I&amp;rsquo;m going to install it on the same server that is doing DHCP, but this can be on any server you want. Start by installing apt-cacher-ng.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;apt-get install apt-cacher-ng
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After install apt-cacher-ng will be running automatically on port 3142. You can visit http://&lt;apt-cacher-ip&gt;:3142 for instructions on configuring apt, as well as a link to view the cache statistics. To use this for during the install process, you need to add a line to your preseed configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# /var/lib/tftpboot/preseeds/ubuntu.preseed
+[...]
+d-i mirror/http/proxy string http://192.168.1.1:3142/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you watch the statistics page while doing another install, you&amp;rsquo;ll notice an almost 100% miss rate. But once you do the second install it will go much faster and you&amp;rsquo;ll see more packages hitting the cache. Now that you have a cache setup, you should probably follow the instructions for configuring your clients to utilize it for faster updates.&lt;/p&gt;
+
+&lt;p&gt;Now is when I ran into one more &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/debian-installer/+bug/568704&#34;&gt;bug&lt;/a&gt; that frustrated things though. While this setting should only be setting a proxy for apt, it sets the proxy for all http, which means if you use any scripts in your preseed file that require http, they will be proxied and probably will not work. One place I had to work around this was adding a PPA as a source for an additional package to be installed. Because the signing key could not be pulled over http, I had to download the key and serve it via tftp.&lt;/p&gt;
+
+&lt;p&gt;At this point you should have a fairly robust system for performing Ubuntu installations via PXE.&lt;/p&gt;
+
+&lt;p&gt;One last tip is how to add entries for other PXE servers you may have on your network. Perhaps a Windows Deployment server, or a FOG server. To enable chain booting you can add these simple menu entries to your &lt;code&gt;pxelinux.cfg/default&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LABEL Fog
+  COM32 pxechn.c32
+  APPEND 192.168.1.2::/pxelinux.0
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using one pair of SSDs for both ZIL and L2ARC in FreeNAS</title>
+      <link>https://clinta.github.io/freenas-multipurpose-ssd/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/freenas-multipurpose-ssd/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m a big fan of ZFS, and a big fan of FreeNAS. But some times the options avaliable in the FreeNAS GUI can&amp;rsquo;t quite do everything. Using one disk for more than one purpose is one of those things. At $dayjob we&amp;rsquo;re going to be using a new FreeNAS server for iSCSI datastores for VMWare. This is one of those instances where a ZIL can really improve performance because there is potential for a lot of synchronious writes from VMs hosting databases.&lt;/p&gt;
+
+&lt;p&gt;In the past, conventional wisdom was to use dedicated SLC SSDs for ZIL, but that seems to be dated information. SLC SSDs are pretty hard to find now, and all the info I can find indicates that enterprise grade MLCs can outperform and outlast the SLCs of a couple years ago. With that info in hand, we specced our new storage system with 2 Intel S3700 SSD&amp;rsquo;s. These drives come in a minimum size of 100GB, way more than anyone needs for a ZIL.&lt;/p&gt;
+
+&lt;p&gt;A brief tangent on ZIL sizing, ZIL is going to cache synchronous writes so that the storage can send back the &amp;ldquo;Write succeeded&amp;rdquo; message before the data written actually gets to the disk. Data is flushed to the disks within the time set in the ZFS tunable tunable zfs_txg_timeout, this defaults to 5 seconds. With 20Gbps of connectivity to this system, the maximum that could ever be written within 5 seconds is 11 GiB. It&amp;rsquo;s reasonable to double or triple this number as a precaution, and to allow SSD wear leveling to reduce the impact of this heavy write load. In my case I&amp;rsquo;ll be sizing my ZIL to 30 GiB.&lt;/p&gt;
+
+&lt;p&gt;So I have a pair of 200 GB SSDs, of which I only need 30 GiB for ZIL. I&amp;rsquo;m going to do the cautious thing and mirror my ZIL, so that if the system loses power and a drive fails, the ZIL will still be safe on another drive. That leaves me with 312.5 GiB of SSD space to do something with. That something will be L2ARC.&lt;/p&gt;
+
+&lt;p&gt;Before going crazy and adding lots of L2ARC keep in mind RAM requirements. As a rule of thumb it&amp;rsquo;s going to take at least 1 GiB of ARC (RAM) to index every 10 GiB of L2ARC. In my case that means indexing this L2ARC will need about 32 GiB of RAM. That&amp;rsquo;s fine on this box, since it&amp;rsquo;s filled with 256 GiB of RAM.&lt;/p&gt;
+
+&lt;p&gt;So now to the meat and potatoes of how to get this done. To begin with, create a pool in FreeNAS normally. Do not add the SSDs to the pool. In my case, it&amp;rsquo;s an 8 Disk RaidZ2.&lt;/p&gt;
+
+&lt;p&gt;Now SSH into your FreeNAS and determine what geom your SSDs are on, in my case they are da8 and da9. First thing to do is initialize these disks with a partition table.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@freenas] ~# gpart create -s gpt da8
+da8 created
+[root@freenas] ~# gpart create -s gpt da9
+da9 created
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next create the ZIL partitions, in my case 30 GiB. I&amp;rsquo;m creating partitions using the same &lt;a href=&#34;https://github.com/freenas/freenas/blob/a77b818f2498257a5c7617c8895a07cf0a6c1643/gui/middleware/notifier.py&#34;&gt;commands&lt;/a&gt; used by the FreeNAS GUI. The &lt;code&gt;-a 4k&lt;/code&gt; makes sure the partitions are 4k alligned. The &lt;code&gt;-b 128&lt;/code&gt; startsthe first partition at 128 bytes into the disk. I believe this has to do with making sure that EFI or BIOS don&amp;rsquo;t try to boot from this drive. &lt;code&gt;-t freebsd-zfs&lt;/code&gt; sets the partition type. And &lt;code&gt;-s 30G&lt;/code&gt; sets the size.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@freenas] ~# gpart add -a 4k -b 128 -t freebsd-zfs -s 30G da8
+da8p1 added
+[root@freenas] ~# gpart add -a 4k -b 128 -t freebsd-zfs -s 30G da9
+da9p1 added
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create the L2ARC partitions. Omitting the size parameter will make the partition use what&amp;rsquo;s left of the disk.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@freenas] ~# gpart add -a 4k -t freebsd-zfs da8
+da8p2 added
+[root@freenas] ~# gpart add -a 4k -t freebsd-zfs da9
+da9p2 added
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sometimes the disk number assignments are unreliable. This is why FreeNAS always uses the partition GUIDs to create pools. I intend to do the same thing here. Start by getting the GUIDs for your new partitions with &lt;code&gt;gpart show da8&lt;/code&gt;. Make note of the rawuuid value for your two partitions.&lt;/p&gt;
+
+&lt;p&gt;Add your ZIL mirror to your pool using the UUIDs you recorded.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@freenas] ~# zpool add tank log mirror gptid/&amp;lt;guid for da8p1&amp;gt; gptid/&amp;lt;guid for da9p1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add your L2ARC devices to your pool.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@freenas] ~# zpool add tank cache gptid/&amp;lt;guid for da8p2&amp;gt;
+[root@freenas] ~# zpool add tank cache gptid/&amp;lt;guid for da9p2&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And that&amp;rsquo;s it. You now have a ZFS pool using a pair of drives for both ZIL and L2ARC.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://clinta.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/about/</guid>
+      <description>
+
+&lt;p&gt;Devops engineer posting about the technologies I use and things that interest me.&lt;/p&gt;
+
+&lt;h3 id=&#34;more-information&#34;&gt;More Information&lt;/h3&gt;
+
+&lt;p&gt;These days I&amp;rsquo;m managing Ubuntu, FreeBSD and Windows servers, leveraging &lt;a href=&#34;http://www.saltstack.com/&#34;&gt;SaltStack&lt;/a&gt; and PowerShell whenever possible to build stable and repeatable configurations.&lt;/p&gt;
+
+&lt;h3 id=&#34;contact-me&#34;&gt;Contact me&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;mailto:clint@clintarmstrong.net&#34;&gt;clint@clintarmstrong.net&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

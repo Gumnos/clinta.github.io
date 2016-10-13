@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resume-rsses on Devops Discoveries</title>
+    <link>https://clinta.github.io/resume/index.xml</link>
+    <description>Recent content in Resume-rsses on Devops Discoveries</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>clint@clintarmstrong.net (Clint Armstrong)</managingEditor>
+    <webMaster>clint@clintarmstrong.net (Clint Armstrong)</webMaster>
+    <lastBuildDate>Thu, 06 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://clinta.github.io/resume/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Résumé</title>
+      <link>https://clinta.github.io/resume/</link>
+      <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/resume/</guid>
+      <description>
+
+&lt;h1 id=&#34;clint-armstrong&#34;&gt;Clint Armstrong&lt;/h1&gt;
+
+&lt;h2 id=&#34;work-experience&#34;&gt;Work Experience&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;01/2015 - Present&lt;/dt&gt;
+&lt;dd&gt;&lt;strong&gt;Network Administrator&lt;/strong&gt; Trillium Staffing, Kalamazoo, MI&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Primary technical resource for managing Networking, Servers and cloud
+ services.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Built a full mesh DMVPN network between over 100 branch offices using
+Linux on commodity hardware.&lt;/li&gt;
+&lt;li&gt;Managed a Citrix environment providing desktops for over 200 users.
+Handled upgrades between several major version of both Citrix and Windows
+Server.&lt;/li&gt;
+&lt;li&gt;Built a modern container cluster for running services on Linux.&lt;/li&gt;
+&lt;li&gt;Migrated communications services from on premis Microsoft Exchange and
+Sharepoint to Office 365.&lt;/li&gt;
+&lt;li&gt;Built a &lt;a href=&#34;diy-sbs-for-Office-365-Unified-Messaging&#34;&gt;solution&lt;/a&gt; for
+integrating Office 365 Unified Messaging using open source software.  and
+Cisco Unified Communications with only open source software.&lt;/li&gt;
+&lt;li&gt;Handled upgrades of multiple clusters between major versions of Vmware
+Vsphere.&lt;/li&gt;
+&lt;li&gt;Handled a migration between physical datacenters.&lt;/li&gt;
+&lt;li&gt;Migrated from provider IP space to BGP peering with multiple providers
+using provider independant IPs.&lt;/li&gt;
+&lt;li&gt;Wrote and contributed multiple modules for SaltStack to manage our linux
+servers and workstations.&lt;/li&gt;
+&lt;li&gt;Wrote multiple docker plugins to built our container cluster.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;12/2011 - 01/2015&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Professional Services Engineer&lt;/strong&gt; Secant Techologies, Kalamazoo, MI&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Provided services to customers including NetPro visits to check health of
+ network and server and leading upgrade projects to server infrastructure.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Frequent repairs of unhealthy Active Directory infrastructure including
+correcting AD Site topology, forcibly removing failed domain controllers,
+and troubleshooting and repairing DNS and DHCP.&lt;/li&gt;
+&lt;li&gt;Many implementations of multi-host VSphere deployments with iSCSI, Fibre
+Chanel and SAS based shared storage.&lt;/li&gt;
+&lt;li&gt;Sole engineer on many server virtualization and upgrade projects for
+Active Directory versions 2008R2 and 2012, Exchange 2010 and 2013,
+various version of Microsoft SQL and other line of business applications.&lt;/li&gt;
+&lt;li&gt;Engaged in long term support for a large company coordinating migrations
+to accommodate a corporate acquisition. Included Exchange and Active
+Directory migrations, workstation inventory and replacement, and user
+support coordination.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;01/2011 - 12/2011&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Microsoft Systems Administrator&lt;/strong&gt; Liberty University, Lynchburg, VA&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Primary Administrator responsible for design and maintenance of Active
+ Directory, Exchange, Active Directory Federation Services, Forefront
+ Unified Access Gateway and Public Key Infrastructure&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lead technician in project to migrate from an on-premises Exchange 2007
+environment to a hybrid oexistent deployment with 350,000 student user
+accounts in the cloud on Microsoft Office 365 and 000 Faculty and Staff
+accounts in on-premises Exchange 2010.&lt;/li&gt;
+&lt;li&gt;Implemented Forefront Unified Access Gateway to secure external
+authentication to Sharepoint and ther internal web services.&lt;/li&gt;
+&lt;li&gt;Implemented Active Directory Federation Services to provide single sign
+on for several external ervices.&lt;/li&gt;
+&lt;li&gt;Participated in implementation PCI security requirements for storage of
+sensitive data on infrastructure servers.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;2008 - 2011&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Desktop Configuration Administrator&lt;/strong&gt; Liberty University, Lynchburg, VA&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Managed the centeralized configuration of over 5000 workstations across
+ campus.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Implemented and managed Microsoft System Center Configuration Manager
+2007 for management of over 5000 workstations.&lt;/li&gt;
+&lt;li&gt;Implemented Microsoft Windows Deployment Services with a custom front-end
+to provide PXE booting and advanced automated imaging workflows to
+increase productivity for On-Site Support Technicians.&lt;/li&gt;
+&lt;li&gt;Repackaged and made the university software library available for
+installation via SCCM or Group Policy, improving efficiency for support
+departments by allowing self-service installations for users.&lt;/li&gt;
+&lt;li&gt;Created and maintained operating system images for Windows XP, Windows
+Vista and Windows 7.   Created and maintained Active Directory Group
+Policies for workstations.&lt;/li&gt;
+&lt;li&gt;Managed Windows Updates for workstations via Windows Server Update
+Services.&lt;/li&gt;
+&lt;li&gt;Automated repetitive business processes and client operations with
+VBScript and PowerShell.&lt;/li&gt;
+&lt;li&gt;Participated in committees coordinating the implementation of Information
+Technology Infrastructure Library (ITIL) business process throughout IT.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;2008&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;Desk-Side Support Technician&lt;/strong&gt; Liberty University, Lynchburg, VA&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Provided desk side support for escalated IT tickets.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Operated as top-tier technical support troubleshooting hardware, software
+and network issues which ould not be solved by remote support
+technicians.&lt;/li&gt;
+&lt;li&gt;Deployed and re-imaged workstations.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;dt&gt;2005 - 2007&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;strong&gt;IT Technician&lt;/strong&gt; Comstock Public Schools, Kalamazoo, MI&lt;/p&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;p&gt;Remote and on-site support technician&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Created and maintained operating system images for Windows 98 and Windows
+XP.&lt;/li&gt;
+&lt;li&gt;Managed software deployment via Novell Zenworks.&lt;/li&gt;
+&lt;li&gt;Provided remote and on-site technical support.&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&#34;open-source-projects&#34;&gt;Open Source Projects&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/undocker-dns&#34;&gt;undocker-dns&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;A small daemon to keep Docker from changing the dns server in a container.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-vxlan-plugin&#34;&gt;docker-vxlan-plugin&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;A plugin for connecting docker containers to vxlan overlay networks.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-arp-ipam&#34;&gt;docker-arp-ipam&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;A docker IPAM plugin to assign IP addresses to containers based on which
+ addresses are already in use on the network.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-drouter&#34;&gt;docker-drouter&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Co-Authored a tool which monitors docker containers and manipulates their
+ routing tables to facilitate efficient routing between containers on a
+ cluster of hosts.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/saltstack/salt/commits?author=clinta&#34;&gt;SaltStack&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Wrote the
+ &lt;a href=&#34;https://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html&#34;&gt;x509&lt;/a&gt;
+ state and module which facilitates managing an internal x509 PKI with Salt.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/docker-zfs-plugin&#34;&gt;docker-zfs-plugin&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Wrote the go zfs library which this project is based on, and Setup the
+ continuous integration pipeline.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&#34;technologies-used&#34;&gt;Technologies Used&lt;/h2&gt;
+
+&lt;p&gt;Technologies I have experinece with include:&lt;/p&gt;
+
+&lt;p&gt;Linux, Ubuntu, FreeBSD, FreeNAS, ZFS, Windows Server, Go (GoLang), Python,
+PowerShell, Bash, Docker, Cisco, BGP, OSPF, Bird, Kamailio, Microsoft Exchange,
+Windows Server, Office 365&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

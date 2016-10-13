@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About-rsses on Devops Discoveries</title>
+    <link>https://clinta.github.io/about/index.xml</link>
+    <description>Recent content in About-rsses on Devops Discoveries</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>clint@clintarmstrong.net (Clint Armstrong)</managingEditor>
+    <webMaster>clint@clintarmstrong.net (Clint Armstrong)</webMaster>
+    <atom:link href="https://clinta.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>https://clinta.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>clint@clintarmstrong.net (Clint Armstrong)</author>
+      <guid>https://clinta.github.io/about/</guid>
+      <description>
+
+&lt;p&gt;Devops engineer posting about the technologies I use and things that interest me.&lt;/p&gt;
+
+&lt;h3 id=&#34;more-information&#34;&gt;More Information&lt;/h3&gt;
+
+&lt;p&gt;These days I&amp;rsquo;m managing Ubuntu, FreeBSD and Windows servers, leveraging &lt;a href=&#34;http://www.saltstack.com/&#34;&gt;SaltStack&lt;/a&gt; and PowerShell whenever possible to build stable and repeatable configurations.&lt;/p&gt;
+
+&lt;h3 id=&#34;contact-me&#34;&gt;Contact me&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;mailto:clint@clintarmstrong.net&#34;&gt;clint@clintarmstrong.net&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
