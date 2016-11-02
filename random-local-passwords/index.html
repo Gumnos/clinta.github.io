@@ -31,18 +31,6 @@ ga('send', 'pageview');
   <div class="header center">
     <ul class="navbar">
 	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
-	
 	</ul>
   </div>
 
@@ -63,22 +51,18 @@ ga('send', 'pageview');
 <p>First install pass using your operating system&rsquo;s package manager. It should pull in all GPG dependencies.</p>
 
 <p>If you don&rsquo;t have a GPG key that you wish to use with pass, you must first create one on your workstation. Depending on your workstation it may take a long time to generate, you can make this faster by installing the <code>haveged</code> daemon to collect entropy. Choose to generate a key of type <code>RSA and RSA</code> and be sure to choose a strong passphrase. This passphrase and the key file are what will protect all your passwords in the future.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ gpg --gen-key
-</pre></div>
+$ gpg --gen-key
 
 <p>Once you have a gpg key, initialize a password store.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ pass init me@mydomain.com
-</pre></div>
+$ pass init me@mydomain.com
 
 <p>You also need to initialize your password store as a git repo and add a git remote. The service account which runs your salt-master must also have read and write permissions to this git remote.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ pass git init
+$ pass git init
 $ pass git remote add origin git@gitserver:/passdb
 $ pass git push
-</pre></div>
 
 <p>Export your gpg public key and copy it to your salt master.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ gpg --armor --export me@mydomain.com &gt; gpg.pub
-</pre></div>
+$ gpg --armor --export me@mydomain.com > gpg.pub
 
 <p>In your salt master, install pass, then import your gpg public key and trust it. Run the commands under the user account that runs your salt-master service.</p>
 
@@ -91,41 +75,39 @@ gpg&gt; quit
 </code></pre>
 
 <p>On your salt master, install the <a href="https://github.com/clinta/salt-pwgen">pwgen</a> extension module. Install this in your <a href="https://docs.saltstack.com/en/latest/ref/configuration/master.html#extension-modules">extension modules</a> directory. These directions assume it is <code>/srv/modules</code>.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ sudo wget https://raw.githubusercontent.com/clinta/salt-pwgen/master/pwgen.py -O /srv/modules/pwgen.py
-</pre></div>
+$ sudo wget https://raw.githubusercontent.com/clinta/salt-pwgen/master/pwgen.py -O /srv/modules/pwgen.py
 
 <p>Clone your password store to the salt master, using your salt-master service account. In my case I&rsquo;m cloning it to /opt/passdb</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ <span style="color: #007020">cd</span> /opt
+$ cd /opt
 $ git clone git@gitserver:/passdb
-</pre></div>
 
 <p>Now you are ready to start generating passwords. Here&rsquo;s how it will work. A pillar will be defined with a jinja template which calls this extension module. When the salt master compiles the pillar it will run the extension module. The extension module checks for the existence of a meta file which holds the unix password hash as well as a sha256 of the .gpg file which contains the encrypted plaintext password. If the meta file does not exist, or the .gpg file doesn&rsquo;t exist, or the sha256 in the meta file doesn&rsquo;t match the .gpg file, it calls pass to generate a new password and writes the unix hash of this password and the sha256 of the new .gpg file to the meta file. It then returns the unix hash which is the value of the pillar. If the meta file does exist, and matches the .gpg file, the unix hash from the meta file is returned for the value of the pillar.</p>
 
 <p>Create your pillar template:</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># /srv/pillar/root-pw.sls</span>
-root-pw: <span style="color: #007020">{{</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;pwgen.get_pw&#39;</span><span style="color: #666666">](</span><span style="color: #bb60d5">pw_name</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;local-root/&#39;</span><span style="color: #666666">+</span><span style="color: #bb60d5">grains</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;host&#39;</span><span style="color: #666666">],</span> <span style="color: #bb60d5">pw_store</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;/opt/passdb&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">pw_meta_dir</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;/opt/pw_meta&#39;</span><span style="color: #666666">)</span> <span style="color: #007020">}}</span>
-</pre></div>
+
+# /srv/pillar/root-pw.sls
+root-pw: {{ salt['pwgen.get_pw'](pw_name='local-root/'+grains['host'], pw_store='/opt/passdb', pw_meta_dir='/opt/pw_meta') }}
+
 
 <p>And apply this pillar via the pillar top file:</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># /srv/pillar/top.sls</span>
+# /srv/pillar/top.sls
 
 base:
-  <span style="color: #4070a0">&#39;*&#39;</span>:
+  '*':
     - root-pw
-</pre></div>
 
 <p>At this point you should be able to highstate a minion, then on the minion run <code>salt-call pillar.get root-pw</code> and get back a unix hash of a unique password. You can get the plaintext of this password on your workstation:</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>$ pass git pull
+$ pass git pull
 $ pass local-root/minion
-</pre></div>
 
 <p>Once you know this is working, you can use this unix hash to set the root password on your minions with a simple state:</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># /srv/salt/root-pw.sls</span>
+
+# /srv/salt/root-pw.sls
 
 root:
   user.present:
-    - password: <span style="color: #007020">{{</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;pillar.get&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;root-pw&#39;</span><span style="color: #666666">)</span> <span style="color: #007020">}}</span>
-</pre></div>
+    - password: {{ salt['pillar.get']('root-pw') }}
+
 
 <p>Make sure this state is applied via your top file, highstate all your minions and you will now have all their unique passwords in your password store.</p>
 

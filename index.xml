@@ -37,6 +37,8 @@ Jekyll. Ever since github upgraded it I&amp;rsquo;ve not been happy with how it 
 
 &lt;h2 id=&#34;work-experience&#34;&gt;Work Experience&lt;/h2&gt;
 
+&lt;hr /&gt;
+
 &lt;dl&gt;
 &lt;dt&gt;01/2015 - Present&lt;/dt&gt;
 &lt;dd&gt;&lt;strong&gt;Network Administrator&lt;/strong&gt; Trillium Staffing, Kalamazoo, MI&lt;/dd&gt;
@@ -149,6 +151,8 @@ XP.&lt;/li&gt;
 
 &lt;h2 id=&#34;open-source-projects&#34;&gt;Open Source Projects&lt;/h2&gt;
 
+&lt;hr /&gt;
+
 &lt;dl&gt;
 &lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/undocker-dns&#34;&gt;undocker-dns&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
 &lt;dd&gt;A small daemon to keep Docker from changing the dns server in a container.&lt;/dd&gt;
@@ -171,6 +175,8 @@ XP.&lt;/li&gt;
 &lt;/dl&gt;
 
 &lt;h2 id=&#34;technologies-used&#34;&gt;Technologies Used&lt;/h2&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;Technologies I have experinece with include:&lt;/p&gt;
 
@@ -195,7 +201,8 @@ Windows Server, Office 365&lt;/p&gt;
 &lt;p&gt;I even have some features that I never had with gitfs, like automatic environments based on branches. Here&amp;rsquo;s how it works.&lt;/p&gt;
 
 &lt;p&gt;My salt master has the following state applied. This state ensures that the salt-master service is running. It gets the list of branches from the git remote and makes sure that that branch is cloned into a directory under &lt;code&gt;/srv/salt/&lt;/code&gt;. It also manages a file in &lt;code&gt;/etc/salt/master.d/roots.conf&lt;/code&gt; which defines each environment that has been cloned and restarts the salt-master process when the file changes. This uses one git repository for both states and pillars, so states are in the &lt;code&gt;repo/states&lt;/code&gt; directory and pillars are in the &lt;code&gt;repo/pillar&lt;/code&gt; directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/salt-master-git.sls&lt;/span&gt;
+
+# repo/states/salt-master-git.sls
 
 salt-master:
   service.running:
@@ -204,29 +211,29 @@ salt-master:
 /srv/salt:
   file.directory: []
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# get the list of remote branches&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git.ls_remote&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;remote&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git@gitlab:salt/salt.git&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;opts&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;--heads&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches.append&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch.replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;refs/heads/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+# get the list of remote branches
+{% set branches = [] %}
+{% for origin_branch in salt[&#39;git.ls_remote&#39;](remote=&#39;git@gitlab:salt/salt.git&#39;, opts=&#39;--heads&#39;, user=&#39;root&#39;) %}
+  {% set i = branches.append(origin_branch.replace(&#39;refs/heads/&#39;, &#39;&#39;)) %}
+{% endfor %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# delete any directories that are no longer remote branches&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.find&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;maxdepth&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.startswith&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.split&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[-&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+# delete any directories that are no longer remote branches
+{% for dir in salt[&#39;file.find&#39;](&#39;/srv/&#39;, type=&#39;d&#39;, maxdepth=1)
+if dir.startswith(&#39;/srv/salt/&#39;) and dir.split(&#39;/&#39;)[-1] not in branches %}
+{{ dir }}:
   file.absent:
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{% endfor %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# clone each branch&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+# clone each branch
+{% for branch in branches %}
+salt-repo-{{ branch }}:
   git.latest:
     - name: git@gitlab:salt/salt.git
-    - target: /srv/salt/&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-    - rev: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-    - branch: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - target: /srv/salt/{{ branch }}
+    - rev: {{ branch }}
+    - branch: {{ branch }}
     - user: root
     - force_checkout: True
     - force_clone: True
@@ -236,80 +243,85 @@ salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span st
       - file: /srv/salt
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{% endfor %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# manage the file_roots config to generate environments&lt;/span&gt;
+# manage the file_roots config to generate environments
 /etc/salt/master.d/roots.conf:
   file.managed:
     - template: jinja
-    - source: salt://&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;tpldir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/files/roots.conf
+    - source: salt://{{ tpldir }}/files/roots.conf
     - user: root
     - mode: 644
     - listen_in:
       - service: salt-master
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/files/roots.conf&lt;/span&gt;
 
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;[]&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.find&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;maxdepth&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; 
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.startswith&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; !&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/master&amp;#39;&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs.append&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+
+# repo/states/files/roots.conf
+
+{%- set branch_dirs = [] -%}
+{%- for dir in salt[&#39;file.find&#39;](&#39;/srv/&#39;, type=&#39;d&#39;, maxdepth=1) 
+if dir.startswith(&#39;/srv/salt/&#39;) and dir != &#39;/srv/salt/master&#39; -%}
+  {%- set i = branch_dirs.append(dir) -%}
+{%- endfor -%}
 
 file_roots:
   base:
     - /srv/salt/master/states
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; !&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;master&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
-    - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/states
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{%- for branch in branch_dirs if branch != &#39;master&#39; %}
+  {{ branch }}:
+    - {{ branch }}/states
+{%- endfor %}
 
 pillar_roots:
   base:
     - /srv/salt/master/pillar
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch_dirs&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; !&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;master&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
-    - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/pillar
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+{%- for branch in branch_dirs if branch != &#39;master&#39; %}
+  {{ branch }}:
+    - {{ branch }}/pillar
+{%- endfor %}
+
 
 &lt;p&gt;With just this and a schedule you already have an okay salt-git integration. But with a little more work you can take it to the next step and make it event driven on git push.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;rsquo;re using gitlab for your salt repository, you can create a post-recieve script by putting a file in &lt;code&gt;/var/opt/gitlab/git-data/repositories/salt/salt.git/custom_hooks/post-receive&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;#!/usr/bin/env bash                                                        &lt;/span&gt;
+
+#!/usr/bin/env bash                                                        
  
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;read&lt;/span&gt; branch; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;do&lt;/span&gt;                                                      
-        &lt;span style=&#34;color: #bb60d5&#34;&gt;branchname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;$(&lt;/span&gt;cut -d &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;/&amp;quot;&lt;/span&gt; -f &lt;span style=&#34;color: #40a070&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;)&lt;/span&gt;                      
-        sudo salt-call event.send salt/push &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;branchname&lt;/span&gt;&lt;span style=&#34;color: #70a0d0; font-style: italic&#34;&gt;}&lt;/span&gt;           
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;done&lt;/span&gt;                                                                       
-&lt;/pre&gt;&lt;/div&gt;
+while read branch; do                                                      
+        branchname=$(cut -d &#34;/&#34; -f 3 &lt;&lt;&lt; &#34;${branch}&#34;)                      
+        sudo salt-call event.send salt/push branch=${branchname}           
+done                                                                       
+
 
 &lt;p&gt;Now in your salt master config, add a reactor:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /etc/salt/master&lt;/span&gt;
+
+# /etc/salt/master
 
 reactor:
-  - &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;salt/push&amp;#39;&lt;/span&gt;:
+  - &#39;salt/push&#39;:
      - salt://reactor/salt-push.sls
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Add the reactor file in your git repo.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/reactor/salt-push.sls&lt;/span&gt;
+
+# repo/states/reactor/salt-push.sls
 
 salt-push:
   local.state.sls:
-    - tgt: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;salt-master&amp;#39;&lt;/span&gt;
+    - tgt: &#39;salt-master&#39;
     - expr_form: pcre
     - queue: True
     - kwarg:
         mods: salt.master.salt-git
         pillar:
           salt_git_branches:
-            - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;branch&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+            - {{ data[&#39;data&#39;][&#39;branch&#39;] }}
         queue: True
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;And add a bit more logic to the salt-master-git.sls to handle the individual branch being pushed. With this logic if the pillar &lt;code&gt;salt_git_branches&lt;/code&gt; is included in the state run, the state will only update that branch. If it is not included, the state will update all branches, and clean up old deleted branches. This saves some time which is important when it&amp;rsquo;s being called by a post-recieve hook.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# repo/states/salt-master-git.sls&lt;/span&gt;
+
+# repo/states/salt-master-git.sls
 
 salt-master:
   service.running:
@@ -318,32 +330,32 @@ salt-master:
 /srv/salt:
   file.directory: []
 
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;pillar.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;salt_git_branches&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,[])&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{% set branches = salt[&#39;pillar.get&#39;](&#39;salt_git_branches&#39;,[]) %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# if a piller was not passed in, then get the list of branches from remote&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git.ls_remote&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;remote&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;git@gitlab:salt/salt.git&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;opts&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;--heads&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches.append&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;origin_branch.replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;refs/heads/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+# if a piller was not passed in, then get the list of branches from remote
+{% if branches == [] %}
+  {% for origin_branch in salt[&#39;git.ls_remote&#39;](remote=&#39;git@gitlab:salt/salt.git&#39;, opts=&#39;--heads&#39;, user=&#39;root&#39;) %}
+    {% set i = branches.append(origin_branch.replace(&#39;refs/heads/&#39;, &#39;&#39;)) %}
+  {% endfor %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Delete directories of deleted branches since we&amp;#39;re looking at all remote branches&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.find&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;maxdepth&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.startswith&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/srv/salt/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir.split&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[-&lt;/span&gt;&lt;span style=&#34;color: #40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+# Delete directories of deleted branches since we&#39;re looking at all remote branches
+{% for dir in salt[&#39;file.find&#39;](&#39;/srv/&#39;, type=&#39;d&#39;, maxdepth=1)
+if dir.startswith(&#39;/srv/salt/&#39;) and dir.split(&#39;/&#39;)[-1] not in branches %}
+{{ dir }}:
   file.absent:
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{% endfor %}
 
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{% endif %}
 
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branches&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+{% for branch in branches %}
+salt-repo-{{ branch }}:
   git.latest:
     - name: git@gitlab:salt/salt.git
-    - target: /srv/salt/&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-    - rev: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-    - branch: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;branch&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - target: /srv/salt/{{ branch }}
+    - rev: {{ branch }}
+    - branch: {{ branch }}
     - user: root
     - force_checkout: True
     - force_clone: True
@@ -353,17 +365,17 @@ salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span st
       - file: /srv/salt
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+{% endfor %}
 
 /etc/salt/master.d/roots.conf:
   file.managed:
     - template: jinja
-    - source: salt://&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;tpldir&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;/files/roots.conf
+    - source: salt://{{ tpldir }}/files/roots.conf
     - user: root
     - mode: 644
     - listen_in:
       - service: salt-master
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Now enjoy the best of both worlds. Automatic integration between salt and git and the reliability and speed of a simple file_roots configuration.&lt;/p&gt;
 </description>
@@ -382,22 +394,18 @@ salt-repo-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span st
 &lt;p&gt;First install pass using your operating system&amp;rsquo;s package manager. It should pull in all GPG dependencies.&lt;/p&gt;
 
 &lt;p&gt;If you don&amp;rsquo;t have a GPG key that you wish to use with pass, you must first create one on your workstation. Depending on your workstation it may take a long time to generate, you can make this faster by installing the &lt;code&gt;haveged&lt;/code&gt; daemon to collect entropy. Choose to generate a key of type &lt;code&gt;RSA and RSA&lt;/code&gt; and be sure to choose a strong passphrase. This passphrase and the key file are what will protect all your passwords in the future.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ gpg --gen-key
-&lt;/pre&gt;&lt;/div&gt;
+$ gpg --gen-key
 
 &lt;p&gt;Once you have a gpg key, initialize a password store.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ pass init me@mydomain.com
-&lt;/pre&gt;&lt;/div&gt;
+$ pass init me@mydomain.com
 
 &lt;p&gt;You also need to initialize your password store as a git repo and add a git remote. The service account which runs your salt-master must also have read and write permissions to this git remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ pass git init
+$ pass git init
 $ pass git remote add origin git@gitserver:/passdb
 $ pass git push
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Export your gpg public key and copy it to your salt master.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ gpg --armor --export me@mydomain.com &amp;gt; gpg.pub
-&lt;/pre&gt;&lt;/div&gt;
+$ gpg --armor --export me@mydomain.com &gt; gpg.pub
 
 &lt;p&gt;In your salt master, install pass, then import your gpg public key and trust it. Run the commands under the user account that runs your salt-master service.&lt;/p&gt;
 
@@ -410,41 +418,39 @@ gpg&amp;gt; quit
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;On your salt master, install the &lt;a href=&#34;https://github.com/clinta/salt-pwgen&#34;&gt;pwgen&lt;/a&gt; extension module. Install this in your &lt;a href=&#34;https://docs.saltstack.com/en/latest/ref/configuration/master.html#extension-modules&#34;&gt;extension modules&lt;/a&gt; directory. These directions assume it is &lt;code&gt;/srv/modules&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ sudo wget https://raw.githubusercontent.com/clinta/salt-pwgen/master/pwgen.py -O /srv/modules/pwgen.py
-&lt;/pre&gt;&lt;/div&gt;
+$ sudo wget https://raw.githubusercontent.com/clinta/salt-pwgen/master/pwgen.py -O /srv/modules/pwgen.py
 
 &lt;p&gt;Clone your password store to the salt master, using your salt-master service account. In my case I&amp;rsquo;m cloning it to /opt/passdb&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /opt
+$ cd /opt
 $ git clone git@gitserver:/passdb
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now you are ready to start generating passwords. Here&amp;rsquo;s how it will work. A pillar will be defined with a jinja template which calls this extension module. When the salt master compiles the pillar it will run the extension module. The extension module checks for the existence of a meta file which holds the unix password hash as well as a sha256 of the .gpg file which contains the encrypted plaintext password. If the meta file does not exist, or the .gpg file doesn&amp;rsquo;t exist, or the sha256 in the meta file doesn&amp;rsquo;t match the .gpg file, it calls pass to generate a new password and writes the unix hash of this password and the sha256 of the new .gpg file to the meta file. It then returns the unix hash which is the value of the pillar. If the meta file does exist, and matches the .gpg file, the unix hash from the meta file is returned for the value of the pillar.&lt;/p&gt;
 
 &lt;p&gt;Create your pillar template:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/root-pw.sls&lt;/span&gt;
-root-pw: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;pwgen.get_pw&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;pw_name&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;local-root/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;grains&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;],&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pw_store&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/opt/passdb&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pw_meta_dir&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/opt/pw_meta&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+# /srv/pillar/root-pw.sls
+root-pw: {{ salt[&#39;pwgen.get_pw&#39;](pw_name=&#39;local-root/&#39;+grains[&#39;host&#39;], pw_store=&#39;/opt/passdb&#39;, pw_meta_dir=&#39;/opt/pw_meta&#39;) }}
+
 
 &lt;p&gt;And apply this pillar via the pillar top file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/top.sls&lt;/span&gt;
+# /srv/pillar/top.sls
 
 base:
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;:
+  &#39;*&#39;:
     - root-pw
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At this point you should be able to highstate a minion, then on the minion run &lt;code&gt;salt-call pillar.get root-pw&lt;/code&gt; and get back a unix hash of a unique password. You can get the plaintext of this password on your workstation:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ pass git pull
+$ pass git pull
 $ pass local-root/minion
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Once you know this is working, you can use this unix hash to set the root password on your minions with a simple state:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/salt/root-pw.sls&lt;/span&gt;
+
+# /srv/salt/root-pw.sls
 
 root:
   user.present:
-    - password: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;pillar.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;root-pw&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    - password: {{ salt[&#39;pillar.get&#39;](&#39;root-pw&#39;) }}
+
 
 &lt;p&gt;Make sure this state is applied via your top file, highstate all your minions and you will now have all their unique passwords in your password store.&lt;/p&gt;
 </description>
@@ -647,34 +653,29 @@ a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:FHoHEZk7wM6b/frTeX+fzQ/K0PtuAvfIzRqjol
 &lt;h2 id=&#34;full-jail&#34;&gt;Full Jail&lt;/h2&gt;
 
 &lt;p&gt;1. Make a directory for the jail, or a zfs dataset if you prefer.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/fulljail1
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;## or&lt;/span&gt;
-zfs create -o &lt;span style=&#34;color: #bb60d5&#34;&gt;mountpoint&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;/usr/local/jails zroot/jails
+mkdir -p /usr/local/jails/fulljail1
+## or
+zfs create -o mountpoint=/usr/local/jails zroot/jails
 zfs create zroot/jails/fulljail1
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2. Download the FreeBSD base files, and any other parts of FreeBSD you want. In this example I&amp;rsquo;ll include the 32 bit libraries as well.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
 tar -xvf /tmp/base.txz -C /usr/local/jails/fulljail1
 fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz
 tar -xvf /tmp/lib32.txz -C /usr/local/jails/fulljail1
 fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz
 tar -xvf /tmp/ports.txz -C /usr/local/jails/fulljail1
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;3. Update your FreeBSD base install.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install
-&lt;/pre&gt;&lt;/div&gt;
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install
 
 &lt;p&gt;4. Verify your download. We&amp;rsquo;re downloading these archives over FTP after all, we should confirm that this download is valid and not tampered with. The &lt;code&gt;freebsd-update IDS&lt;/code&gt; command verifies the installation using a PGP key which is in your base system, which was presumably installed with an ISO that you verified using the FreeBSD &lt;a href=&#34;https://www.freebsd.org/releases/10.2R/signatures.html&#34;&gt;signed checksums&lt;/a&gt;. Admittedly this step is a bit of paranoia, but I think it&amp;rsquo;s prudent.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS
-&lt;/pre&gt;&lt;/div&gt;
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS
 
 &lt;p&gt;5. Make sure you jail has the right timezone and dns servers and a hostname in rc.conf.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf
+cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf
 cp /etc/localtime /usr/local/jails/fulljail1/etc/localtime
-&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;hostname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt;fulljail1&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt; &amp;gt; /usr/local/jails/fulljail1/etc/rc.conf
-&lt;/pre&gt;&lt;/div&gt;
+echo hostname=\&#34;fulljail1\&#34; &gt; /usr/local/jails/fulljail1/etc/rc.conf
 
 &lt;p&gt;6. Edit jail.conf with the details about your jail.&lt;/p&gt;
 
@@ -697,16 +698,15 @@ fulljail1 {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;7. Start and login to your jail.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jail -c fulljail1
-&lt;/pre&gt;&lt;/div&gt;
+jail -c fulljail1
 
 &lt;p&gt;11 commands and a config file, but this is the most tedious way to make a jail. With a little bit of templating it can be even easier. So I&amp;rsquo;ll start by making a template. Making a template is basically the same as steps 1, 2 and 3 above, but with a different destination folder, I&amp;rsquo;ll condense them here.&lt;/p&gt;
 
 &lt;h2 id=&#34;creating-a-template&#34;&gt;Creating a template&lt;/h2&gt;
 
 &lt;p&gt;1. Create a template or a ZFS dataset. If you&amp;rsquo;d like to use the zfs clone method of deploying templates, you&amp;rsquo;ll need to create a zfs dataset instead of a folder.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/releases/10.2-RELEASE
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;## or &lt;/span&gt;
+mkdir -p /usr/local/jails/releases/10.2-RELEASE
+## or 
 zfs create -p zroot/jails/releases/10.2-RELEASE
 
 fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
@@ -717,31 +717,25 @@ fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.
 tar -xvf /tmp/ports.txz -C /usr/local/jails/releases/10.2-RELEASE
 cp /etc/resolv.conf /usr/local/jails/releases/10.2-RELEASE/etc/resolv.conf
 cp /etc/localtime /usr/local/jails/releases/10.2-RELEASE/etc/localtime
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2. Update your template with &lt;code&gt;freebsd-update&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install
-&lt;/pre&gt;&lt;/div&gt;
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install
 
 &lt;p&gt;3. Verify your install&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;env &lt;span style=&#34;color: #bb60d5&#34;&gt;UNAME_r&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS
-&lt;/pre&gt;&lt;/div&gt;
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS
 
 &lt;p&gt;And that&amp;rsquo;s it, now you have a fully up to date jail template. If you&amp;rsquo;ve made this template with zfs, you can easily deploy it using zfs snapshots.&lt;/p&gt;
 
 &lt;h2 id=&#34;deploying-a-template-with-zfs-snapshots&#34;&gt;Deploying a template with ZFS snapshots&lt;/h2&gt;
 
 &lt;p&gt;1. Create a snapshot. My last freebsd-update to my template brought it to patch level 17, so I&amp;rsquo;ll call my snapshot p10.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;zfs snapshot zroot/jails/releases/10.2-RELEASE@p10
-&lt;/pre&gt;&lt;/div&gt;
+zfs snapshot zroot/jails/releases/10.2-RELEASE@p10
 
 &lt;p&gt;2. Clone the snapshot to a new jail.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1
-&lt;/pre&gt;&lt;/div&gt;
+zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1
 
 &lt;p&gt;3. Configure the jail hostname.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;hostname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt;zjail1&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt; &amp;gt; /usr/local/jails/zjail1/etc/rc.conf
-&lt;/pre&gt;&lt;/div&gt;
+echo hostname=\&#34;zjail1\&#34; &gt; /usr/local/jails/zjail1/etc/rc.conf
 
 &lt;p&gt;4. Add the jail definition to jail.conf, make sure you have the global jail settings from jail.conf listed in the fulljail example.&lt;/p&gt;
 
@@ -755,8 +749,7 @@ zjail1 {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;5. Start the jail.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jail -c zjail1
-&lt;/pre&gt;&lt;/div&gt;
+jail -c zjail1
 
 &lt;p&gt;The downside with the zfs approach is that each jail is now a fully independent, and if you need to update your jails, you have to update them all individually. By sharing a template using nullfs mounts you can have only one copy of the base system that only needs to be updated once.&lt;/p&gt;
 
@@ -767,15 +760,14 @@ zjail1 {
 &lt;p&gt;This method is a little bit more tricky, because you have to take notes of which directories are local to your jails and which are universal to FreeBSD. Fortunately FreeBSD&amp;rsquo;s directory structure is stable and predictable and the benefits of this method are that it allows you to update your base image and your ports tree once for all jails.&lt;/p&gt;
 
 &lt;p&gt;1. This method requires a slightly different template than the ZFS method, so either copy the template created in the previous instructions, or use ZFS and clone it.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# or&lt;/span&gt;
+cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE
+# or
 zfs create zroot/jails/templates
 zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/templates/base-10.2-RELEASE
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2. In addition to your base template, you need to create a skeleton template which will hold all the directories that are local to your jail. We&amp;rsquo;re going to copy these directories from the template to the skeleton.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# or&lt;/span&gt;
+mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE
+# or
 zfs create -p zroot/jails/templates/skeleton-10.2-RELEASE
 
 mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/ports/distfiles /usr/local/jails/templates/skeleton-10.2-RELEASE/home /usr/local/jails/templates/skeleton-10.2-RELEASE/portsbuild
@@ -784,10 +776,9 @@ mv /usr/local/jails/templates/base-10.2-RELEASE/usr/local /usr/local/jails/templ
 mv /usr/local/jails/templates/base-10.2-RELEASE/tmp /usr/local/jails/templates/skeleton-10.2-RELEASE/tmp
 mv /usr/local/jails/templates/base-10.2-RELEASE/var /usr/local/jails/templates/skeleton-10.2-RELEASE/var
 mv /usr/local/jails/templates/base-10.2-RELEASE/root /usr/local/jails/templates/skeleton-10.2-RELEASE/root
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;3. The skeleton directory is what is going to be copied for each new jail. It is going to be mounted in &lt;code&gt;/skeleton/&lt;/code&gt; inside the jail. So in the read-only base template we need to create symlink from all the expected locations to the appropriate directories inside the &lt;code&gt;/skeleton/&lt;/code&gt; directory. It is very important to cd into your jail directory and create these symlinks with relative paths. That way they will always link to the correct location no matter where the base template ends up mounted.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /usr/local/jails/templates/base-10.2-RELEASE
+cd /usr/local/jails/templates/base-10.2-RELEASE
 mkdir skeleton
 ln -s skeleton/etc etc
 ln -s skeleton/home home
@@ -796,28 +787,23 @@ ln -s skeleton/usr/local usr/local
 ln -s skeleton/usr/ports/distfiles usr/ports/distfiles
 ln -s skeleton/tmp tmp
 ln -s skeleton/var var
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;4. Edit make.conf so that your ports workdirectory is located inside the skeleton directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;WRKDIRPREFIX?=  /skeleton/portbuild&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf
-&lt;/pre&gt;&lt;/div&gt;
+echo &#34;WRKDIRPREFIX?=  /skeleton/portbuild&#34; &gt;&gt; /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf
 
 &lt;p&gt;5. Copy your skeleton for your jail. You can use plain old copy or ZFS snapshots.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton
+zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton
 zfs create zroot/jails/thinjails
 zfs clone zroot/jails/templates/skeleton-10.2-RELEASE@skeleton zroot/jails/thinjails/thinjail1
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# or&lt;/span&gt;
+# or
 mkdir /usr/local/jails/thinjails
 cp -R /usr/local/jails/templates/skeleton-10.2-RELEASE /usr/local/jails/thinjails/thinjail1
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;6. Add the hostname to the jails rc.conf&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;hostname&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt;thinjail1&lt;span style=&#34;color: #4070a0; font-weight: bold&#34;&gt;\&amp;quot;&lt;/span&gt; &amp;gt; /usr/local/jails/thinjails/thinjail1/etc/rc.conf
-&lt;/pre&gt;&lt;/div&gt;
+echo hostname=\&#34;thinjail1\&#34; &gt; /usr/local/jails/thinjails/thinjail1/etc/rc.conf
 
 &lt;p&gt;7. Make the jail directory where the base template and skeleton folder will be mounted.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir -p /usr/local/jails/thinjail1
-&lt;/pre&gt;&lt;/div&gt;
+mkdir -p /usr/local/jails/thinjail1
 
 &lt;p&gt;8. Create the jail entry in &lt;code&gt;/etc/jail.conf&lt;/code&gt;, be sure and include the global jail configs listed in the fulljail example.&lt;/p&gt;
 
@@ -840,8 +826,7 @@ thinjail1 {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;10. Start the jail.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jail -c thinjail1
-&lt;/pre&gt;&lt;/div&gt;
+jail -c thinjail1
 
 &lt;p&gt;Now if you create dozens of thinjails, you can run &lt;code&gt;env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/templates/base-10.2-RELEASE fetch install&lt;/code&gt; once and all your jails will be updated. You can run &lt;code&gt;portsnap -p /usr/local/jails/templates/base-10.2-RELEASE/usr/ports auto&lt;/code&gt; and your ports tree for all jails is updated. And you have one easy place to backup to save all your jails customizations: &lt;code&gt;/usr/local/jails/thinjails/&lt;/code&gt;.&lt;/p&gt;
 
@@ -958,20 +943,19 @@ thinjail1 {
       <author>clint@clintarmstrong.net (Clint Armstrong)</author>
       <guid>https://clinta.github.io/change-upn-to-email-with-powershell/</guid>
       <description>&lt;p&gt;If you need a quick way to change the UPN of all your users in active directory to match their email address, PowerShell makes it easy.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;$users&lt;/span&gt; = &lt;span style=&#34;color: #007020&#34;&gt;get-aduser&lt;/span&gt; -SearchBase &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;OU=Users,DC=ad,DC=contoso,DC=com&amp;quot;&lt;/span&gt; -Filter * -Properties EmailAddress |
-where {&lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.EmailAddress &lt;span style=&#34;color: #666666&#34;&gt;-ne&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$null&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;-AND&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.EmailAddress.toLower() &lt;span style=&#34;color: #666666&#34;&gt;-ne&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.UserPrincipalName.toLower()}
+$users = get-aduser -SearchBase &#34;OU=Users,DC=ad,DC=contoso,DC=com&#34; -Filter * -Properties EmailAddress |
+where {$_.EmailAddress -ne $null -AND $_.EmailAddress.toLower() -ne $_.UserPrincipalName.toLower()}
 
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color: #bb60d5&#34;&gt;$user&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;$users&lt;/span&gt;) {
-    &lt;span style=&#34;color: #bb60d5&#34;&gt;$forest&lt;/span&gt; = &lt;span style=&#34;color: #007020&#34;&gt;Get-ADForest&lt;/span&gt;
-    &lt;span style=&#34;color: #bb60d5&#34;&gt;$email&lt;/span&gt; = &lt;span style=&#34;color: #bb60d5&#34;&gt;$user&lt;/span&gt;.EmailAddress
-    &lt;span style=&#34;color: #bb60d5&#34;&gt;$username&lt;/span&gt; = &lt;span style=&#34;color: #bb60d5&#34;&gt;$email&lt;/span&gt;.toLower().Split(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;)[0]
-    &lt;span style=&#34;color: #bb60d5&#34;&gt;$userdomain&lt;/span&gt; = &lt;span style=&#34;color: #bb60d5&#34;&gt;$email&lt;/span&gt;.toLower().Split(&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;)[1]
-    &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color: #666666&#34;&gt;-Not&lt;/span&gt; $(&lt;span style=&#34;color: #bb60d5&#34;&gt;$forest&lt;/span&gt;.UPNSuffixes).Contains(&lt;span style=&#34;color: #bb60d5&#34;&gt;$userdomain&lt;/span&gt;)) {
-        &lt;span style=&#34;color: #bb60d5&#34;&gt;$forest&lt;/span&gt; | &lt;span style=&#34;color: #007020&#34;&gt;Set-ADForest&lt;/span&gt; -UPNSuffixes @{Add=&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;$userdomain&amp;quot;&lt;/span&gt;}
+foreach ($user in $users) {
+    $forest = Get-ADForest
+    $email = $user.EmailAddress
+    $username = $email.toLower().Split(&#39;@&#39;)[0]
+    $userdomain = $email.toLower().Split(&#39;@&#39;)[1]
+    if (-Not $($forest.UPNSuffixes).Contains($userdomain)) {
+        $forest | Set-ADForest -UPNSuffixes @{Add=&#34;$userdomain&#34;}
     }
-    &lt;span style=&#34;color: #bb60d5&#34;&gt;$user&lt;/span&gt; | &lt;span style=&#34;color: #007020&#34;&gt;Set-ADUser&lt;/span&gt; -UserPrincipalName &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;$username@$userdomain&amp;quot;&lt;/span&gt;
+    $user | Set-ADUser -UserPrincipalName &#34;$username@$userdomain&#34;
 }
-&lt;/pre&gt;&lt;/div&gt;
 </description>
     </item>
     
@@ -986,14 +970,12 @@ where {&lt;span style=&#34;color: #bb60d5&#34;&gt;$_&lt;/span&gt;.EmailAddress &
 &lt;p&gt;This means that if you want to monitor your own mongodb instances with collectd you&amp;rsquo;ll need to build it yourself.&lt;/p&gt;
 
 &lt;p&gt;Start by cloning the stackdriver repository and changing to the stackdriver agent branch.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Stackdriver/collectd
-&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; collectd
+git clone https://github.com/Stackdriver/collectd
+cd collectd
 git checkout stackdriver-agent-5.5.0
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The build script should help you find any missing dependencies you need to do the build.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;./build.sh
-&lt;/pre&gt;&lt;/div&gt;
+./build.sh
 
 &lt;p&gt;Run the configure script, specifying only the mongodb module and instruct it to use the included libmongoc driver.&lt;/p&gt;
 
@@ -1013,23 +995,21 @@ git checkout stackdriver-agent-5.5.0
       <description>&lt;p&gt;There are many reasons an organization could use it&amp;rsquo;s own internal apt repository. But controlling access to this repository for clients that are outside your internal network can be difficult. But if your repository contains proprietary or confidential packages, securing access is not optional. Thankfully apt supports client authentication with SSL certificates. And with the new &lt;a href=&#34;http://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html&#34;&gt;x509&lt;/a&gt; module, managing these certificates can be made fully automatic.&lt;/p&gt;
 
 &lt;p&gt;The x509 module is not yet in the latest release of salt, so you&amp;rsquo;ll need to manually add it to your custom paths.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/salt/_modules
+cd /srv/salt/_modules
 wget https://raw.githubusercontent.com/saltstack/salt/develop/salt/modules/x509.py
-&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/salt/_states
+cd /srv/salt/_states
 wget https://raw.githubusercontent.com/saltstack/salt/develop/salt/states/x509.py
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now setup targeting in the top file.&lt;/p&gt;
 
 &lt;p&gt;/srv/salt/top.sls&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;base:
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;:
+base:
+  &#39;ca&#39;:
     - ca.server
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;aptrepo&amp;#39;&lt;/span&gt;:
+  &#39;aptrepo&#39;:
     - aptrepo.server
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;:
+  &#39;*&#39;:
     - aptrepo.client
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;First the CA needs to be configured. It will need to create a CA private key and certificate,
 then publish that certificate to the mine where other minions will get it. It will also need
@@ -1038,40 +1018,39 @@ to have a signing policy which allows the apt server and clients to get signed c
 &lt;p&gt;Start by creating the signing policy configuraiton.&lt;/p&gt;
 
 &lt;p&gt;/srv/salt/pki/files/signing_policies.conf&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;x509_signing_policies:
+x509_signing_policies:
   aptrepo_server:
-    - minions: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;aptrepo&amp;#39;&lt;/span&gt;
+    - minions: &#39;aptrepo&#39;
     - signing_private_key: /etc/pki/aptrepo.key
     - signing_cert: /etc/pki/aptrepo.crt
     - C: US
     - ST: Utah
-    - basicConstraints: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;CA:false&amp;quot;&lt;/span&gt;
-    - keyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;keyEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;dataEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;keyAgreement,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;digitalSignature&amp;quot;&lt;/span&gt;
-    - extendedKeyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;serverAuth,clientAuth&amp;quot;&lt;/span&gt;
+    - basicConstraints: &#34;critical CA:false&#34;
+    - keyUsage: &#34;keyEncipherment, dataEncipherment, keyAgreement, digitalSignature&#34;
+    - extendedKeyUsage: &#34;critical serverAuth,clientAuth&#34;
     - subjectKeyIdentifier: hash
     - authorityKeyIdentifier: keyid,issuer:always
     - days_valid: 90
     - copypath: /etc/pki/aptrepo_issued_certs/
   aptrepo_client:
-    - minions: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+    - minions: &#39;*&#39;
     - signing_private_key: /etc/pki/aptrepo.key
     - signing_cert: /etc/pki/aptrepo.crt
     - C: US
     - ST: Utah
-    - basicConstraints: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;CA:false&amp;quot;&lt;/span&gt;
-    - keyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;keyEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;dataEncipherment,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;keyAgreement,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;digitalSignature&amp;quot;&lt;/span&gt;
-    - extendedKeyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;clientAuth&amp;quot;&lt;/span&gt;
+    - basicConstraints: &#34;critical CA:false&#34;
+    - keyUsage: &#34;keyEncipherment, dataEncipherment, keyAgreement, digitalSignature&#34;
+    - extendedKeyUsage: &#34;critical clientAuth&#34;
     - subjectKeyIdentifier: hash
     - authorityKeyIdentifier: keyid,issuer:always
     - days_valid: 30
     - copypath: /etc/pki/aptrepo_issued_certs/
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Note that in the below state I&amp;rsquo;m triggering a restart of the salt-minion service when the
 configuration changes. You&amp;rsquo;ll need another state managing the status of salt-minion for this to work.&lt;/p&gt;
 
 &lt;p&gt;/srv/salt/pki/server.sls&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;/etc/pki:
+/etc/pki:
   file.directory:
     - user: root
     - group: root
@@ -1094,8 +1073,8 @@ configuration changes. You&amp;rsquo;ll need another state managing the status o
     - CN: Internal AptRepo
     - C: US
     - ST: Utah
-    - basicConstraints: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;CA:true&amp;quot;&lt;/span&gt;
-    - keyUsage: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;quot;critical&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;cRLSign,&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;keyCertSign&amp;quot;&lt;/span&gt;
+    - basicConstraints: &#34;critical CA:true&#34;
+    - keyUsage: &#34;critical cRLSign, keyCertSign&#34;
     - subjectKeyIdentifier: hash
     - authorityKeyIdentifier: keyid,issuer:always
     - days_valid: 1095
@@ -1116,7 +1095,6 @@ mine.send:
         glob_path: /etc/pki/*.crt
     - onchanges:
       - x509: /etc/pki/aptrepo.crt
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To create the repository I&amp;rsquo;ll be using reprepro. A good gude to configuring reprepro can be found
 &lt;a href=&#34;http://vincent.bernat.im/en/blog/2014-local-apt-repositories.htmlGNUPGHOME=gpg&#34;&gt;here&lt;/a&gt;
@@ -1156,10 +1134,9 @@ gnupghome +b/gpg
 
 &lt;p&gt;To sign packages added to the repository, gpg keys are required. Personally I opted to create
 the GPG keys locally, then copy them to the salt server where they will be managed.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/salt/aptrepo/server/files
+cd /srv/salt/aptrepo/server/files
 mkdir gpg
-&lt;span style=&#34;color: #bb60d5&#34;&gt;GNUPGHOME&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;gpg gpg --gen-key  &lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Make sure and use an empty password&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+GNUPGHOME=gpg gpg --gen-key  # Make sure and use an empty password
 
 &lt;p&gt;Another file that needs to be managed is the NGINX configuration file.
 Notice the &lt;code&gt;ssl_verify_client on;&lt;/code&gt;, this is what enables client authentication.&lt;/p&gt;
@@ -1189,28 +1166,28 @@ Salt will create a cron job that regularly runs this script. Now adding packages
 repository is a simple matter of SCPing them to the incoming directory on the aptrepo server.&lt;/p&gt;
 
 &lt;p&gt;/srv/salt/aptrepo/server/files/processincoming.sh&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;#!/bin/sh&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; /srv/packages
+#!/bin/sh
+cd /srv/packages
 
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; f in incoming/*.deb
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;do&lt;/span&gt;
-	reprepro -C main includedeb trusty-prod &lt;span style=&#34;color: #bb60d5&#34;&gt;$f&lt;/span&gt;
-	rm &lt;span style=&#34;color: #bb60d5&#34;&gt;$f&lt;/span&gt;
-&lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+for f in incoming/*.deb
+do
+	reprepro -C main includedeb trusty-prod $f
+	rm $f
+done
 
 &lt;p&gt;Now we&amp;rsquo;re ready to put it all together with a salt state.&lt;/p&gt;
 
 &lt;p&gt;/srv/salt/aptrepo/server/init.sls&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Install the GPG package needed to sign packages&lt;/span&gt;
+
+# Install the GPG package needed to sign packages
 gnupg:
   pkg.installed: []
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Install the dpkg-sig package also needd to sign packages&lt;/span&gt;
+# Install the dpkg-sig package also needd to sign packages
 dpkg-sig:
   pkg.installed: []
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Install nginx which will be used to serve the packages&lt;/span&gt;
+# Install nginx which will be used to serve the packages
 nginx:
   pkg.installed: []
   service.running:
@@ -1218,21 +1195,21 @@ nginx:
     - require:
       - pkg: nginx
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add a reprepro user&lt;/span&gt;
+# Add a reprepro user
 reprepro:
   user.present:
     - system: True
     - home: /srv/packages
   pkg.installed: []
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Configure nginx, restart the nginx service when this file changes&lt;/span&gt;
+# Configure nginx, restart the nginx service when this file changes
 /etc/nginx/sites-available/default:
   file.managed:
     - source: salt://aptrepo/server/files/nginx-default
     - listen_in:
       - service: nginx
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Manage the reprepro configuration files&lt;/span&gt;
+# Manage the reprepro configuration files
 /srv/packages/conf:
   file.recurse:
     - makedirs: True
@@ -1240,7 +1217,7 @@ reprepro:
     - user: reprepro
     - group: reprepro
     
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the GPG keys that will be used to sign packages&lt;/span&gt;
+# Copy the GPG keys that will be used to sign packages
 /srv/packages/gpg:
   file.recurse:
     - source: salt://aptrepo/server/files/gpg
@@ -1248,7 +1225,7 @@ reprepro:
     - user: reprepro
     - group: reprepro
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the public key into a location where it will be served by NGINX so that clients can get it.&lt;/span&gt;
+# Copy the public key into a location where it will be served by NGINX so that clients can get it.
 /srv/packages/www/public.gpg.key:
   file.managed:
     - source: salt://aptrepo/server/files/gpg/public.gpg.key
@@ -1256,14 +1233,14 @@ reprepro:
     - user: reprepro
     - group: reprepro
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a logging directory&lt;/span&gt;
+# Create a logging directory
 /srv/packages/logs:
   file.directory:
     - makedirs: True
     - user: reprepro
     - group: reprepro
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a directory to hold incoming packages&lt;/span&gt;
+# Create a directory to hold incoming packages
 /srv/packages/incoming/main:
   file.directory:
     - makedirs: True
@@ -1271,7 +1248,7 @@ reprepro:
     - user: reprepro
     - group: reprepro
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the script that will automatically process incoming packages, and a cron job to run it.&lt;/span&gt;
+# Copy the script that will automatically process incoming packages, and a cron job to run it.
 /srv/packages/processincoming.sh:
   file.managed:
     - source: salt://aptrepo/server/files/processincoming.sh
@@ -1280,41 +1257,41 @@ reprepro:
     - mode: 755
   cron.present:
     - user: reprepro
-    - minute: &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+    - minute: &#39;*&#39;
     - require:
       - pkg: reprepro
       - file: /srv/packages/processincoming.sh
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a certs directory for NGINX&lt;/span&gt;
+# Create a certs directory for NGINX
 /etc/nginx/certs:
   file.directory:
     - user: root
     - group: root
     - mode: 700
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Copy the CA cert to the nginx cert directory&lt;/span&gt;
+# Copy the CA cert to the nginx cert directory
 /etc/nginx/certs/aptrepo_ca.crt:
   x509.pem_managed:
-    - text: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;mine.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;x509.get_pem_entries&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/pki/aptrepo.crt&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]|&lt;/span&gt;&lt;span style=&#34;color: #06287e&#34;&gt;replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - text: {{ salt[&#39;mine.get&#39;](&#39;ca&#39;, &#39;x509.get_pem_entries&#39;)[&#39;ca&#39;][&#39;/etc/pki/aptrepo.crt&#39;]|replace(&#39;\n&#39;, &#39;&#39;) }}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a private key for the server&lt;/span&gt;
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# The condition below ensures that a key is always created if one doesn&amp;#39;t exist, but if one does&lt;/span&gt;
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# exist, the state will be a prereq and a new key will only be created when the certificate needs&lt;/span&gt;
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# to be renewed.&lt;/span&gt;
+# Create a private key for the server
+# The condition below ensures that a key is always created if one doesn&#39;t exist, but if one does
+# exist, the state will be a prereq and a new key will only be created when the certificate needs
+# to be renewed.
 aptrepo_server-key:
   x509.private_key_managed:
     - name: /etc/nginx/certs/server.key
     - bits: 4096
     - backup: True
     - new: True
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.file_exists&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/nginx/certs/server.key&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    {% if salt[&#39;file.file_exists&#39;](&#39;/etc/nginx/certs/server.key&#39;) -%}
     - prereq:
       - x509: aptrepo_server-cert
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    {%- endif %}
     - listen_in:
       - service: nginx
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a certificate for the server, signed by the CA.&lt;/span&gt;
+# Create a certificate for the server, signed by the CA.
 aptrepo_server-cert:
   x509.certificate_managed:
     - name: /etc/nginx/certs/server.crt
@@ -1326,7 +1303,7 @@ aptrepo_server-cert:
     - backup: True
     - listen_in:
       - service: nginx
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Now to configure clients to be able to use the new repository. First apt needs to know
 that our repository requires a client certificate.&lt;/p&gt;
@@ -1347,46 +1324,47 @@ that our repository requires a client certificate.&lt;/p&gt;
 need to use it.&lt;/p&gt;
 
 &lt;p&gt;/srv/salt/aptrepo/client/init.sls&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add our new repository&lt;/span&gt;
+
+# Add our new repository
 internal-main-prod:
   pkgrepo.managed:
     - humanname: Internal Repo
     - name: deb https://aptrepo.example.com trusty-prod main
     - key_url: salt://aptrepo/server/files/gpg/public.gpg.key
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add the CA certificate&lt;/span&gt;
+# Add the CA certificate
 /etc/ssl/aptrepo_ca.crt:
   x509.pem_managed:
-    - text: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;mine.get&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;x509.get_pem_entries&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ca&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;][&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/pki/aptrepo.crt&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]|&lt;/span&gt;&lt;span style=&#34;color: #06287e&#34;&gt;replace&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - text: {{ salt[&#39;mine.get&#39;](&#39;ca&#39;, &#39;x509.get_pem_entries&#39;)[&#39;ca&#39;][&#39;/etc/pki/aptrepo.crt&#39;]|replace(&#39;\n&#39;, &#39;&#39;) }}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Generate a unique private key&lt;/span&gt;
+# Generate a unique private key
 aptrepo_client-key:
   x509.private_key_managed:
     - name: /etc/ssl/aptrepo_client.key
     - bits: 4096
     - backup: True
     - new: True
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;salt&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;file.file_exists&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;/etc/ssl/aptrepo_client.key&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;)&lt;/span&gt; -&lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    {% if salt[&#39;file.file_exists&#39;](&#39;/etc/ssl/aptrepo_client.key&#39;) -%}
     - prereq:
       - x509: aptrepo_client-cert
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt;- &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    {%- endif %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Create a certificate signed by CA&lt;/span&gt;
+# Create a certificate signed by CA
 aptrepo_client-cert:
   x509.certificate_managed:
     - name: /etc/ssl/aptrepo_client.crt
     - ca_server: ca
     - signing_policy: aptrepo_client
     - public_key: /etc/ssl/aptrepo_client.key
-    - CN: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;grains&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;fqdn&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - CN: {{ grains[&#39;fqdn&#39;] }}
     - days_remaining: 15
     - backup: True
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add the file configuring apt to use the certificates with this repository&lt;/span&gt;
+# Add the file configuring apt to use the certificates with this repository
 /etc/apt/apt.conf.d/45aptrepo-ssl:
   file.managed:
     - source: salt://aptrepo/client/files/45aptrepo-ssl
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;That it, now you have a fully managed internal repository on aptrepo. You can create expose this repository to the internet and only your clients trusted by salt and issued a client certificate will be able to use it.&lt;/p&gt;
 </description>
@@ -1517,21 +1495,21 @@ aptrepo_client-cert:
 &lt;p&gt;One of the great things about a configuration management solution like Salt is the ability to centrally manage local users. Sure LDAP and Kerberos are great, but sometimes it&amp;rsquo;s better to keep things simple, that&amp;rsquo;s what I&amp;rsquo;m doing with Salt. Leveraging Pillars I can define certain users to be added to servers of a given role. Here&amp;rsquo;s how I do it.&lt;/p&gt;
 
 &lt;p&gt;Start by defining your users, separating and targeting by role.:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/top.sls&lt;/span&gt;
+# /srv/pillar/top.sls
 base:
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;:
+  &#39;*&#39;:
     - users.admins
     - users.revokedusers
 
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;web*&amp;#39;&lt;/span&gt;:
+  &#39;web*&#39;:
     - users.webadmins
 
-  &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;db*&amp;#39;&lt;/span&gt;:
+  &#39;db*&#39;:
     - users.dbadmins
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And define your users:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/admins.sls&lt;/span&gt;
+
+# /srv/pillar/users/admins.sls
 users:
   tywin:
     fullname: Tywin Lannister
@@ -1539,109 +1517,113 @@ users:
     ssh-keys:
       - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNWRiUmFXjxrp4VGfqWISvsEdxPJi2ES3gi6U/ZoVR3UpMUNGYm/VUTNjiXPX6XU5KjaSdGgeqDQdcwfAxl7q4A= tywin@CastRockWks1
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCllUe3Q14M1AwMyaGLaW0b3IyDyghljYzKlQE/osh0hjUCxqcjFW26DekBSF/RErYeJwlRPrGxWZAYLYW9ZMLolYJGAon1jBgNUAaSbj45m+sf8gFDWqpL6E0Vxzr4/o2A7NpqBsdwy95Xov0MGQq7wyJ7bEQ4b/TFo7Peb6oWoHGdDMbXym/T0UFiEH30w6XBIN34tRsV9DGmG3BpshI7ho5pNo1dO8xDD0Acr6blpOQKap02ihJKYBAdFDGfK4P3PUrhArEJvD8QU7Q7Fwl1Yej6Y54IMndTVf8i5CZNmUKh87Xawo4NRMaVPePoMInEYTiEkOYrILGkWRCT2GWb tywin@TLLap1
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/revokedusers.sls&lt;/span&gt;
+
+
+# /srv/pillar/users/revokedusers.sls
 revokedusers:
   robb:
     fullname: Robb Stark
     uid: 2001
     ssh-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFmuEiljWGa1W3/mgymLdEwCbkBcIaXZfik9uNQCzajW Robb@RSLap1
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/webadmins.sls&lt;/span&gt;
+
+
+# /srv/pillar/users/webadmins.sls
 users:
   tyrion:
     fullname: Tyrion Lannister
     uid: 1101
     ssh-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIED4TtDwUcNZdhQwIxK4LOtn3Q/yQxlcvQKrZIBaOllQ tyrion@TSLap2
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/pillar/users/dbadmins.sls&lt;/span&gt;
+
+
+# /srv/pillar/users/dbadmins.sls
 users:
   cersei:
     fullname: Cersei Lannister
     uid: 1102
     ssh-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINZ9GpN4T3beWlRzfO27tYH7t13QhMRoKbmDR3nwwAWa cersei@CLLap1
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;It should be fairly self-explanatory how this works. Tywin is added to every server. Tyrion is only added to webservers and Cersei is only added to database servers. Robb has been fired and his access to all servers has been revoked.&lt;/p&gt;
 
 &lt;p&gt;Now the logic for adding these users.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# /srv/salt/users/init.sls&lt;/span&gt;
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Revoke any users with a role of revoked&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pillar.get&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;revokedusers&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;{})&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;.iteritems&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+# /srv/salt/users/init.sls
+
+# Revoke any users with a role of revoked
+{% for user, args in pillar.get(&#39;revokedusers&#39;, {}).iteritems() %}
+{{user}}:
   user.absent: []
   group.absent: []
 
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_root_key:
+{% if args[&#39;ssh-keys&#39;] %}
+{{user}}_root_key:
   ssh_auth.absent:
     - user: root
     - names:
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      {% for key in args[&#39;ssh-keys&#39;] %}
+      - {{ key }}
+      {% endfor %}
 
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_key:
+{{user}}_key:
   ssh_auth.absent:
-    - user: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - user: {{user}}
     - names:
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      {% for key in args[&#39;ssh-keys&#39;] %}
+      - {{ key }}
+      {% endfor %}
+{% endif %}
+{% endfor %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Add users&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;pillar.get&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;users&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;{})&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;.iteritems&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;:
+# Add users
+{% for user, args in pillar.get(&#39;users&#39;, {}).iteritems() %}
+{{user}}:
   group.present:
-    - gid: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;uid&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - gid: {{ args[&#39;uid&#39;] }}
   user.present:
-    - fullname: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;fullname&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-    - uid: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;uid&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-    - gid: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;uid&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - fullname: {{ args[&#39;fullname&#39;] }}
+    - uid: {{ args[&#39;uid&#39;] }}
+    - gid: {{ args[&#39;uid&#39;] }}
     - shell: /bin/bash
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;grains&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;os&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;Ubuntu&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    {% if grains[&#39;os&#39;] == &#39;Ubuntu&#39; %}
     - groups:
       - sudo
       - adm
       - dip
       - cdrom
       - plugdev
-    &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+    {% endif %}
 
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_root_key:
+{% if args[&#39;ssh-keys&#39;] %}
+{{user}}_root_key:
   ssh_auth.present:
     - user: root
     - names:
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      {% for key in args[&#39;ssh-keys&#39;] %}
+      - {{ key }}
+      {% endfor %}
 
-&lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;_key:
+{{user}}_key:
   ssh_auth.present:
-    - user: &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color: #bb60d5&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
+    - user: {{user}}
     - names:
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #4070a0&#34;&gt;&amp;#39;ssh-keys&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-      - &lt;span style=&#34;color: #007020&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color: #bb60d5&#34;&gt;key&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;}}&lt;/span&gt;
-      &lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endif&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;{%&lt;/span&gt; &lt;span style=&#34;color: #007020; font-weight: bold&#34;&gt;endfor&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;%}&lt;/span&gt;
+      {% for key in args[&#39;ssh-keys&#39;] %}
+      - {{ key }}
+      {% endfor %}
+{% endif %}
+{% endfor %}
 
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# Allow sudoers to sudo without passwords.&lt;/span&gt;
-&lt;span style=&#34;color: #60a0b0; font-style: italic&#34;&gt;# This is to avoid having to manage passwords in addition to keys&lt;/span&gt;
+# Allow sudoers to sudo without passwords.
+# This is to avoid having to manage passwords in addition to keys
 /etc/sudoers.d/sudonopasswd:
   file.managed:
     - source: salt://users/files/sudoers.d/sudonopasswd
     - user: root
     - group: root
     - mode: 440
-&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;The first section removes any revoked users, and removed revoked users ssh keys from the root account, as well as their own.&lt;/p&gt;
 
@@ -1668,31 +1650,27 @@ users:
 &lt;p&gt;Another complication that&amp;rsquo;s not addressed in most existing guides is getting this to work with both BIOS and EFI based computers. Ignoring EFI and setting everything to boot in legacy mode isn&amp;rsquo;t a long term solution, and not one I&amp;rsquo;m willing to accept.&lt;/p&gt;
 
 &lt;p&gt;The first thing we need is a tftp server.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;apt-get install tftpd-hpa
-&lt;/pre&gt;&lt;/div&gt;
+apt-get install tftpd-hpa
 
 &lt;p&gt;Now we need syslinux. Syslinux contains a set of kernels that can be downloaded via tftp and booted by the client. It&amp;rsquo;s really just a set of files, no services that will be run, so I&amp;rsquo;ll be skipping the normal ubuntu syslinux packages and getting the latest and greatest from the source.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget https://www.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.gz
+wget https://www.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.gz
 tar -xvf syslinux-6.03.tar.gz
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now create some directories and copy the necessary syslinux files to the tftp root directory. Since we&amp;rsquo;re wanting to boot legacy bios clients and x64 based EFI clients. Technically 32 bit EFI clients might exist, but I don&amp;rsquo;t have any, so I&amp;rsquo;m not bothering to configure those.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/bios
+mkdir /var/lib/tftpboot/bios
 cp syslinux-6.03/bios/core/pxelinux.0 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/elflink/ldlinux/ldlinux.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/lib/libcom32.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/libutil/libutil.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/menu/vesamenu.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/modules/pxechn.c32 /var/lib/tftpboot/bios/
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/efi64
+mkdir /var/lib/tftpboot/efi64
 cp syslinux-6.03/efi64/efi/syslinux.efi /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/elflink/ldlinux/ldlinux.e64 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/lib/libcom32.c32 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/libutil/libutil.c32 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/menu/vesamenu.c32 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/modules/pxechn.c32 /var/lib/tftpboot/efi64/
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now that our boot kernels are in place, configure DHCP to pass the kernel to the clients. This can be tricky, and the method will depend on your DHCP server. When a client sends a DHCP request, it includes information about itself. Option 93 includes the architecture of the client. 0 indicates a bios client, 9 and 7 indicate a 64 bit EFI client. 6 identifies an ia64 client, but I don&amp;rsquo;t have any of those either. Using the DHCP templates provided on the &lt;a href=&#34;http://www.syslinux.org/wiki/index.php/PXELINUX#UEFI&#34;&gt;syslinux wiki&lt;/a&gt;, I&amp;rsquo;ve customized my DHCP server.&lt;/p&gt;
 
@@ -1719,8 +1697,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;With this in place, our clients can now pxe boot, but they&amp;rsquo;ll just get an error saying that the configuraiton file can&amp;rsquo;t be found. They need a configuration to tell them what to do. pxelinux looks for a configuration file in the pxelinux.cfg directory. You can create configuration files for individual machines by creating files with a fliename that matches the MAC address of the booting client. Any client that doesn&amp;rsquo;t have a matching config will use the default file. In this example, we&amp;rsquo;re just going to make the default file.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/bios/pxelinux.cfg
-&lt;/pre&gt;&lt;/div&gt;
+mkdir /var/lib/tftpboot/bios/pxelinux.cfg
 
 &lt;p&gt;Edit the file &lt;code&gt;/var/lib/tftpboot/bios/pxelinux.cfg/default&lt;/code&gt;.&lt;/p&gt;
 
@@ -1739,21 +1716,19 @@ LABEL BootLocal
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;I haven&amp;rsquo;t found a nice way to make tftpd-hpa follow symlinks, so this directory must be copied both to the bios and the efi directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cp -r /var/lib/tftpboot/bios/pxelinux.cfg /var/lib/tftpboot/efi64
-&lt;/pre&gt;&lt;/div&gt;
+cp -r /var/lib/tftpboot/bios/pxelinux.cfg /var/lib/tftpboot/efi64
 
 &lt;p&gt;Now try and PXE boot. You will get a sparse menu with only one option. We&amp;rsquo;ll be adding more later. Right now the only option in the menu is to continue booting to the local disk. If you wish to take a break to customize the look of this menu, you can do so by customizing options like &lt;code&gt;MENU BACKGROUND&lt;/code&gt; and &lt;code&gt;MENU COLOR&lt;/code&gt;. Read more about these options on the &lt;a href=&#34;http://www.syslinux.org/wiki/index.php/Menu#MENU_COLOR&#34;&gt;syslinux wiki&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Now it&amp;rsquo;s time to add the Ubuntu mini CD. I like to stick with LTS releases of Ubuntu, which means that the normal server ISO will have packages that are 2 years old by the time it&amp;rsquo;s replaced. This makes them almost useless as the first apt-get upgrade will download nearly as much as the original ISO had on it in the first place. The mini iso contains only what&amp;rsquo;s necessary to boot, then pulls all the packages from the internet. This would make the installation pretty slow, but we&amp;rsquo;re going to supercharge it with an Apt Cache later on in this guide.&lt;/p&gt;
 
 &lt;p&gt;Grab the mini ISO and extract the files into your tftpboot directory. I choose to maintain a pretty strict hierarchy so that I can add more distributions later.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget -O ubuntu-14.04-x64-mini.iso http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
+wget -O ubuntu-14.04-x64-mini.iso http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
 mkdir /mnt/iso
 mount ubuntu-14.04-x64-mini.iso /mnt/iso
 mkdir -p /var/lib/tftpboot/images/ubuntu/14.04/
 cp -r /mnt/iso /var/lib/tftpboot/images/ubuntu/14.04/amd64
 umount /mnt/iso
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now we can add an option to our PXE Configuraiton to boot to this image.&lt;/p&gt;
 
@@ -1780,9 +1755,8 @@ LABEL Ubuntu 14.04 (64-bit)
 &lt;p&gt;At this point you can PXE boot and run an interactive installation using the mini installer. The system will be installed fully up to date, with all packages pulled direct from the internet. All the installer questions will be asked normally just like if you had booted from the CD.&lt;/p&gt;
 
 &lt;p&gt;Next step is to begin automating the installation. In Debian and Ubuntu, automation is done via preseed files. This &lt;a href=&#34;https://help.ubuntu.com/lts/installation-guide/example-preseed.txt&#34;&gt;example&lt;/a&gt; is fairly well documented in the comments and will serve as a good starting point. Start by putting this file in your tftp directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir /var/lib/tftpboot/preseeds
+mkdir /var/lib/tftpboot/preseeds
 wget -O /var/lib/tftpboot/preseeds/ubuntu.preseed https://help.ubuntu.com/lts/installation-guide/example-preseed.txt
-&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Edit this preseed file to your liking, using the in-line comments as a guide. I modified mine to do things like use normal partitioning rather than lvm, I commented out the hostname parameter to make the installer prompt for a hostname, and I set the tasksel property to none, then put openssh-server and salt-minion as additional packages to install.&lt;/p&gt;
 
@@ -1813,8 +1787,7 @@ LABEL Ubuntu 14.04 (64-bit)
 &lt;p&gt;At this point you now have either a fully or semi-automated pxe installer for Ubuntu. However, because we&amp;rsquo;re using the mini cd, it&amp;rsquo;s probably a fair bit slower that you&amp;rsquo;d like, pulling packages from the internet for every install. Now it&amp;rsquo;s time to setup your apt proxy to speed this up.&lt;/p&gt;
 
 &lt;p&gt;In this demo I&amp;rsquo;m going to install it on the same server that is doing DHCP, but this can be on any server you want. Start by installing apt-cacher-ng.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f0f0f0&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;apt-get install apt-cacher-ng
-&lt;/pre&gt;&lt;/div&gt;
+apt-get install apt-cacher-ng
 
 &lt;p&gt;After install apt-cacher-ng will be running automatically on port 3142. You can visit http://&lt;apt-cacher-ip&gt;:3142 for instructions on configuring apt, as well as a link to view the cache statistics. To use this for during the install process, you need to add a line to your preseed configuration.&lt;/p&gt;
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resume-rsses on Devops Discoveries</title>
+    <title>Resumes on Devops Discoveries</title>
     <link>https://clinta.github.io/resume/index.xml</link>
-    <description>Recent content in Resume-rsses on Devops Discoveries</description>
+    <description>Recent content in Resumes on Devops Discoveries</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>clint@clintarmstrong.net (Clint Armstrong)</managingEditor>
@@ -22,6 +22,8 @@
 &lt;h1 id=&#34;clint-armstrong&#34;&gt;Clint Armstrong&lt;/h1&gt;
 
 &lt;h2 id=&#34;work-experience&#34;&gt;Work Experience&lt;/h2&gt;
+
+&lt;hr /&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;01/2015 - Present&lt;/dt&gt;
@@ -135,6 +137,8 @@ XP.&lt;/li&gt;
 
 &lt;h2 id=&#34;open-source-projects&#34;&gt;Open Source Projects&lt;/h2&gt;
 
+&lt;hr /&gt;
+
 &lt;dl&gt;
 &lt;dt&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/TrilliumIT/undocker-dns&#34;&gt;undocker-dns&lt;/a&gt;&lt;/strong&gt;&lt;/dt&gt;
 &lt;dd&gt;A small daemon to keep Docker from changing the dns server in a container.&lt;/dd&gt;
@@ -157,6 +161,8 @@ XP.&lt;/li&gt;
 &lt;/dl&gt;
 
 &lt;h2 id=&#34;technologies-used&#34;&gt;Technologies Used&lt;/h2&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;Technologies I have experinece with include:&lt;/p&gt;
 

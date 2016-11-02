@@ -31,18 +31,6 @@ ga('send', 'pageview');
   <div class="header center">
     <ul class="navbar">
 	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
-	
 	</ul>
   </div>
 
@@ -59,23 +47,21 @@ ga('send', 'pageview');
   <p>There are many reasons an organization could use it&rsquo;s own internal apt repository. But controlling access to this repository for clients that are outside your internal network can be difficult. But if your repository contains proprietary or confidential packages, securing access is not optional. Thankfully apt supports client authentication with SSL certificates. And with the new <a href="http://docs.saltstack.com/en/latest/ref/states/all/salt.states.x509.html">x509</a> module, managing these certificates can be made fully automatic.</p>
 
 <p>The x509 module is not yet in the latest release of salt, so you&rsquo;ll need to manually add it to your custom paths.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020">cd</span> /srv/salt/_modules
+cd /srv/salt/_modules
 wget https://raw.githubusercontent.com/saltstack/salt/develop/salt/modules/x509.py
-<span style="color: #007020">cd</span> /srv/salt/_states
+cd /srv/salt/_states
 wget https://raw.githubusercontent.com/saltstack/salt/develop/salt/states/x509.py
-</pre></div>
 
 <p>Now setup targeting in the top file.</p>
 
 <p>/srv/salt/top.sls</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>base:
-  <span style="color: #4070a0">&#39;ca&#39;</span>:
+base:
+  'ca':
     - ca.server
-  <span style="color: #4070a0">&#39;aptrepo&#39;</span>:
+  'aptrepo':
     - aptrepo.server
-  <span style="color: #4070a0">&#39;*&#39;</span>:
+  '*':
     - aptrepo.client
-</pre></div>
 
 <p>First the CA needs to be configured. It will need to create a CA private key and certificate,
 then publish that certificate to the mine where other minions will get it. It will also need
@@ -84,40 +70,39 @@ to have a signing policy which allows the apt server and clients to get signed c
 <p>Start by creating the signing policy configuraiton.</p>
 
 <p>/srv/salt/pki/files/signing_policies.conf</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>x509_signing_policies:
+x509_signing_policies:
   aptrepo_server:
-    - minions: <span style="color: #4070a0">&#39;aptrepo&#39;</span>
+    - minions: 'aptrepo'
     - signing_private_key: /etc/pki/aptrepo.key
     - signing_cert: /etc/pki/aptrepo.crt
     - C: US
     - ST: Utah
-    - basicConstraints: <span style="color: #4070a0">&quot;critical</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">CA:false&quot;</span>
-    - keyUsage: <span style="color: #4070a0">&quot;keyEncipherment,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">dataEncipherment,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">keyAgreement,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">digitalSignature&quot;</span>
-    - extendedKeyUsage: <span style="color: #4070a0">&quot;critical</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">serverAuth,clientAuth&quot;</span>
+    - basicConstraints: "critical CA:false"
+    - keyUsage: "keyEncipherment, dataEncipherment, keyAgreement, digitalSignature"
+    - extendedKeyUsage: "critical serverAuth,clientAuth"
     - subjectKeyIdentifier: hash
     - authorityKeyIdentifier: keyid,issuer:always
     - days_valid: 90
     - copypath: /etc/pki/aptrepo_issued_certs/
   aptrepo_client:
-    - minions: <span style="color: #4070a0">&#39;*&#39;</span>
+    - minions: '*'
     - signing_private_key: /etc/pki/aptrepo.key
     - signing_cert: /etc/pki/aptrepo.crt
     - C: US
     - ST: Utah
-    - basicConstraints: <span style="color: #4070a0">&quot;critical</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">CA:false&quot;</span>
-    - keyUsage: <span style="color: #4070a0">&quot;keyEncipherment,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">dataEncipherment,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">keyAgreement,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">digitalSignature&quot;</span>
-    - extendedKeyUsage: <span style="color: #4070a0">&quot;critical</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">clientAuth&quot;</span>
+    - basicConstraints: "critical CA:false"
+    - keyUsage: "keyEncipherment, dataEncipherment, keyAgreement, digitalSignature"
+    - extendedKeyUsage: "critical clientAuth"
     - subjectKeyIdentifier: hash
     - authorityKeyIdentifier: keyid,issuer:always
     - days_valid: 30
     - copypath: /etc/pki/aptrepo_issued_certs/
-</pre></div>
 
 <p>Note that in the below state I&rsquo;m triggering a restart of the salt-minion service when the
 configuration changes. You&rsquo;ll need another state managing the status of salt-minion for this to work.</p>
 
 <p>/srv/salt/pki/server.sls</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>/etc/pki:
+/etc/pki:
   file.directory:
     - user: root
     - group: root
@@ -140,8 +125,8 @@ configuration changes. You&rsquo;ll need another state managing the status of sa
     - CN: Internal AptRepo
     - C: US
     - ST: Utah
-    - basicConstraints: <span style="color: #4070a0">&quot;critical</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">CA:true&quot;</span>
-    - keyUsage: <span style="color: #4070a0">&quot;critical</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">cRLSign,</span><span style="color: #bb60d5"> </span><span style="color: #4070a0">keyCertSign&quot;</span>
+    - basicConstraints: "critical CA:true"
+    - keyUsage: "critical cRLSign, keyCertSign"
     - subjectKeyIdentifier: hash
     - authorityKeyIdentifier: keyid,issuer:always
     - days_valid: 1095
@@ -162,7 +147,6 @@ mine.send:
         glob_path: /etc/pki/*.crt
     - onchanges:
       - x509: /etc/pki/aptrepo.crt
-</pre></div>
 
 <p>To create the repository I&rsquo;ll be using reprepro. A good gude to configuring reprepro can be found
 <a href="http://vincent.bernat.im/en/blog/2014-local-apt-repositories.htmlGNUPGHOME=gpg">here</a>
@@ -202,10 +186,9 @@ gnupghome +b/gpg
 
 <p>To sign packages added to the repository, gpg keys are required. Personally I opted to create
 the GPG keys locally, then copy them to the salt server where they will be managed.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020">cd</span> /srv/salt/aptrepo/server/files
+cd /srv/salt/aptrepo/server/files
 mkdir gpg
-<span style="color: #bb60d5">GNUPGHOME</span><span style="color: #666666">=</span>gpg gpg --gen-key  <span style="color: #60a0b0; font-style: italic"># Make sure and use an empty password</span>
-</pre></div>
+GNUPGHOME=gpg gpg --gen-key  # Make sure and use an empty password
 
 <p>Another file that needs to be managed is the NGINX configuration file.
 Notice the <code>ssl_verify_client on;</code>, this is what enables client authentication.</p>
@@ -235,28 +218,28 @@ Salt will create a cron job that regularly runs this script. Now adding packages
 repository is a simple matter of SCPing them to the incoming directory on the aptrepo server.</p>
 
 <p>/srv/salt/aptrepo/server/files/processincoming.sh</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic">#!/bin/sh</span>
-<span style="color: #007020">cd</span> /srv/packages
+#!/bin/sh
+cd /srv/packages
 
-<span style="color: #007020; font-weight: bold">for</span> f in incoming/*.deb
-<span style="color: #007020; font-weight: bold">do</span>
-	reprepro -C main includedeb trusty-prod <span style="color: #bb60d5">$f</span>
-	rm <span style="color: #bb60d5">$f</span>
-<span style="color: #007020; font-weight: bold">done</span>
-</pre></div>
+for f in incoming/*.deb
+do
+	reprepro -C main includedeb trusty-prod $f
+	rm $f
+done
 
 <p>Now we&rsquo;re ready to put it all together with a salt state.</p>
 
 <p>/srv/salt/aptrepo/server/init.sls</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># Install the GPG package needed to sign packages</span>
+
+# Install the GPG package needed to sign packages
 gnupg:
   pkg.installed: []
 
-<span style="color: #60a0b0; font-style: italic"># Install the dpkg-sig package also needd to sign packages</span>
+# Install the dpkg-sig package also needd to sign packages
 dpkg-sig:
   pkg.installed: []
 
-<span style="color: #60a0b0; font-style: italic"># Install nginx which will be used to serve the packages</span>
+# Install nginx which will be used to serve the packages
 nginx:
   pkg.installed: []
   service.running:
@@ -264,21 +247,21 @@ nginx:
     - require:
       - pkg: nginx
 
-<span style="color: #60a0b0; font-style: italic"># Add a reprepro user</span>
+# Add a reprepro user
 reprepro:
   user.present:
     - system: True
     - home: /srv/packages
   pkg.installed: []
 
-<span style="color: #60a0b0; font-style: italic"># Configure nginx, restart the nginx service when this file changes</span>
+# Configure nginx, restart the nginx service when this file changes
 /etc/nginx/sites-available/default:
   file.managed:
     - source: salt://aptrepo/server/files/nginx-default
     - listen_in:
       - service: nginx
 
-<span style="color: #60a0b0; font-style: italic"># Manage the reprepro configuration files</span>
+# Manage the reprepro configuration files
 /srv/packages/conf:
   file.recurse:
     - makedirs: True
@@ -286,7 +269,7 @@ reprepro:
     - user: reprepro
     - group: reprepro
     
-<span style="color: #60a0b0; font-style: italic"># Copy the GPG keys that will be used to sign packages</span>
+# Copy the GPG keys that will be used to sign packages
 /srv/packages/gpg:
   file.recurse:
     - source: salt://aptrepo/server/files/gpg
@@ -294,7 +277,7 @@ reprepro:
     - user: reprepro
     - group: reprepro
 
-<span style="color: #60a0b0; font-style: italic"># Copy the public key into a location where it will be served by NGINX so that clients can get it.</span>
+# Copy the public key into a location where it will be served by NGINX so that clients can get it.
 /srv/packages/www/public.gpg.key:
   file.managed:
     - source: salt://aptrepo/server/files/gpg/public.gpg.key
@@ -302,14 +285,14 @@ reprepro:
     - user: reprepro
     - group: reprepro
 
-<span style="color: #60a0b0; font-style: italic"># Create a logging directory</span>
+# Create a logging directory
 /srv/packages/logs:
   file.directory:
     - makedirs: True
     - user: reprepro
     - group: reprepro
 
-<span style="color: #60a0b0; font-style: italic"># Create a directory to hold incoming packages</span>
+# Create a directory to hold incoming packages
 /srv/packages/incoming/main:
   file.directory:
     - makedirs: True
@@ -317,7 +300,7 @@ reprepro:
     - user: reprepro
     - group: reprepro
 
-<span style="color: #60a0b0; font-style: italic"># Copy the script that will automatically process incoming packages, and a cron job to run it.</span>
+# Copy the script that will automatically process incoming packages, and a cron job to run it.
 /srv/packages/processincoming.sh:
   file.managed:
     - source: salt://aptrepo/server/files/processincoming.sh
@@ -326,41 +309,41 @@ reprepro:
     - mode: 755
   cron.present:
     - user: reprepro
-    - minute: <span style="color: #4070a0">&#39;*&#39;</span>
+    - minute: '*'
     - require:
       - pkg: reprepro
       - file: /srv/packages/processincoming.sh
 
-<span style="color: #60a0b0; font-style: italic"># Create a certs directory for NGINX</span>
+# Create a certs directory for NGINX
 /etc/nginx/certs:
   file.directory:
     - user: root
     - group: root
     - mode: 700
 
-<span style="color: #60a0b0; font-style: italic"># Copy the CA cert to the nginx cert directory</span>
+# Copy the CA cert to the nginx cert directory
 /etc/nginx/certs/aptrepo_ca.crt:
   x509.pem_managed:
-    - text: <span style="color: #007020">{{</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;mine.get&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;ca&#39;</span><span style="color: #666666">,</span> <span style="color: #4070a0">&#39;x509.get_pem_entries&#39;</span><span style="color: #666666">)[</span><span style="color: #4070a0">&#39;ca&#39;</span><span style="color: #666666">][</span><span style="color: #4070a0">&#39;/etc/pki/aptrepo.crt&#39;</span><span style="color: #666666">]|</span><span style="color: #06287e">replace</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;\n&#39;</span><span style="color: #666666">,</span> <span style="color: #4070a0">&#39;&#39;</span><span style="color: #666666">)</span> <span style="color: #007020">}}</span>
+    - text: {{ salt['mine.get']('ca', 'x509.get_pem_entries')['ca']['/etc/pki/aptrepo.crt']|replace('\n', '') }}
 
-<span style="color: #60a0b0; font-style: italic"># Create a private key for the server</span>
-<span style="color: #60a0b0; font-style: italic"># The condition below ensures that a key is always created if one doesn&#39;t exist, but if one does</span>
-<span style="color: #60a0b0; font-style: italic"># exist, the state will be a prereq and a new key will only be created when the certificate needs</span>
-<span style="color: #60a0b0; font-style: italic"># to be renewed.</span>
+# Create a private key for the server
+# The condition below ensures that a key is always created if one doesn't exist, but if one does
+# exist, the state will be a prereq and a new key will only be created when the certificate needs
+# to be renewed.
 aptrepo_server-key:
   x509.private_key_managed:
     - name: /etc/nginx/certs/server.key
     - bits: 4096
     - backup: True
     - new: True
-    <span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;file.file_exists&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;/etc/nginx/certs/server.key&#39;</span><span style="color: #666666">)</span> -<span style="color: #007020">%}</span>
+    {% if salt['file.file_exists']('/etc/nginx/certs/server.key') -%}
     - prereq:
       - x509: aptrepo_server-cert
-    <span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">endif</span> <span style="color: #007020">%}</span>
+    {%- endif %}
     - listen_in:
       - service: nginx
 
-<span style="color: #60a0b0; font-style: italic"># Create a certificate for the server, signed by the CA.</span>
+# Create a certificate for the server, signed by the CA.
 aptrepo_server-cert:
   x509.certificate_managed:
     - name: /etc/nginx/certs/server.crt
@@ -372,7 +355,7 @@ aptrepo_server-cert:
     - backup: True
     - listen_in:
       - service: nginx
-</pre></div>
+
 
 <p>Now to configure clients to be able to use the new repository. First apt needs to know
 that our repository requires a client certificate.</p>
@@ -393,46 +376,47 @@ that our repository requires a client certificate.</p>
 need to use it.</p>
 
 <p>/srv/salt/aptrepo/client/init.sls</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># Add our new repository</span>
+
+# Add our new repository
 internal-main-prod:
   pkgrepo.managed:
     - humanname: Internal Repo
     - name: deb https://aptrepo.example.com trusty-prod main
     - key_url: salt://aptrepo/server/files/gpg/public.gpg.key
 
-<span style="color: #60a0b0; font-style: italic"># Add the CA certificate</span>
+# Add the CA certificate
 /etc/ssl/aptrepo_ca.crt:
   x509.pem_managed:
-    - text: <span style="color: #007020">{{</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;mine.get&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;ca&#39;</span><span style="color: #666666">,</span> <span style="color: #4070a0">&#39;x509.get_pem_entries&#39;</span><span style="color: #666666">)[</span><span style="color: #4070a0">&#39;ca&#39;</span><span style="color: #666666">][</span><span style="color: #4070a0">&#39;/etc/pki/aptrepo.crt&#39;</span><span style="color: #666666">]|</span><span style="color: #06287e">replace</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;\n&#39;</span><span style="color: #666666">,</span> <span style="color: #4070a0">&#39;&#39;</span><span style="color: #666666">)</span> <span style="color: #007020">}}</span>
+    - text: {{ salt['mine.get']('ca', 'x509.get_pem_entries')['ca']['/etc/pki/aptrepo.crt']|replace('\n', '') }}
 
-<span style="color: #60a0b0; font-style: italic"># Generate a unique private key</span>
+# Generate a unique private key
 aptrepo_client-key:
   x509.private_key_managed:
     - name: /etc/ssl/aptrepo_client.key
     - bits: 4096
     - backup: True
     - new: True
-    <span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;file.file_exists&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;/etc/ssl/aptrepo_client.key&#39;</span><span style="color: #666666">)</span> -<span style="color: #007020">%}</span>
+    {% if salt['file.file_exists']('/etc/ssl/aptrepo_client.key') -%}
     - prereq:
       - x509: aptrepo_client-cert
-    <span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">endif</span> <span style="color: #007020">%}</span>
+    {%- endif %}
 
-<span style="color: #60a0b0; font-style: italic"># Create a certificate signed by CA</span>
+# Create a certificate signed by CA
 aptrepo_client-cert:
   x509.certificate_managed:
     - name: /etc/ssl/aptrepo_client.crt
     - ca_server: ca
     - signing_policy: aptrepo_client
     - public_key: /etc/ssl/aptrepo_client.key
-    - CN: <span style="color: #007020">{{</span> <span style="color: #bb60d5">grains</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;fqdn&#39;</span><span style="color: #666666">]</span> <span style="color: #007020">}}</span>
+    - CN: {{ grains['fqdn'] }}
     - days_remaining: 15
     - backup: True
 
-<span style="color: #60a0b0; font-style: italic"># Add the file configuring apt to use the certificates with this repository</span>
+# Add the file configuring apt to use the certificates with this repository
 /etc/apt/apt.conf.d/45aptrepo-ssl:
   file.managed:
     - source: salt://aptrepo/client/files/45aptrepo-ssl
-</pre></div>
+
 
 <p>That it, now you have a fully managed internal repository on aptrepo. You can create expose this repository to the internet and only your clients trusted by salt and issued a client certificate will be able to use it.</p>
 

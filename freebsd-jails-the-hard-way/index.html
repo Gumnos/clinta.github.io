@@ -31,18 +31,6 @@ ga('send', 'pageview');
   <div class="header center">
     <ul class="navbar">
 	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
-	
 	</ul>
   </div>
 
@@ -71,34 +59,29 @@ ga('send', 'pageview');
 <h2 id="full-jail">Full Jail</h2>
 
 <p>1. Make a directory for the jail, or a zfs dataset if you prefer.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir -p /usr/local/jails/fulljail1
-<span style="color: #60a0b0; font-style: italic">## or</span>
-zfs create -o <span style="color: #bb60d5">mountpoint</span><span style="color: #666666">=</span>/usr/local/jails zroot/jails
+mkdir -p /usr/local/jails/fulljail1
+## or
+zfs create -o mountpoint=/usr/local/jails zroot/jails
 zfs create zroot/jails/fulljail1
-</pre></div>
 
 <p>2. Download the FreeBSD base files, and any other parts of FreeBSD you want. In this example I&rsquo;ll include the 32 bit libraries as well.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
 tar -xvf /tmp/base.txz -C /usr/local/jails/fulljail1
 fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz
 tar -xvf /tmp/lib32.txz -C /usr/local/jails/fulljail1
 fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz
 tar -xvf /tmp/ports.txz -C /usr/local/jails/fulljail1
-</pre></div>
 
 <p>3. Update your FreeBSD base install.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>env <span style="color: #bb60d5">UNAME_r</span><span style="color: #666666">=</span>10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install
-</pre></div>
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install
 
 <p>4. Verify your download. We&rsquo;re downloading these archives over FTP after all, we should confirm that this download is valid and not tampered with. The <code>freebsd-update IDS</code> command verifies the installation using a PGP key which is in your base system, which was presumably installed with an ISO that you verified using the FreeBSD <a href="https://www.freebsd.org/releases/10.2R/signatures.html">signed checksums</a>. Admittedly this step is a bit of paranoia, but I think it&rsquo;s prudent.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>env <span style="color: #bb60d5">UNAME_r</span><span style="color: #666666">=</span>10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS
-</pre></div>
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS
 
 <p>5. Make sure you jail has the right timezone and dns servers and a hostname in rc.conf.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf
+cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf
 cp /etc/localtime /usr/local/jails/fulljail1/etc/localtime
-<span style="color: #007020">echo</span> <span style="color: #bb60d5">hostname</span><span style="color: #666666">=</span><span style="color: #4070a0; font-weight: bold">\&quot;</span>fulljail1<span style="color: #4070a0; font-weight: bold">\&quot;</span> &gt; /usr/local/jails/fulljail1/etc/rc.conf
-</pre></div>
+echo hostname=\"fulljail1\" > /usr/local/jails/fulljail1/etc/rc.conf
 
 <p>6. Edit jail.conf with the details about your jail.</p>
 
@@ -121,16 +104,15 @@ fulljail1 {
 </code></pre>
 
 <p>7. Start and login to your jail.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>jail -c fulljail1
-</pre></div>
+jail -c fulljail1
 
 <p>11 commands and a config file, but this is the most tedious way to make a jail. With a little bit of templating it can be even easier. So I&rsquo;ll start by making a template. Making a template is basically the same as steps 1, 2 and 3 above, but with a different destination folder, I&rsquo;ll condense them here.</p>
 
 <h2 id="creating-a-template">Creating a template</h2>
 
 <p>1. Create a template or a ZFS dataset. If you&rsquo;d like to use the zfs clone method of deploying templates, you&rsquo;ll need to create a zfs dataset instead of a folder.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir -p /usr/local/jails/releases/10.2-RELEASE
-<span style="color: #60a0b0; font-style: italic">## or </span>
+mkdir -p /usr/local/jails/releases/10.2-RELEASE
+## or 
 zfs create -p zroot/jails/releases/10.2-RELEASE
 
 fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
@@ -141,31 +123,25 @@ fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.
 tar -xvf /tmp/ports.txz -C /usr/local/jails/releases/10.2-RELEASE
 cp /etc/resolv.conf /usr/local/jails/releases/10.2-RELEASE/etc/resolv.conf
 cp /etc/localtime /usr/local/jails/releases/10.2-RELEASE/etc/localtime
-</pre></div>
 
 <p>2. Update your template with <code>freebsd-update</code>.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>env <span style="color: #bb60d5">UNAME_r</span><span style="color: #666666">=</span>10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install
-</pre></div>
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install
 
 <p>3. Verify your install</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>env <span style="color: #bb60d5">UNAME_r</span><span style="color: #666666">=</span>10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS
-</pre></div>
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS
 
 <p>And that&rsquo;s it, now you have a fully up to date jail template. If you&rsquo;ve made this template with zfs, you can easily deploy it using zfs snapshots.</p>
 
 <h2 id="deploying-a-template-with-zfs-snapshots">Deploying a template with ZFS snapshots</h2>
 
 <p>1. Create a snapshot. My last freebsd-update to my template brought it to patch level 17, so I&rsquo;ll call my snapshot p10.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>zfs snapshot zroot/jails/releases/10.2-RELEASE@p10
-</pre></div>
+zfs snapshot zroot/jails/releases/10.2-RELEASE@p10
 
 <p>2. Clone the snapshot to a new jail.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1
-</pre></div>
+zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1
 
 <p>3. Configure the jail hostname.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020">echo</span> <span style="color: #bb60d5">hostname</span><span style="color: #666666">=</span><span style="color: #4070a0; font-weight: bold">\&quot;</span>zjail1<span style="color: #4070a0; font-weight: bold">\&quot;</span> &gt; /usr/local/jails/zjail1/etc/rc.conf
-</pre></div>
+echo hostname=\"zjail1\" > /usr/local/jails/zjail1/etc/rc.conf
 
 <p>4. Add the jail definition to jail.conf, make sure you have the global jail settings from jail.conf listed in the fulljail example.</p>
 
@@ -179,8 +155,7 @@ zjail1 {
 </code></pre>
 
 <p>5. Start the jail.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>jail -c zjail1
-</pre></div>
+jail -c zjail1
 
 <p>The downside with the zfs approach is that each jail is now a fully independent, and if you need to update your jails, you have to update them all individually. By sharing a template using nullfs mounts you can have only one copy of the base system that only needs to be updated once.</p>
 
@@ -191,15 +166,14 @@ zjail1 {
 <p>This method is a little bit more tricky, because you have to take notes of which directories are local to your jails and which are universal to FreeBSD. Fortunately FreeBSD&rsquo;s directory structure is stable and predictable and the benefits of this method are that it allows you to update your base image and your ports tree once for all jails.</p>
 
 <p>1. This method requires a slightly different template than the ZFS method, so either copy the template created in the previous instructions, or use ZFS and clone it.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE
-<span style="color: #60a0b0; font-style: italic"># or</span>
+cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE
+# or
 zfs create zroot/jails/templates
 zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/templates/base-10.2-RELEASE
-</pre></div>
 
 <p>2. In addition to your base template, you need to create a skeleton template which will hold all the directories that are local to your jail. We&rsquo;re going to copy these directories from the template to the skeleton.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE
-<span style="color: #60a0b0; font-style: italic"># or</span>
+mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE
+# or
 zfs create -p zroot/jails/templates/skeleton-10.2-RELEASE
 
 mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/ports/distfiles /usr/local/jails/templates/skeleton-10.2-RELEASE/home /usr/local/jails/templates/skeleton-10.2-RELEASE/portsbuild
@@ -208,10 +182,9 @@ mv /usr/local/jails/templates/base-10.2-RELEASE/usr/local /usr/local/jails/templ
 mv /usr/local/jails/templates/base-10.2-RELEASE/tmp /usr/local/jails/templates/skeleton-10.2-RELEASE/tmp
 mv /usr/local/jails/templates/base-10.2-RELEASE/var /usr/local/jails/templates/skeleton-10.2-RELEASE/var
 mv /usr/local/jails/templates/base-10.2-RELEASE/root /usr/local/jails/templates/skeleton-10.2-RELEASE/root
-</pre></div>
 
 <p>3. The skeleton directory is what is going to be copied for each new jail. It is going to be mounted in <code>/skeleton/</code> inside the jail. So in the read-only base template we need to create symlink from all the expected locations to the appropriate directories inside the <code>/skeleton/</code> directory. It is very important to cd into your jail directory and create these symlinks with relative paths. That way they will always link to the correct location no matter where the base template ends up mounted.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020">cd</span> /usr/local/jails/templates/base-10.2-RELEASE
+cd /usr/local/jails/templates/base-10.2-RELEASE
 mkdir skeleton
 ln -s skeleton/etc etc
 ln -s skeleton/home home
@@ -220,28 +193,23 @@ ln -s skeleton/usr/local usr/local
 ln -s skeleton/usr/ports/distfiles usr/ports/distfiles
 ln -s skeleton/tmp tmp
 ln -s skeleton/var var
-</pre></div>
 
 <p>4. Edit make.conf so that your ports workdirectory is located inside the skeleton directory.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020">echo</span> <span style="color: #4070a0">&quot;WRKDIRPREFIX?=  /skeleton/portbuild&quot;</span> &gt;&gt; /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf
-</pre></div>
+echo "WRKDIRPREFIX?=  /skeleton/portbuild" >> /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf
 
 <p>5. Copy your skeleton for your jail. You can use plain old copy or ZFS snapshots.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton
+zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton
 zfs create zroot/jails/thinjails
 zfs clone zroot/jails/templates/skeleton-10.2-RELEASE@skeleton zroot/jails/thinjails/thinjail1
-<span style="color: #60a0b0; font-style: italic"># or</span>
+# or
 mkdir /usr/local/jails/thinjails
 cp -R /usr/local/jails/templates/skeleton-10.2-RELEASE /usr/local/jails/thinjails/thinjail1
-</pre></div>
 
 <p>6. Add the hostname to the jails rc.conf</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020">echo</span> <span style="color: #bb60d5">hostname</span><span style="color: #666666">=</span><span style="color: #4070a0; font-weight: bold">\&quot;</span>thinjail1<span style="color: #4070a0; font-weight: bold">\&quot;</span> &gt; /usr/local/jails/thinjails/thinjail1/etc/rc.conf
-</pre></div>
+echo hostname=\"thinjail1\" > /usr/local/jails/thinjails/thinjail1/etc/rc.conf
 
 <p>7. Make the jail directory where the base template and skeleton folder will be mounted.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir -p /usr/local/jails/thinjail1
-</pre></div>
+mkdir -p /usr/local/jails/thinjail1
 
 <p>8. Create the jail entry in <code>/etc/jail.conf</code>, be sure and include the global jail configs listed in the fulljail example.</p>
 
@@ -264,8 +232,7 @@ thinjail1 {
 </code></pre>
 
 <p>10. Start the jail.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>jail -c thinjail1
-</pre></div>
+jail -c thinjail1
 
 <p>Now if you create dozens of thinjails, you can run <code>env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/templates/base-10.2-RELEASE fetch install</code> once and all your jails will be updated. You can run <code>portsnap -p /usr/local/jails/templates/base-10.2-RELEASE/usr/ports auto</code> and your ports tree for all jails is updated. And you have one easy place to backup to save all your jails customizations: <code>/usr/local/jails/thinjails/</code>.</p>
 

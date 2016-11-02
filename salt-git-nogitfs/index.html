@@ -31,18 +31,6 @@ ga('send', 'pageview');
   <div class="header center">
     <ul class="navbar">
 	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
-	
 	</ul>
   </div>
 
@@ -65,7 +53,8 @@ ga('send', 'pageview');
 <p>I even have some features that I never had with gitfs, like automatic environments based on branches. Here&rsquo;s how it works.</p>
 
 <p>My salt master has the following state applied. This state ensures that the salt-master service is running. It gets the list of branches from the git remote and makes sure that that branch is cloned into a directory under <code>/srv/salt/</code>. It also manages a file in <code>/etc/salt/master.d/roots.conf</code> which defines each environment that has been cloned and restarts the salt-master process when the file changes. This uses one git repository for both states and pillars, so states are in the <code>repo/states</code> directory and pillars are in the <code>repo/pillar</code> directory.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># repo/states/salt-master-git.sls</span>
+
+# repo/states/salt-master-git.sls
 
 salt-master:
   service.running:
@@ -74,29 +63,29 @@ salt-master:
 /srv/salt:
   file.directory: []
 
-<span style="color: #60a0b0; font-style: italic"># get the list of remote branches</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">set</span> <span style="color: #bb60d5">branches</span> <span style="color: #666666">=</span> <span style="color: #666666">[]</span> <span style="color: #007020">%}</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">origin_branch</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;git.ls_remote&#39;</span><span style="color: #666666">](</span><span style="color: #bb60d5">remote</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;git@gitlab:salt/salt.git&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">opts</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;--heads&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">user</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;root&#39;</span><span style="color: #666666">)</span> <span style="color: #007020">%}</span>
-  <span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">set</span> <span style="color: #bb60d5">i</span> <span style="color: #666666">=</span> <span style="color: #bb60d5">branches.append</span><span style="color: #666666">(</span><span style="color: #bb60d5">origin_branch.replace</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;refs/heads/&#39;</span><span style="color: #666666">,</span> <span style="color: #4070a0">&#39;&#39;</span><span style="color: #666666">))</span> <span style="color: #007020">%}</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+# get the list of remote branches
+{% set branches = [] %}
+{% for origin_branch in salt['git.ls_remote'](remote='git@gitlab:salt/salt.git', opts='--heads', user='root') %}
+  {% set i = branches.append(origin_branch.replace('refs/heads/', '')) %}
+{% endfor %}
 
-<span style="color: #60a0b0; font-style: italic"># delete any directories that are no longer remote branches</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">dir</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;file.find&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;/srv/&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">type</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;d&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">maxdepth</span><span style="color: #666666">=</span><span style="color: #40a070">1</span><span style="color: #666666">)</span>
-<span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">dir.startswith</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;/srv/salt/&#39;</span><span style="color: #666666">)</span> <span style="color: #007020; font-weight: bold">and</span> <span style="color: #bb60d5">dir.split</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;/&#39;</span><span style="color: #666666">)[-</span><span style="color: #40a070">1</span><span style="color: #666666">]</span> <span style="color: #007020; font-weight: bold">not</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">branches</span> <span style="color: #007020">%}</span>
-<span style="color: #007020">{{</span> <span style="color: #bb60d5">dir</span> <span style="color: #007020">}}</span>:
+# delete any directories that are no longer remote branches
+{% for dir in salt['file.find']('/srv/', type='d', maxdepth=1)
+if dir.startswith('/srv/salt/') and dir.split('/')[-1] not in branches %}
+{{ dir }}:
   file.absent:
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+{% endfor %}
 
-<span style="color: #60a0b0; font-style: italic"># clone each branch</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">branches</span> <span style="color: #007020">%}</span>
-salt-repo-<span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>:
+# clone each branch
+{% for branch in branches %}
+salt-repo-{{ branch }}:
   git.latest:
     - name: git@gitlab:salt/salt.git
-    - target: /srv/salt/<span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>
-    - rev: <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>
-    - branch: <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>
+    - target: /srv/salt/{{ branch }}
+    - rev: {{ branch }}
+    - branch: {{ branch }}
     - user: root
     - force_checkout: True
     - force_clone: True
@@ -106,80 +95,85 @@ salt-repo-<span style="color: #007020">{{</span> <span style="color: #bb60d5">br
       - file: /srv/salt
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+{% endfor %}
 
-<span style="color: #60a0b0; font-style: italic"># manage the file_roots config to generate environments</span>
+# manage the file_roots config to generate environments
 /etc/salt/master.d/roots.conf:
   file.managed:
     - template: jinja
-    - source: salt://<span style="color: #007020">{{</span> <span style="color: #bb60d5">tpldir</span> <span style="color: #007020">}}</span>/files/roots.conf
+    - source: salt://{{ tpldir }}/files/roots.conf
     - user: root
     - mode: 644
     - listen_in:
       - service: salt-master
-</pre></div>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># repo/states/files/roots.conf</span>
 
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">set</span> <span style="color: #bb60d5">branch_dirs</span> <span style="color: #666666">=</span> <span style="color: #666666">[]</span> -<span style="color: #007020">%}</span>
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">dir</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;file.find&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;/srv/&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">type</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;d&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">maxdepth</span><span style="color: #666666">=</span><span style="color: #40a070">1</span><span style="color: #666666">)</span> 
-<span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">dir.startswith</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;/srv/salt/&#39;</span><span style="color: #666666">)</span> <span style="color: #007020; font-weight: bold">and</span> <span style="color: #bb60d5">dir</span> !<span style="color: #666666">=</span> <span style="color: #4070a0">&#39;/srv/salt/master&#39;</span> -<span style="color: #007020">%}</span>
-  <span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">set</span> <span style="color: #bb60d5">i</span> <span style="color: #666666">=</span> <span style="color: #bb60d5">branch_dirs.append</span><span style="color: #666666">(</span><span style="color: #bb60d5">dir</span><span style="color: #666666">)</span> -<span style="color: #007020">%}</span>
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">endfor</span> -<span style="color: #007020">%}</span>
+
+# repo/states/files/roots.conf
+
+{%- set branch_dirs = [] -%}
+{%- for dir in salt['file.find']('/srv/', type='d', maxdepth=1) 
+if dir.startswith('/srv/salt/') and dir != '/srv/salt/master' -%}
+  {%- set i = branch_dirs.append(dir) -%}
+{%- endfor -%}
 
 file_roots:
   base:
     - /srv/salt/master/states
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">branch_dirs</span> <span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">branch</span> !<span style="color: #666666">=</span> <span style="color: #4070a0">&#39;master&#39;</span> <span style="color: #007020">%}</span>
-  <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>:
-    - <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>/states
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+{%- for branch in branch_dirs if branch != 'master' %}
+  {{ branch }}:
+    - {{ branch }}/states
+{%- endfor %}
 
 pillar_roots:
   base:
     - /srv/salt/master/pillar
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">branch_dirs</span> <span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">branch</span> !<span style="color: #666666">=</span> <span style="color: #4070a0">&#39;master&#39;</span> <span style="color: #007020">%}</span>
-  <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>:
-    - <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>/pillar
-<span style="color: #007020">{%</span>- <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
-</pre></div>
+{%- for branch in branch_dirs if branch != 'master' %}
+  {{ branch }}:
+    - {{ branch }}/pillar
+{%- endfor %}
+
 
 <p>With just this and a schedule you already have an okay salt-git integration. But with a little more work you can take it to the next step and make it event driven on git push.</p>
 
 <p>If you&rsquo;re using gitlab for your salt repository, you can create a post-recieve script by putting a file in <code>/var/opt/gitlab/git-data/repositories/salt/salt.git/custom_hooks/post-receive</code>.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic">#!/usr/bin/env bash                                                        </span>
+
+#!/usr/bin/env bash                                                        
  
-<span style="color: #007020; font-weight: bold">while</span> <span style="color: #007020">read</span> branch; <span style="color: #007020; font-weight: bold">do</span>                                                      
-        <span style="color: #bb60d5">branchname</span><span style="color: #666666">=</span><span style="color: #007020; font-weight: bold">$(</span>cut -d <span style="color: #4070a0">&quot;/&quot;</span> -f <span style="color: #40a070">3</span> <span style="color: #666666">&lt;&lt;&lt;</span> <span style="color: #4070a0">&quot;</span><span style="color: #70a0d0; font-style: italic">${</span><span style="color: #bb60d5">branch</span><span style="color: #70a0d0; font-style: italic">}</span><span style="color: #4070a0">&quot;</span><span style="color: #007020; font-weight: bold">)</span>                      
-        sudo salt-call event.send salt/push <span style="color: #bb60d5">branch</span><span style="color: #666666">=</span><span style="color: #70a0d0; font-style: italic">${</span><span style="color: #bb60d5">branchname</span><span style="color: #70a0d0; font-style: italic">}</span>           
-<span style="color: #007020; font-weight: bold">done</span>                                                                       
-</pre></div>
+while read branch; do                                                      
+        branchname=$(cut -d "/" -f 3 <<< "${branch}")                      
+        sudo salt-call event.send salt/push branch=${branchname}           
+done                                                                       
+
 
 <p>Now in your salt master config, add a reactor:</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># /etc/salt/master</span>
+
+# /etc/salt/master
 
 reactor:
-  - <span style="color: #4070a0">&#39;salt/push&#39;</span>:
+  - 'salt/push':
      - salt://reactor/salt-push.sls
-</pre></div>
+
 
 <p>Add the reactor file in your git repo.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># repo/states/reactor/salt-push.sls</span>
+
+# repo/states/reactor/salt-push.sls
 
 salt-push:
   local.state.sls:
-    - tgt: <span style="color: #4070a0">&#39;salt-master&#39;</span>
+    - tgt: 'salt-master'
     - expr_form: pcre
     - queue: True
     - kwarg:
         mods: salt.master.salt-git
         pillar:
           salt_git_branches:
-            - <span style="color: #007020">{{</span> <span style="color: #bb60d5">data</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;data&#39;</span><span style="color: #666666">][</span><span style="color: #4070a0">&#39;branch&#39;</span><span style="color: #666666">]</span> <span style="color: #007020">}}</span>
+            - {{ data['data']['branch'] }}
         queue: True
-</pre></div>
+
 
 <p>And add a bit more logic to the salt-master-git.sls to handle the individual branch being pushed. With this logic if the pillar <code>salt_git_branches</code> is included in the state run, the state will only update that branch. If it is not included, the state will update all branches, and clean up old deleted branches. This saves some time which is important when it&rsquo;s being called by a post-recieve hook.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic"># repo/states/salt-master-git.sls</span>
+
+# repo/states/salt-master-git.sls
 
 salt-master:
   service.running:
@@ -188,32 +182,32 @@ salt-master:
 /srv/salt:
   file.directory: []
 
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">set</span> <span style="color: #bb60d5">branches</span> <span style="color: #666666">=</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;pillar.get&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;salt_git_branches&#39;</span><span style="color: #666666">,[])</span> <span style="color: #007020">%}</span>
+{% set branches = salt['pillar.get']('salt_git_branches',[]) %}
 
-<span style="color: #60a0b0; font-style: italic"># if a piller was not passed in, then get the list of branches from remote</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">branches</span> <span style="color: #666666">==</span> <span style="color: #666666">[]</span> <span style="color: #007020">%}</span>
-  <span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">origin_branch</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;git.ls_remote&#39;</span><span style="color: #666666">](</span><span style="color: #bb60d5">remote</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;git@gitlab:salt/salt.git&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">opts</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;--heads&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">user</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;root&#39;</span><span style="color: #666666">)</span> <span style="color: #007020">%}</span>
-    <span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">set</span> <span style="color: #bb60d5">i</span> <span style="color: #666666">=</span> <span style="color: #bb60d5">branches.append</span><span style="color: #666666">(</span><span style="color: #bb60d5">origin_branch.replace</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;refs/heads/&#39;</span><span style="color: #666666">,</span> <span style="color: #4070a0">&#39;&#39;</span><span style="color: #666666">))</span> <span style="color: #007020">%}</span>
-  <span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+# if a piller was not passed in, then get the list of branches from remote
+{% if branches == [] %}
+  {% for origin_branch in salt['git.ls_remote'](remote='git@gitlab:salt/salt.git', opts='--heads', user='root') %}
+    {% set i = branches.append(origin_branch.replace('refs/heads/', '')) %}
+  {% endfor %}
 
-<span style="color: #60a0b0; font-style: italic"># Delete directories of deleted branches since we&#39;re looking at all remote branches</span>
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">dir</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">salt</span><span style="color: #666666">[</span><span style="color: #4070a0">&#39;file.find&#39;</span><span style="color: #666666">](</span><span style="color: #4070a0">&#39;/srv/&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">type</span><span style="color: #666666">=</span><span style="color: #4070a0">&#39;d&#39;</span><span style="color: #666666">,</span> <span style="color: #bb60d5">maxdepth</span><span style="color: #666666">=</span><span style="color: #40a070">1</span><span style="color: #666666">)</span>
-<span style="color: #007020; font-weight: bold">if</span> <span style="color: #bb60d5">dir.startswith</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;/srv/salt/&#39;</span><span style="color: #666666">)</span> <span style="color: #007020; font-weight: bold">and</span> <span style="color: #bb60d5">dir.split</span><span style="color: #666666">(</span><span style="color: #4070a0">&#39;/&#39;</span><span style="color: #666666">)[-</span><span style="color: #40a070">1</span><span style="color: #666666">]</span> <span style="color: #007020; font-weight: bold">not</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">branches</span> <span style="color: #007020">%}</span>
-<span style="color: #007020">{{</span> <span style="color: #bb60d5">dir</span> <span style="color: #007020">}}</span>:
+# Delete directories of deleted branches since we're looking at all remote branches
+{% for dir in salt['file.find']('/srv/', type='d', maxdepth=1)
+if dir.startswith('/srv/salt/') and dir.split('/')[-1] not in branches %}
+{{ dir }}:
   file.absent:
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+{% endfor %}
 
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endif</span> <span style="color: #007020">%}</span>
+{% endif %}
 
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">for</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020; font-weight: bold">in</span> <span style="color: #bb60d5">branches</span> <span style="color: #007020">%}</span>
-salt-repo-<span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>:
+{% for branch in branches %}
+salt-repo-{{ branch }}:
   git.latest:
     - name: git@gitlab:salt/salt.git
-    - target: /srv/salt/<span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>
-    - rev: <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>
-    - branch: <span style="color: #007020">{{</span> <span style="color: #bb60d5">branch</span> <span style="color: #007020">}}</span>
+    - target: /srv/salt/{{ branch }}
+    - rev: {{ branch }}
+    - branch: {{ branch }}
     - user: root
     - force_checkout: True
     - force_clone: True
@@ -223,17 +217,17 @@ salt-repo-<span style="color: #007020">{{</span> <span style="color: #bb60d5">br
       - file: /srv/salt
     - require_in:
       - file: /etc/salt/master.d/roots.conf
-<span style="color: #007020">{%</span> <span style="color: #007020; font-weight: bold">endfor</span> <span style="color: #007020">%}</span>
+{% endfor %}
 
 /etc/salt/master.d/roots.conf:
   file.managed:
     - template: jinja
-    - source: salt://<span style="color: #007020">{{</span> <span style="color: #bb60d5">tpldir</span> <span style="color: #007020">}}</span>/files/roots.conf
+    - source: salt://{{ tpldir }}/files/roots.conf
     - user: root
     - mode: 644
     - listen_in:
       - service: salt-master
-</pre></div>
+
 
 <p>Now enjoy the best of both worlds. Automatic integration between salt and git and the reliability and speed of a simple file_roots configuration.</p>
 

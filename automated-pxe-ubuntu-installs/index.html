@@ -31,18 +31,6 @@ ga('send', 'pageview');
   <div class="header center">
     <ul class="navbar">
 	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
-	
 	</ul>
   </div>
 
@@ -61,31 +49,27 @@ ga('send', 'pageview');
 <p>Another complication that&rsquo;s not addressed in most existing guides is getting this to work with both BIOS and EFI based computers. Ignoring EFI and setting everything to boot in legacy mode isn&rsquo;t a long term solution, and not one I&rsquo;m willing to accept.</p>
 
 <p>The first thing we need is a tftp server.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>apt-get install tftpd-hpa
-</pre></div>
+apt-get install tftpd-hpa
 
 <p>Now we need syslinux. Syslinux contains a set of kernels that can be downloaded via tftp and booted by the client. It&rsquo;s really just a set of files, no services that will be run, so I&rsquo;ll be skipping the normal ubuntu syslinux packages and getting the latest and greatest from the source.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>wget https://www.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.gz
+wget https://www.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.gz
 tar -xvf syslinux-6.03.tar.gz
-</pre></div>
 
 <p>Now create some directories and copy the necessary syslinux files to the tftp root directory. Since we&rsquo;re wanting to boot legacy bios clients and x64 based EFI clients. Technically 32 bit EFI clients might exist, but I don&rsquo;t have any, so I&rsquo;m not bothering to configure those.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir /var/lib/tftpboot/bios
+mkdir /var/lib/tftpboot/bios
 cp syslinux-6.03/bios/core/pxelinux.0 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/elflink/ldlinux/ldlinux.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/lib/libcom32.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/libutil/libutil.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/menu/vesamenu.c32 /var/lib/tftpboot/bios/
 cp syslinux-6.03/bios/com32/modules/pxechn.c32 /var/lib/tftpboot/bios/
-</pre></div>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir /var/lib/tftpboot/efi64
+mkdir /var/lib/tftpboot/efi64
 cp syslinux-6.03/efi64/efi/syslinux.efi /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/elflink/ldlinux/ldlinux.e64 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/lib/libcom32.c32 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/libutil/libutil.c32 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/menu/vesamenu.c32 /var/lib/tftpboot/efi64/
 cp syslinux-6.03/efi64/com32/modules/pxechn.c32 /var/lib/tftpboot/efi64/
-</pre></div>
 
 <p>Now that our boot kernels are in place, configure DHCP to pass the kernel to the clients. This can be tricky, and the method will depend on your DHCP server. When a client sends a DHCP request, it includes information about itself. Option 93 includes the architecture of the client. 0 indicates a bios client, 9 and 7 indicate a 64 bit EFI client. 6 identifies an ia64 client, but I don&rsquo;t have any of those either. Using the DHCP templates provided on the <a href="http://www.syslinux.org/wiki/index.php/PXELINUX#UEFI">syslinux wiki</a>, I&rsquo;ve customized my DHCP server.</p>
 
@@ -112,8 +96,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 </code></pre>
 
 <p>With this in place, our clients can now pxe boot, but they&rsquo;ll just get an error saying that the configuraiton file can&rsquo;t be found. They need a configuration to tell them what to do. pxelinux looks for a configuration file in the pxelinux.cfg directory. You can create configuration files for individual machines by creating files with a fliename that matches the MAC address of the booting client. Any client that doesn&rsquo;t have a matching config will use the default file. In this example, we&rsquo;re just going to make the default file.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir /var/lib/tftpboot/bios/pxelinux.cfg
-</pre></div>
+mkdir /var/lib/tftpboot/bios/pxelinux.cfg
 
 <p>Edit the file <code>/var/lib/tftpboot/bios/pxelinux.cfg/default</code>.</p>
 
@@ -132,21 +115,19 @@ LABEL BootLocal
 </code></pre>
 
 <p>I haven&rsquo;t found a nice way to make tftpd-hpa follow symlinks, so this directory must be copied both to the bios and the efi directory.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>cp -r /var/lib/tftpboot/bios/pxelinux.cfg /var/lib/tftpboot/efi64
-</pre></div>
+cp -r /var/lib/tftpboot/bios/pxelinux.cfg /var/lib/tftpboot/efi64
 
 <p>Now try and PXE boot. You will get a sparse menu with only one option. We&rsquo;ll be adding more later. Right now the only option in the menu is to continue booting to the local disk. If you wish to take a break to customize the look of this menu, you can do so by customizing options like <code>MENU BACKGROUND</code> and <code>MENU COLOR</code>. Read more about these options on the <a href="http://www.syslinux.org/wiki/index.php/Menu#MENU_COLOR">syslinux wiki</a>.</p>
 
 <p>Now it&rsquo;s time to add the Ubuntu mini CD. I like to stick with LTS releases of Ubuntu, which means that the normal server ISO will have packages that are 2 years old by the time it&rsquo;s replaced. This makes them almost useless as the first apt-get upgrade will download nearly as much as the original ISO had on it in the first place. The mini iso contains only what&rsquo;s necessary to boot, then pulls all the packages from the internet. This would make the installation pretty slow, but we&rsquo;re going to supercharge it with an Apt Cache later on in this guide.</p>
 
 <p>Grab the mini ISO and extract the files into your tftpboot directory. I choose to maintain a pretty strict hierarchy so that I can add more distributions later.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>wget -O ubuntu-14.04-x64-mini.iso http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
+wget -O ubuntu-14.04-x64-mini.iso http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
 mkdir /mnt/iso
 mount ubuntu-14.04-x64-mini.iso /mnt/iso
 mkdir -p /var/lib/tftpboot/images/ubuntu/14.04/
 cp -r /mnt/iso /var/lib/tftpboot/images/ubuntu/14.04/amd64
 umount /mnt/iso
-</pre></div>
 
 <p>Now we can add an option to our PXE Configuraiton to boot to this image.</p>
 
@@ -173,9 +154,8 @@ LABEL Ubuntu 14.04 (64-bit)
 <p>At this point you can PXE boot and run an interactive installation using the mini installer. The system will be installed fully up to date, with all packages pulled direct from the internet. All the installer questions will be asked normally just like if you had booted from the CD.</p>
 
 <p>Next step is to begin automating the installation. In Debian and Ubuntu, automation is done via preseed files. This <a href="https://help.ubuntu.com/lts/installation-guide/example-preseed.txt">example</a> is fairly well documented in the comments and will serve as a good starting point. Start by putting this file in your tftp directory.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>mkdir /var/lib/tftpboot/preseeds
+mkdir /var/lib/tftpboot/preseeds
 wget -O /var/lib/tftpboot/preseeds/ubuntu.preseed https://help.ubuntu.com/lts/installation-guide/example-preseed.txt
-</pre></div>
 
 <p>Edit this preseed file to your liking, using the in-line comments as a guide. I modified mine to do things like use normal partitioning rather than lvm, I commented out the hostname parameter to make the installer prompt for a hostname, and I set the tasksel property to none, then put openssh-server and salt-minion as additional packages to install.</p>
 
@@ -206,8 +186,7 @@ LABEL Ubuntu 14.04 (64-bit)
 <p>At this point you now have either a fully or semi-automated pxe installer for Ubuntu. However, because we&rsquo;re using the mini cd, it&rsquo;s probably a fair bit slower that you&rsquo;d like, pulling packages from the internet for every install. Now it&rsquo;s time to setup your apt proxy to speed this up.</p>
 
 <p>In this demo I&rsquo;m going to install it on the same server that is doing DHCP, but this can be on any server you want. Start by installing apt-cacher-ng.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>apt-get install apt-cacher-ng
-</pre></div>
+apt-get install apt-cacher-ng
 
 <p>After install apt-cacher-ng will be running automatically on port 3142. You can visit http://<apt-cacher-ip>:3142 for instructions on configuring apt, as well as a link to view the cache statistics. To use this for during the install process, you need to add a line to your preseed configuration.</p>
 

@@ -31,18 +31,6 @@ ga('send', 'pageview');
   <div class="header center">
     <ul class="navbar">
 	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
-	
 	</ul>
   </div>
 
@@ -61,14 +49,12 @@ ga('send', 'pageview');
 <p>This means that if you want to monitor your own mongodb instances with collectd you&rsquo;ll need to build it yourself.</p>
 
 <p>Start by cloning the stackdriver repository and changing to the stackdriver agent branch.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>git clone https://github.com/Stackdriver/collectd
-<span style="color: #007020">cd</span> collectd
+git clone https://github.com/Stackdriver/collectd
+cd collectd
 git checkout stackdriver-agent-5.5.0
-</pre></div>
 
 <p>The build script should help you find any missing dependencies you need to do the build.</p>
-<div class="highlight" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>./build.sh
-</pre></div>
+./build.sh
 
 <p>Run the configure script, specifying only the mongodb module and instruct it to use the included libmongoc driver.</p>
 

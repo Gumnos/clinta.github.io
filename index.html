@@ -1,7 +1,7 @@
 <!doctype html> 
 <html lang="en-us"> 
 <head>
-	<meta name="generator" content="Hugo 0.17-DEV" />
+	<meta name="generator" content="Hugo 0.18-DEV" />
   <meta charset="utf-8">
   <title>Devops Discoveries</title>
   <meta name="author" content="Clint Armstrong">
@@ -31,18 +31,6 @@ ga('send', 'pageview');
 
   <div class="header center">
     <ul class="navbar">
-	
-	
-		<li class="navbar"><a class="navbar" href="/">Posts</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="/resume">Résumé</a></li>
-	
-	
-	
-		<li class="navbar"><a class="navbar" href="https://twitter.com/clinta">Twitter</a></li>
-	
 	
 	</ul>
   </div>
@@ -82,7 +70,7 @@ For this guide, I&rsquo;m going to be putting my jails in /usr/local/jails.</p>
     
       <h1><a href="https://clinta.github.io/change-upn-to-email-with-powershell/">Changing UPN to Email with Powershell</a></h1>
       <p>If you need a quick way to change the UPN of all your users in active directory to match their email address, PowerShell makes it easy.
-$users = get-aduser -SearchBase &quot;OU=Users,DC=ad,DC=contoso,DC=com&quot; -Filter * -Properties EmailAddress | where {$_.EmailAddress -ne $null -AND $_.EmailAddress.toLower() -ne $_.UserPrincipalName.toLower()} foreach ($user in $users) { $forest = Get-ADForest $email = $user.EmailAddress $username = $email.toLower().Split(&#39;@&#39;)[0] $userdomain = $email.toLower().Split(&#39;@&#39;)[1] if (-Not $($forest.UPNSuffixes).Contains($userdomain)) { $forest | Set-ADForest -UPNSuffixes @{Add=&quot;$userdomain&quot;} } $user | Set-ADUser -UserPrincipalName &quot;$username@$userdomain&quot; }  </p>
+$users = get-aduser -SearchBase "OU=Users,DC=ad,DC=contoso,DC=com" -Filter * -Properties EmailAddress | where {$_.EmailAddress -ne $null -AND $_.EmailAddress.toLower() -ne $_.UserPrincipalName.toLower()} foreach ($user in $users) { $forest = Get-ADForest $email = $user.EmailAddress $username = $email.toLower().Split('@')[0] $userdomain = $email.toLower().Split('@')[1] if (-Not $($forest.UPNSuffixes).Contains($userdomain)) { $forest | Set-ADForest -UPNSuffixes @{Add="$userdomain"} } $user | Set-ADUser -UserPrincipalName "</p>
 	  <p class="small"><a href="https://clinta.github.io/change-upn-to-email-with-powershell/">2015-08-07</a></p>
     
       <h1><a href="https://clinta.github.io/mongodb-for-collectd/">Compiling the mongodb plugin for collectd</a></h1>
