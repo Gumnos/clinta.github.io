@@ -19,41 +19,41 @@ I'll also show some examples of how to use the templating power of jail.conf to 
 1\. Make a directory for the jail, or a zfs dataset if you prefer.
 
 ```sh
-mkdir -p /usr/local/jails/fulljail1
-## or
-zfs create -o mountpoint=/usr/local/jails zroot/jails
-zfs create zroot/jails/fulljail1
+mkdir -p /usr/local/jails/fulljail1  
+## or  
+zfs create -o mountpoint=/usr/local/jails zroot/jails  
+zfs create zroot/jails/fulljail1  
 ```
 
 2\. Download the FreeBSD base files, and any other parts of FreeBSD you want. In this example I'll include the 32 bit libraries as well.
 
 ```sh
-fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
-tar -xvf /tmp/base.txz -C /usr/local/jails/fulljail1
-fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz
-tar -xvf /tmp/lib32.txz -C /usr/local/jails/fulljail1
-fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz
-tar -xvf /tmp/ports.txz -C /usr/local/jails/fulljail1
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz  
+tar -xvf /tmp/base.txz -C /usr/local/jails/fulljail1  
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz  
+tar -xvf /tmp/lib32.txz -C /usr/local/jails/fulljail1  
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz  
+tar -xvf /tmp/ports.txz -C /usr/local/jails/fulljail1  
 ```
 
 3\. Update your FreeBSD base install.
 
 ```sh
-env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail fetch install  
 ```
 
 4\. Verify your download. We're downloading these archives over FTP after all, we should confirm that this download is valid and not tampered with. The `freebsd-update IDS` command verifies the installation using a PGP key which is in your base system, which was presumably installed with an ISO that you verified using the FreeBSD [signed checksums](https://www.freebsd.org/releases/10.2R/signatures.html). Admittedly this step is a bit of paranoia, but I think it's prudent.
 
 ```sh
-env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/fulljail IDS  
 ```
 
 5\. Make sure you jail has the right timezone and dns servers and a hostname in rc.conf.
 
 ```sh
-cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf
-cp /etc/localtime /usr/local/jails/fulljail1/etc/localtime
-echo hostname=\"fulljail1\" > /usr/local/jails/fulljail1/etc/rc.conf
+cp /etc/resolv.conf /usr/local/jails/fulljail1/etc/resolv.conf  
+cp /etc/localtime /usr/local/jails/fulljail1/etc/localtime  
+echo hostname=\"fulljail1\" > /usr/local/jails/fulljail1/etc/rc.conf  
 ```
 
 6\. Edit jail.conf with the details about your jail.
@@ -80,7 +80,7 @@ fulljail1 {
 7\. Start and login to your jail.
 
 ```sh
-jail -c fulljail1
+jail -c fulljail1  
 ```
 
 11 commands and a config file, but this is the most tedious way to make a jail. With a little bit of templating it can be even easier. So I'll start by making a template. Making a template is basically the same as steps 1, 2 and 3 above, but with a different destination folder, I'll condense them here.
@@ -90,30 +90,30 @@ jail -c fulljail1
 1\. Create a template or a ZFS dataset. If you'd like to use the zfs clone method of deploying templates, you'll need to create a zfs dataset instead of a folder.
 
 ```sh
-mkdir -p /usr/local/jails/releases/10.2-RELEASE
-## or 
-zfs create -p zroot/jails/releases/10.2-RELEASE
-
-fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz
-tar -xvf /tmp/base.txz -C /usr/local/jails/releases/10.2-RELEASE
-fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz
-tar -xvf /tmp/lib32.txz -C /usr/local/jails/releases/10.2-RELEASE
-fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz
-tar -xvf /tmp/ports.txz -C /usr/local/jails/releases/10.2-RELEASE
-cp /etc/resolv.conf /usr/local/jails/releases/10.2-RELEASE/etc/resolv.conf
-cp /etc/localtime /usr/local/jails/releases/10.2-RELEASE/etc/localtime
+mkdir -p /usr/local/jails/releases/10.2-RELEASE  
+## or  
+zfs create -p zroot/jails/releases/10.2-RELEASE  
+  
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/base.txz -o /tmp/base.txz  
+tar -xvf /tmp/base.txz -C /usr/local/jails/releases/10.2-RELEASE  
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/lib32.txz -o /tmp/lib32.txz  
+tar -xvf /tmp/lib32.txz -C /usr/local/jails/releases/10.2-RELEASE  
+fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/10.2-RELEASE/ports.txz -o /tmp/ports.txz  
+tar -xvf /tmp/ports.txz -C /usr/local/jails/releases/10.2-RELEASE  
+cp /etc/resolv.conf /usr/local/jails/releases/10.2-RELEASE/etc/resolv.conf  
+cp /etc/localtime /usr/local/jails/releases/10.2-RELEASE/etc/localtime  
 ```
 
 2\. Update your template with `freebsd-update`.
 
 ```sh
-env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE fetch install  
 ```
 
 3\. Verify your install
 
 ```sh
-env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS
+env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/releases/10.2-RELEASE IDS  
 ```
 
 And that's it, now you have a fully up to date jail template. If you've made this template with zfs, you can easily deploy it using zfs snapshots.
@@ -123,19 +123,19 @@ And that's it, now you have a fully up to date jail template. If you've made thi
 1\. Create a snapshot. My last freebsd-update to my template brought it to patch level 17, so I'll call my snapshot p10.
 
 ```sh
-zfs snapshot zroot/jails/releases/10.2-RELEASE@p10
+zfs snapshot zroot/jails/releases/10.2-RELEASE@p10  
 ```
 
 2\. Clone the snapshot to a new jail.
 
 ```sh
-zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1
+zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/zjail1  
 ```
 
 3\. Configure the jail hostname.
 
 ```sh
-echo hostname=\"zjail1\" > /usr/local/jails/zjail1/etc/rc.conf
+echo hostname=\"zjail1\" > /usr/local/jails/zjail1/etc/rc.conf  
 ```
 
 4\. Add the jail definition to jail.conf, make sure you have the global jail settings from jail.conf listed in the fulljail example.
@@ -153,7 +153,7 @@ zjail1 {
 5\. Start the jail.
 
 ```sh
-jail -c zjail1
+jail -c zjail1  
 ```
 
 The downside with the zfs approach is that each jail is now a fully independent, and if you need to update your jails, you have to update them all individually. By sharing a template using nullfs mounts you can have only one copy of the base system that only needs to be updated once.
@@ -167,68 +167,68 @@ This method is a little bit more tricky, because you have to take notes of which
 1\. This method requires a slightly different template than the ZFS method, so either copy the template created in the previous instructions, or use ZFS and clone it.
 
 ```sh
-cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE
-# or
-zfs create zroot/jails/templates
-zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/templates/base-10.2-RELEASE
+cp -R /usr/local/jails/releases/10.2-RELEASE /usr/local/jails/templates/base-10.2-RELEASE  
+# or  
+zfs create zroot/jails/templates  
+zfs clone zroot/jails/releases/10.2-RELEASE@p10 zroot/jails/templates/base-10.2-RELEASE  
 ```
 
 2\. In addition to your base template, you need to create a skeleton template which will hold all the directories that are local to your jail. We're going to copy these directories from the template to the skeleton.
 
 ```sh
-mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE
-# or
-zfs create -p zroot/jails/templates/skeleton-10.2-RELEASE
-
-mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/ports/distfiles /usr/local/jails/templates/skeleton-10.2-RELEASE/home /usr/local/jails/templates/skeleton-10.2-RELEASE/portsbuild
-mv /usr/local/jails/templates/base-10.2-RELEASE/etc /usr/local/jails/templates/skeleton-10.2-RELEASE/etc
-mv /usr/local/jails/templates/base-10.2-RELEASE/usr/local /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/local
-mv /usr/local/jails/templates/base-10.2-RELEASE/tmp /usr/local/jails/templates/skeleton-10.2-RELEASE/tmp
-mv /usr/local/jails/templates/base-10.2-RELEASE/var /usr/local/jails/templates/skeleton-10.2-RELEASE/var
-mv /usr/local/jails/templates/base-10.2-RELEASE/root /usr/local/jails/templates/skeleton-10.2-RELEASE/root
+mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE  
+# or  
+zfs create -p zroot/jails/templates/skeleton-10.2-RELEASE  
+  
+mkdir -p /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/ports/distfiles /usr/local/jails/templates/skeleton-10.2-RELEASE/home /usr/local/jails/templates/skeleton-10.2-RELEASE/portsbuild  
+mv /usr/local/jails/templates/base-10.2-RELEASE/etc /usr/local/jails/templates/skeleton-10.2-RELEASE/etc  
+mv /usr/local/jails/templates/base-10.2-RELEASE/usr/local /usr/local/jails/templates/skeleton-10.2-RELEASE/usr/local  
+mv /usr/local/jails/templates/base-10.2-RELEASE/tmp /usr/local/jails/templates/skeleton-10.2-RELEASE/tmp  
+mv /usr/local/jails/templates/base-10.2-RELEASE/var /usr/local/jails/templates/skeleton-10.2-RELEASE/var  
+mv /usr/local/jails/templates/base-10.2-RELEASE/root /usr/local/jails/templates/skeleton-10.2-RELEASE/root  
 ```
 
 3\. The skeleton directory is what is going to be copied for each new jail. It is going to be mounted in `/skeleton/` inside the jail. So in the read-only base template we need to create symlink from all the expected locations to the appropriate directories inside the `/skeleton/` directory. It is very important to cd into your jail directory and create these symlinks with relative paths. That way they will always link to the correct location no matter where the base template ends up mounted.
 
 ```sh
-cd /usr/local/jails/templates/base-10.2-RELEASE
-mkdir skeleton
-ln -s skeleton/etc etc
-ln -s skeleton/home home
-ln -s skeleton/root root
-ln -s skeleton/usr/local usr/local
-ln -s skeleton/usr/ports/distfiles usr/ports/distfiles
-ln -s skeleton/tmp tmp
-ln -s skeleton/var var
+cd /usr/local/jails/templates/base-10.2-RELEASE  
+mkdir skeleton  
+ln -s skeleton/etc etc  
+ln -s skeleton/home home  
+ln -s skeleton/root root  
+ln -s skeleton/usr/local usr/local  
+ln -s skeleton/usr/ports/distfiles usr/ports/distfiles  
+ln -s skeleton/tmp tmp  
+ln -s skeleton/var var  
 ```
 
 4\. Edit make.conf so that your ports workdirectory is located inside the skeleton directory.
 
 ```sh
-echo "WRKDIRPREFIX?=  /skeleton/portbuild" >> /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf
+echo "WRKDIRPREFIX?=  /skeleton/portbuild" >> /usr/local/jails/templates/skeleton-10.2-RELEASE/etc/make.conf  
 ```
 
 5\. Copy your skeleton for your jail. You can use plain old copy or ZFS snapshots.
 
 ```sh
-zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton
-zfs create zroot/jails/thinjails
-zfs clone zroot/jails/templates/skeleton-10.2-RELEASE@skeleton zroot/jails/thinjails/thinjail1
-# or
-mkdir /usr/local/jails/thinjails
-cp -R /usr/local/jails/templates/skeleton-10.2-RELEASE /usr/local/jails/thinjails/thinjail1
+zfs snapshot zroot/jails/templates/skeleton-10.2-RELEASE@skeleton  
+zfs create zroot/jails/thinjails  
+zfs clone zroot/jails/templates/skeleton-10.2-RELEASE@skeleton zroot/jails/thinjails/thinjail1  
+# or  
+mkdir /usr/local/jails/thinjails  
+cp -R /usr/local/jails/templates/skeleton-10.2-RELEASE /usr/local/jails/thinjails/thinjail1  
 ```
 
 6\. Add the hostname to the jails rc.conf
 
 ```sh
-echo hostname=\"thinjail1\" > /usr/local/jails/thinjails/thinjail1/etc/rc.conf
+echo hostname=\"thinjail1\" > /usr/local/jails/thinjails/thinjail1/etc/rc.conf  
 ```
 
 7\. Make the jail directory where the base template and skeleton folder will be mounted.
 
 ```sh
-mkdir -p /usr/local/jails/thinjail1
+mkdir -p /usr/local/jails/thinjail1  
 ```
 
 8\. Create the jail entry in `/etc/jail.conf`, be sure and include the global jail configs listed in the fulljail example.
@@ -256,7 +256,7 @@ thinjail1 {
 10\. Start the jail.
 
 ```sh
-jail -c thinjail1
+jail -c thinjail1  
 ```
 
 Now if you create dozens of thinjails, you can run `env UNAME_r=10.2-RELEASE freebsd-update -b /usr/local/jails/templates/base-10.2-RELEASE fetch install` once and all your jails will be updated. You can run `portsnap -p /usr/local/jails/templates/base-10.2-RELEASE/usr/ports auto` and your ports tree for all jails is updated. And you have one easy place to backup to save all your jails customizations: `/usr/local/jails/thinjails/`.
